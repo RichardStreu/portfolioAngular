@@ -26,6 +26,7 @@ body {
   background-color: $color-bgDark;
   color: white;
   font-size: 1rem;
+  user-select: none;
 }
 
 .contentWrapper {
