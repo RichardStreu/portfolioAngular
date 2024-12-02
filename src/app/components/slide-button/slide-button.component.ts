@@ -10,6 +10,6 @@ import { Component, Input } from '@angular/core';
 export class SlideButtonComponent {
 
   @Input("text") text: string = "";
-  @Input("path") path: string = "";
+  @Input("path") path?: string = "";
 
 }
