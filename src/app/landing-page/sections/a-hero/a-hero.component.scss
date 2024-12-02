@@ -1,6 +1,11 @@
 @import "../../../../styles.scss";
 
-.heroSectino .contentWrapper {
+.heroSection {
+  background: linear-gradient(to top right, rgba(61, 207, 182, 0) 40%, rgba(61, 207, 182, 0.3) 100%);
   height: 100dvh;
+}
+
+.heroSection .contentWrapper {
+  
   background-color: aqua;
 }
