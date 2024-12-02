@@ -32,7 +32,7 @@ header {
         font-size: 1rem;
         position: relative;
         z-index: 2;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.2s ease-in-out;
 
         
       }
@@ -46,7 +46,7 @@ header {
         position: absolute;
         z-index: 1;
         left: -1px;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.2s ease-in-out;
       }
 
       &.active {
@@ -73,6 +73,25 @@ header {
       font-size: 1.25rem;
       color: white;
       text-decoration: none;
+      
+      position: relative;
+
+      &::after {
+        content: "";
+          display: block;
+          width: 8px;
+          height: 8px;
+          border-radius: 100vh;
+          background-color: $color-hightLight;
+          position: absolute;
+          left: calc(50% - 4px);
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+      }
+
+      &:hover::after {
+          opacity: 1;
+      }
     }
   }
 
