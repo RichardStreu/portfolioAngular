@@ -30,6 +30,12 @@ header {
       position: relative;
       cursor: pointer;
       user-select: none;
+      transition: all 0.2s ease-in-out;
+
+
+      &:hover {
+        border: 2px solid white;
+      }
 
       span {
         background-color: transparent;
@@ -44,13 +50,13 @@ header {
 
       &::before {
         content: "";
-        width: 42px;
+        width: 44px;
         height: 28px;
         background-color: $color-hightLight;
         border-radius: 100vh;
         position: absolute;
         z-index: 1;
-        left: -1px;
+        left: -2px;
         transition: all 0.2s ease-in-out;
       }
 
@@ -61,7 +67,7 @@ header {
         }
 
         &::before {
-          left: 35px;
+          left: 34px;
         }
       }
 
