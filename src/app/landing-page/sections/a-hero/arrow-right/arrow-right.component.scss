@@ -1,21 +1,71 @@
 @import "../../../../../styles.scss";
 
 .arrowRightContainer {
-
   display: flex;
   flex-direction: column;
   gap: 24px;
   align-items: center;
+  position: relative;
+  width: 32px;
+
+  >a {
+    transform-origin: top left;
+    transform: rotate(-90deg) translate(24px ,-50%);
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-hightLight;
+    }
+  }
+
 
 .arrowRightLinkBox {
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: center;
+
+  a {
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 100vh;
+      background-color: $color-hightLight;
+      position: absolute;
+      right: -12px;
+      bottom: calc(50% - 2px);
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    path {
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      path {
+        fill: white;
+      }
+    }
+  }
 }
 
   .line {
-    height: 240px;
+    height: 186px;
     width: 2px;
     background-color: white;
   }

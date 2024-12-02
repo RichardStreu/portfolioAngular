@@ -1,7 +1,16 @@
 @import "../../../../../styles.scss";
 
-.arrowLeftContainer {
+@keyframes upDown {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
 
+.arrowLeftContainer {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -18,7 +27,12 @@
     width: 30px;
     border: 2px solid $color-hightLight;
     border-radius: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      animation: upDown 1.4s infinite;
+    }
   }
-
 }
-
