@@ -1,4 +1,83 @@
+@import "../../../styles.scss";
+
 header {
   background-color: green;
-  height: 50px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .headerNavbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .languageButton {
+      width: 80px;
+      height: 28px;
+      border: 2px solid $color-hightLight;
+      border-radius: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+
+      span {
+        background-color: transparent;
+        border: none;
+        color: rgba($color-hightLight, 0.7);
+        font-family: "Fira";
+        font-size: 1rem;
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s ease-in-out;
+
+        
+      }
+
+      &::before {
+        content: "";
+        width: 42px;
+        height: 28px;
+        background-color: $color-hightLight;
+        border-radius: 100vh;
+        position: absolute;
+        z-index: 1;
+        left: -1px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &.active {
+        span:last-child {
+          color: white;
+          font-weight: bold;
+        }
+
+        &::before {
+          left: 35px;
+        }
+      }
+
+      &:not(.active) {
+        span:first-child {
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+
+    a {
+      font-family: "Fira";
+      font-size: 1.25rem;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  svg {
+    height: 48px;
+    width: auto;
+  }
 }
