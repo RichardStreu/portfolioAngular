@@ -3,9 +3,25 @@
 .heroSection {
   background: linear-gradient(to top right, rgba(61, 207, 182, 0) 40%, rgba(61, 207, 182, 0.3) 100%);
   height: 100dvh;
+  
+
+  .contentWrapper {
+    position: relative;
+    height: calc(100dvh - 96px);
+
+    .arrowLeft {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .arrowRight {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+
+  }
 }
 
-.heroSection .contentWrapper {
-  
-  background-color: aqua;
-}

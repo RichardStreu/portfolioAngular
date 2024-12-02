@@ -1,0 +1,23 @@
+@import "../../../../../styles.scss";
+
+.arrowRightContainer {
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+.arrowRightLinkBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+  .line {
+    height: 240px;
+    width: 2px;
+    background-color: white;
+  }
+}
+

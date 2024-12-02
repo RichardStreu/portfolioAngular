@@ -1,0 +1,24 @@
+@import "../../../../../styles.scss";
+
+.arrowLeftContainer {
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+  .line {
+    height: 240px;
+    width: 2px;
+    background-color: $color-hightLight;
+  }
+
+  .scrollDownBox {
+    height: 48px;
+    width: 30px;
+    border: 2px solid $color-hightLight;
+    border-radius: 50vh;
+  }
+
+}
+
