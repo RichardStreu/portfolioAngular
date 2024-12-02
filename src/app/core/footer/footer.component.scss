@@ -1,0 +1,36 @@
+@import "../../../styles.scss";
+
+.contentWrapper div {
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.footerLogoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  svg {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.footerCopyBox {
+  color: $color-hightLight;
+  font-family: "Fira";
+  font-size: 1.15rem;
+}
+
+.footerLinkBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
