@@ -3,6 +3,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 export const routes: Routes = [
-  { path: 'landingPage', component: LandingPageComponent },
+  { path: '', component: LandingPageComponent },
   { path: 'legalNotice', component: LegalNoticeComponent },
 ];

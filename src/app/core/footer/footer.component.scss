@@ -3,34 +3,41 @@
 .contentWrapper div {
   display: flex;
   justify-content: space-between;
- 
-}
 
-.footerLogoBox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-
-  svg {
-    margin-bottom: 1.5rem;
-  }
-}
-
-.footerCopyBox {
-  color: $color-hightLight;
-  font-family: "Fira";
-  font-size: 1.15rem;
-}
-
-.footerLinkBox {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-start;
+  .footerLogoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-bottom: 64px;
   
-  a {
-    color: white;
-    text-decoration: none;
+    svg {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  .footerCopyBox {
+    color: $color-hightLight;
+    font-family: "Fira";
+    font-size: 1.15rem;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 100px;
+  }
+  
+  .footerLinkBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 64px;
+  
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 }
+
