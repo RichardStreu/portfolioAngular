@@ -34,6 +34,10 @@ header {
 
       &:hover {
         border: 2px solid white;
+
+        span {
+          color: $color-highLight;
+        }
       }
 
       span {
