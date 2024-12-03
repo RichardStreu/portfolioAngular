@@ -1,0 +1,122 @@
+@import "../../../styles.scss";
+
+header {
+  background: linear-gradient(
+    to bottom,
+    rgba(41, 41, 41, 1) 30%,
+    rgba(41, 41, 41, 0)
+  );
+
+  .headerContent {
+    height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .headerNavbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .languageButton {
+      width: 80px;
+      height: 28px;
+      border: 2px solid $color-highLight;
+      border-radius: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        border: 2px solid white;
+
+        span {
+          color: $color-highLight;
+        }
+      }
+
+      span {
+        background-color: transparent;
+        border: none;
+        color: rgba($color-highLight, 0.7);
+        font-family: "Fira";
+        font-size: 1rem;
+        position: relative;
+        z-index: 2;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &::before {
+        content: "";
+        width: 44px;
+        height: 28px;
+        background-color: $color-highLight;
+        border-radius: 100vh;
+        position: absolute;
+        z-index: 1;
+        left: -2px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &.active {
+        span:last-child {
+          color: white;
+          font-weight: bold;
+        }
+
+        &::before {
+          left: 34px;
+        }
+      }
+
+      &:not(.active) {
+        span:first-child {
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+
+    a {
+      font-family: "Fira";
+      font-size: 1.25rem;
+      color: white;
+      text-decoration: none;
+
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 100vh;
+        background-color: $color-highLight;
+        position: absolute;
+        left: calc(50% - 4px);
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  #richardStreuLogo {
+    height: 48px;
+    width: auto;
+
+    #logoPath {
+      fill: $color-highLight;
+    }
+  }
+
+  
+}

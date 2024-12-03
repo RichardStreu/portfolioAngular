@@ -1,0 +1,26 @@
+@import "../../../../styles.scss";
+
+.skillsetSection {
+  height: 100dvh;
+  background: radial-gradient(
+    circle at -5% 50%,
+    rgba($color-highLight, 0.15), 
+    rgb(41, 41, 41) 20% 
+  );
+
+  .contentWrapper {
+    display: flex;
+
+    .skillsetLeftPart {
+      flex: 1;
+      background-color: aqua;
+      min-height: 400px;
+    }
+
+    .skillsetRightPart {
+    flex: 1;   
+    background-color: red;
+    }
+
+  }
+}

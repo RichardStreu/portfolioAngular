@@ -1,0 +1,51 @@
+@import "../../../styles.scss";
+
+.contentWrapper div {
+  display: flex;
+  justify-content: space-between;
+
+  .footerLogoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-bottom: 64px;
+
+    svg {
+      margin-bottom: 1.5rem;
+    }
+
+    #richardStreuFooterLogo {
+      height: 48px;
+      width: auto;
+  
+      #logoFooterPath {
+        fill: $color-highLight;
+      }
+    }
+  }
+
+  .footerCopyBox {
+    color: $color-highLight;
+    font-family: "Fira";
+    font-size: 1.15rem;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 100px;
+  }
+
+  .footerLinkBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 64px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}

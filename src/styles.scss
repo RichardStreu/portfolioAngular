@@ -10,9 +10,29 @@
     format("truetype");
 }
 
+$color-bgDark: rgb(41, 41, 41);
+// $color-highLight: magenta;
+$color-highLight: rgb(61, 207, 182);
+$color-red: rgb(197, 106, 106);
+
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: $color-bgDark;
+  color: white;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1248px;
+  margin-left: auto;
+  margin-right: auto;
 }

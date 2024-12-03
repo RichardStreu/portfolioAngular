@@ -1,0 +1,38 @@
+@import "../../../../../styles.scss";
+
+@keyframes upDown {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.arrowLeftContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+  .line {
+    height: 240px;
+    width: 2px;
+    background-color: $color-highLight;
+  }
+
+  .scrollDownBox {
+    height: 48px;
+    width: 30px;
+    border: 2px solid $color-highLight;
+    border-radius: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      animation: upDown 1.4s infinite;
+    }
+  }
+}

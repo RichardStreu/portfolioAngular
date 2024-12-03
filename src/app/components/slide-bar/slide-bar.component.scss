@@ -1,0 +1,49 @@
+@import "../../../styles.scss";
+
+@keyframes slideText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slideBarContainer {
+  width: 105%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: rgba($color: white, $alpha: 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 12px 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform-origin: bottom left;
+  transform: rotate(-3deg);
+  display: flex;
+
+  .slideBarText {
+    font-size: 2rem;
+    color: $color-highLight;
+    animation: slideText 25s linear infinite;
+    display: flex;
+    gap: 56px;
+    padding-left: 56px;
+
+    .dotBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 100vh;
+        background-color: $color-highLight;
+      }
+    }
+  }
+}

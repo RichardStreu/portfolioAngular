@@ -1,0 +1,56 @@
+@import "../../../../styles.scss";
+
+.heroSection {
+  background: linear-gradient(
+    to top right,
+    rgba(61, 207, 182, 0) 40%,
+    rgba($color-highLight, 0.3) 100%
+  );
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+
+  .contentWrapper {
+    position: relative;
+    height: calc(100dvh - 96px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .arrowLeft {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .arrowRight {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    .nameContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .job {
+        font-family: "Fira", monospace;
+        font-size: 2.5rem;
+        padding-bottom: 12px;
+      }
+
+      .name {
+        font-family: "Karla", sans-serif;
+        font-size: 8rem;
+        font-weight: bold;
+        padding-bottom: 40px;
+      }
+
+      div {
+        display: flex;
+        gap: 48px;
+      }
+    }
+  }
+}
