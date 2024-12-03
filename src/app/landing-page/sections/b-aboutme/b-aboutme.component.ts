@@ -14,6 +14,7 @@ export class BAboutmeComponent {
 
   whoIAmText: string = 'Who I Am';
   aboutMeText: string = 'About Me';
+  greetingText: string = 'Hi, I’m a german speaking Frontend Developer based in Chemnitz. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.';
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
@@ -23,8 +24,12 @@ export class BAboutmeComponent {
           : 'Lerne mich kennen';
           this.aboutMeText = 
           this.languageService.currentLanguage == 'en'
-            ? 'About Me'
+            ? 'About me'
             : 'Zu mir';
+          this.greetingText =
+          this.languageService.currentLanguage == 'en'
+            ? 'Hi, I’m a german speaking Frontend Developer based in Chemnitz. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.'
+            : 'Hallo, ich bin ein deutschsprachiger Frontend-Entwickler aus Chemnitz. Motiviert von den grenzenlosen Möglichkeiten in der IT, freue ich mich darauf, visuell ansprechende und intuitive Websites und Anwendungen zu gestalten.';
     });
   }
 

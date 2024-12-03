@@ -65,10 +65,44 @@
       .aboutMeBox {
         width: 100%;
         min-height: 400px;
-        background-color: rgba($color-highLight, 0.2);
+        background-color: rgba($color-highLight, 0.15);
         border: 2px solid $color-highLight;
         border-radius: 30px;
         padding: 2rem;
+
+        h2 {
+          font-family: "Fira", sans-serif;
+          font-weight: bold;
+          font-size: 4rem;
+          color: $color-highLight;
+        }
+
+        p {
+          font-family: "Karla", sans-serif;
+          font-size: 1.13rem;
+          color: white;
+        }
+
+        .aboutMeItems {
+          display: flex;
+          gap: 1.5rem;
+
+          svg {
+            width: 32px;
+            height: 32px;
+          }
+
+          p {
+            font-family: "Karla", sans-serif;
+            font-size: 1.13rem;
+            color: rgba($color: white, $alpha: 0.8);
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
       }
     }
   }
