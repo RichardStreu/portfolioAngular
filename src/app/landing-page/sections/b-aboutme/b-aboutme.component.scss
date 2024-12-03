@@ -7,35 +7,64 @@
 }
 
 .aboutMeContent {
-
-  background-color: aqua;
   height: 708px;
   width: 100%;
+  display: flex;
 
-  .imgSwipe {
-    width: 568px;
-    height: 568px;
-    border-radius: 30px;
-    position: relative;
+  .aboutMeLeft {
+    flex: 1;
 
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 25px,
-      $color-highLight 25px,
-      $color-highLight 27px
-    );
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .imgSwipe {
+      width: 568px;
+      height: 568px;
       border-radius: 30px;
-      filter: grayscale(100%);
-      transition: all 0.4s ease-out;
+      position: relative;
 
-      &:hover {
-        transform: translate(20px, -20px);
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 25px,
+        $color-highLight 25px,
+        $color-highLight 27px
+      );
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        filter: grayscale(100%);
+        transition: all 0.4s ease-out;
+
+        &:hover {
+          transform: translate(30px, -30px);
+        }
+      }
+    }
+  }
+
+  .aboutMeRight {
+    flex: 1;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+
+    div {
+      width: 568px;
+
+      > p {
+        font-size: 1.5rem;
+        font-family: "Karla", sans-serif;
+        font-weight: 500;
+        color: $color-highLight;
+      }
+
+      .aboutMeBox {
+        width: 100%;
+        min-height: 400px;
+        background-color: rgba($color-highLight, 0.2);
+        border: 2px solid $color-highLight;
+        border-radius: 30px;
       }
     }
   }
