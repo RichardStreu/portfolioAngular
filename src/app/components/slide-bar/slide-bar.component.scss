@@ -1,5 +1,14 @@
 @import "../../../styles.scss";
 
+@keyframes slideText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .slideBarContainer {
   width: 105%;
   overflow: hidden;
@@ -14,20 +23,27 @@
   bottom: 0;
   transform-origin: bottom left;
   transform: rotate(-3deg);
-}
+  display: flex;
 
-.slideBarText {
-  display: inline-block;
-  font-size: 1.5em;
-  color: #333;
-  animation: marquee 15s linear infinite;
-}
+  .slideBarText {
+    font-size: 2rem;
+    color: $color-hightLight;
+    animation: slideText 25s linear infinite;
+    display: flex;
+    gap: 56px;
+    padding-left: 56px;
 
-@keyframes marquee {
-  from {
-      transform: translateX(100%);
-  }
-  to {
-      transform: translateX(-100%);
+    .dotBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 100vh;
+        background-color: $color-hightLight;
+      }
+    }
   }
 }
