@@ -69,34 +69,45 @@
         border: 2px solid $color-highLight;
         border-radius: 30px;
         padding: 2rem;
+        gap: 1rem;
 
         h2 {
           font-family: "Fira", sans-serif;
           font-weight: bold;
           font-size: 4rem;
           color: $color-highLight;
+          padding-bottom: 1rem;
         }
 
         p {
           font-family: "Karla", sans-serif;
           font-size: 1.13rem;
           color: white;
+          padding-bottom: 1rem;
         }
 
         .aboutMeItems {
           display: flex;
+          flex-direction: row;
           gap: 1.5rem;
+          width: 100%;
 
           svg {
             width: 32px;
+            min-width: 32px;
             height: 32px;
+
+            path {
+              fill: $color-highLight;
+            }
           }
 
           p {
             font-family: "Karla", sans-serif;
             font-size: 1.13rem;
-            color: rgba($color: white, $alpha: 0.8);
+            color: rgba($color: white, $alpha: 0.7);
             transition: all 0.2s ease-in-out;
+            padding-bottom: 0;
 
             &:hover {
               color: white;

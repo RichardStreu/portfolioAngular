@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-c-skillset',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './c-skillset.component.scss'
 })
 export class CSkillsetComponent {
+
+  languageService = inject(LanguageService);
 
 }
