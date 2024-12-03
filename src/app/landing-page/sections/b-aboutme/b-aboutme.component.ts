@@ -13,6 +13,7 @@ export class BAboutmeComponent {
   languageService = inject(LanguageService);
 
   whoIAmText: string = 'Who I Am';
+  aboutMeText: string = 'About Me';
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
@@ -20,6 +21,10 @@ export class BAboutmeComponent {
         this.languageService.currentLanguage == 'en'
           ? 'Who I Am'
           : 'Lerne mich kennen';
+          this.aboutMeText = 
+          this.languageService.currentLanguage == 'en'
+            ? 'About Me'
+            : 'Zu mir';
       // this.contactMeText =
       //   this.languageService.currentLanguage == 'en'
       //     ? 'Contact Me'
