@@ -11,5 +11,5 @@ import { CSkillsetComponent } from './sections/c-skillset/c-skillset.component';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-
+  
 }
