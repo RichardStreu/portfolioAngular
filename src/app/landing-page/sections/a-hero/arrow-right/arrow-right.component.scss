@@ -33,6 +33,11 @@
       transition: all 0.2s ease-in-out;
       position: relative;
 
+      svg path {
+        fill: $color-highLight;
+        transition: all 0.2s ease-in-out;
+      }
+
       &::after {
         content: "";
         display: block;
@@ -51,12 +56,8 @@
         opacity: 1;
       }
 
-      path {
-        transition: all 0.2s ease-in-out;
-      }
-
       &:hover {
-        path {
+        svg path {
           fill: white;
         }
       }
