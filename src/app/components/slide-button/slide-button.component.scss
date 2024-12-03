@@ -4,7 +4,7 @@
   0% {
     transform: translateX(calc(100% + 3rem));
   }
-  
+
   100% {
     transform: translateX(calc(-100% - 3rem));
   }
@@ -29,8 +29,7 @@ a {
   }
 
   &:hover {
-    border: 2px solid $color-hightLight;
-    
+    border: 2px solid $color-highLight;
 
     span {
       transition: all 1s ease-in;
@@ -39,7 +38,7 @@ a {
       animation: buttonSlide 2s linear infinite;
       animation-direction: normal;
       animation-delay: 1s;
-      color: $color-hightLight;
+      color: $color-highLight;
     }
   }
 }

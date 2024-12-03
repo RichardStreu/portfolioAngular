@@ -27,7 +27,7 @@
 
   .slideBarText {
     font-size: 2rem;
-    color: $color-hightLight;
+    color: $color-highLight;
     animation: slideText 25s linear infinite;
     display: flex;
     gap: 56px;
@@ -42,7 +42,7 @@
         width: 8px;
         height: 8px;
         border-radius: 100vh;
-        background-color: $color-hightLight;
+        background-color: $color-highLight;
       }
     }
   }

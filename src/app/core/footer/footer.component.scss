@@ -11,21 +11,21 @@
     justify-content: flex-end;
     gap: 0.5rem;
     padding-bottom: 64px;
-  
+
     svg {
       margin-bottom: 1.5rem;
     }
   }
-  
+
   .footerCopyBox {
-    color: $color-hightLight;
+    color: $color-highLight;
     font-family: "Fira";
     font-size: 1.15rem;
     display: flex;
     align-items: flex-end;
     padding-bottom: 100px;
   }
-  
+
   .footerLinkBox {
     display: flex;
     flex-direction: column;
@@ -33,11 +33,10 @@
     align-items: flex-start;
     gap: 0.5rem;
     padding-bottom: 64px;
-  
+
     a {
       color: white;
       text-decoration: none;
     }
   }
 }
-

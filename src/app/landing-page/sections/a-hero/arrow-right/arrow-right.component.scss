@@ -8,9 +8,9 @@
   position: relative;
   width: 32px;
 
-  >a {
+  > a {
     transform-origin: top left;
-    transform: rotate(-90deg) translate(24px ,-50%);
+    transform: rotate(-90deg) translate(24px, -50%);
     color: white;
     text-decoration: none;
     position: absolute;
@@ -19,50 +19,49 @@
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: $color-hightLight;
+      color: $color-highLight;
     }
   }
 
+  .arrowRightLinkBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
 
-.arrowRightLinkBox {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-
-  a {
-    transition: all 0.2s ease-in-out;
-    position: relative;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 8px;
-      height: 8px;
-      border-radius: 100vh;
-      background-color: $color-hightLight;
-      position: absolute;
-      right: -12px;
-      bottom: calc(50% - 2px);
-      opacity: 0;
+    a {
       transition: all 0.2s ease-in-out;
-    }
+      position: relative;
 
-    &:hover::after {
-      opacity: 1;
-    }
+      &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 100vh;
+        background-color: $color-highLight;
+        position: absolute;
+        right: -12px;
+        bottom: calc(50% - 2px);
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
 
-    path {
-      transition: all 0.2s ease-in-out;
-    }
+      &:hover::after {
+        opacity: 1;
+      }
 
-    &:hover {
       path {
-        fill: white;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        path {
+          fill: white;
+        }
       }
     }
   }
-}
 
   .line {
     height: 186px;
@@ -70,4 +69,3 @@
     background-color: white;
   }
 }
-
