@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+
+.slideBarContainer {
+  width: 105%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: rgba($color: white, $alpha: 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 12px 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform-origin: bottom left;
+  transform: rotate(-3deg);
+}
+
+.slideBarText {
+  display: inline-block;
+  font-size: 1.5em;
+  color: #333;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
