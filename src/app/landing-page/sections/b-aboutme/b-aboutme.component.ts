@@ -25,10 +25,6 @@ export class BAboutmeComponent {
           this.languageService.currentLanguage == 'en'
             ? 'About Me'
             : 'Zu mir';
-      // this.contactMeText =
-      //   this.languageService.currentLanguage == 'en'
-      //     ? 'Contact Me'
-      //     : 'Schreib mir';
     });
   }
 

@@ -15,6 +15,15 @@
     svg {
       margin-bottom: 1.5rem;
     }
+
+    #richardStreuFooterLogo {
+      height: 48px;
+      width: auto;
+  
+      #logoFooterPath {
+        fill: $color-highLight;
+      }
+    }
   }
 
   .footerCopyBox {

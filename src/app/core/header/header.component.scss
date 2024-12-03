@@ -105,12 +105,14 @@ header {
     }
   }
 
-  svg {
-    
+  #richardStreuLogo {
+    height: 48px;
+    width: auto;
+
+    #logoPath {
+      fill: $color-highLight;
+    }
   }
 
-  .logo {
-    height: 148px;
-    width: auto;
-  }
+  
 }
