@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-b-aboutme',
@@ -8,5 +9,26 @@ import { Component } from '@angular/core';
   styleUrl: './b-aboutme.component.scss'
 })
 export class BAboutmeComponent {
+
+  languageService = inject(LanguageService);
+
+  whoIAmText: string = 'Who I Am';
+
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {
+      this.whoIAmText =
+        this.languageService.currentLanguage == 'en'
+          ? 'Who I Am'
+          : 'Lerne mich kennen';
+      // this.contactMeText =
+      //   this.languageService.currentLanguage == 'en'
+      //     ? 'Contact Me'
+      //     : 'Schreib mir';
+    });
+  }
+
+  constructor() {
+    this.chooseLanguage();
+  }
 
 }
