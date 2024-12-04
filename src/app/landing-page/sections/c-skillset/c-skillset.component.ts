@@ -49,7 +49,7 @@ export class CSkillsetComponent {
       this.specialInterestText =
         this.languageService.currentLanguage == 'en'
           ? 'I have a special interest in learning'
-          : 'Ich habe ein besonderes Interesse an';
+          : 'Ich interesseire mich ebenfalls für';
     });
   }
 
