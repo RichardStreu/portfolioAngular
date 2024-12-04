@@ -20,6 +20,7 @@ export class CSkillsetComponent {
   anotherSkillText: string = '';
   feelFreeText: string = '';
   buttonText: string = '';
+  specialInterestText: string = '';
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
@@ -45,6 +46,10 @@ export class CSkillsetComponent {
         this.languageService.currentLanguage == 'en'
           ? "Let's Talk"
           : 'Zum Kontakt';
+      this.specialInterestText =
+        this.languageService.currentLanguage == 'en'
+          ? 'I have a special interest in learning'
+          : 'Ich habe ein besonderes Interesse an';
     });
   }
 
