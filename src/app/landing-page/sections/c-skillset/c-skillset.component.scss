@@ -77,8 +77,17 @@
 
       .skillsetRightPart {
         flex: 1;
-        background-color: red;
         min-height: 200px;
+
+        .skillSetSkillsBox {
+          width: 632px;
+          display: flex;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 72px;
+          row-gap: 40px;
+          
+        }
       }
     }
   }

@@ -1,17 +1,26 @@
 <section id="skillsetSection" class="skillsetSection">
   <div class="contentWrapper">
-    <p>{{technologiesText}}</p>
+    <p>{{ technologiesText }}</p>
     <div class="skillsetContent">
       <div class="skillsetLeftPart">
         <div class="skillsetTextBox">
-          <h2>{{skillSetText}}</h2>
-          <p class="skillDescripton">{{skillSetDescriptionText}}</p>
-          <p class="skillNeed">{{youNeedText}}<span class="skillAnother">{{anotherSkillText}}</span></p>
-          <p class="skillFeelFree">{{feelFreeText}}</p>
+          <h2>{{ skillSetText }}</h2>
+          <p class="skillDescripton">{{ skillSetDescriptionText }}</p>
+          <p class="skillNeed">
+            {{ youNeedText
+            }}<span class="skillAnother">{{ anotherSkillText }}</span>
+          </p>
+          <p class="skillFeelFree">{{ feelFreeText }}</p>
           <app-slide-button [path]="" [text]="buttonText"></app-slide-button>
         </div>
       </div>
-      <div class="skillsetRightPart"></div>
+      <div class="skillsetRightPart">
+        <div class="skillSetSkillsBox">
+          @for (item of skillSet; track $index) {
+          <app-skill-item [skill]="item"></app-skill-item>
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>
