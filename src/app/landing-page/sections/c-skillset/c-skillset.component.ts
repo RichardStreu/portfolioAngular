@@ -50,4 +50,62 @@ export class CSkillsetComponent {
   constructor() {
     this.chooseLanguage();
   }
+
+  skillSet = [
+    {name: "name",
+     img: "img",
+     effectClass: "class",
+     fillColor: "color"
+    },
+    {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+     {name: "name",
+      img: "img",
+      effectClass: "class",
+      fillColor: "color"
+     },
+  ]
 }

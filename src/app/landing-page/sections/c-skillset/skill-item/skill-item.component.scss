@@ -1,0 +1,19 @@
+@import "../../../../../styles.scss";
+
+.skillItem {
+
+  display: flex;
+
+  img {
+    width: 64px;
+    height: 64px;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    font-family: "Fira", sans-serif;
+    font-size: 1.13px;
+    text-align: center;
+    color: white;
+  }
+}
