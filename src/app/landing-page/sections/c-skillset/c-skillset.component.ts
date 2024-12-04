@@ -52,60 +52,60 @@ export class CSkillsetComponent {
   }
 
   skillSet = [
-    {name: "name",
-     img: "img",
-     effectClass: "class",
-     fillColor: "color"
+    {name: "HTML",
+     imgPath: "HTML.svg",
+     effectClass: "bounce",
+     colorClass: "fillColorWhite"
     },
-    {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+    {name: "CSS",
+      imgPath: "CSS.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "JavaScript",
+      imgPath: "JavaScript.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "Material Design",
+      imgPath: "Material-Design.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "TypeScript",
+      imgPath: "TypeScript.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "Anuglar",
+      imgPath: "Angular.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "Firebase",
+      imgPath: "Firebase.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "GIT",
+      imgPath: "Git.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "REST-Api",
+      imgPath: "Rest-Api.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "Scrum",
+      imgPath: "Scrum.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
      },
-     {name: "name",
-      img: "img",
-      effectClass: "class",
-      fillColor: "color"
+     {name: "Growth mindset",
+      imgPath: "GrowthMindset.svg",
+      effectClass: "scale",
+      colorClass: "fillColorHighLight"
      },
   ]
 }
