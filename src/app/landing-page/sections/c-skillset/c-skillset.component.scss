@@ -4,23 +4,40 @@
   height: 100dvh;
   background: radial-gradient(
     circle at -5% 50%,
-    rgba($color-highLight, 0.15), 
-    rgb(41, 41, 41) 20% 
+    rgba($color-highLight, 0.15),
+    rgb(41, 41, 41) 20%
   );
 
   .contentWrapper {
     display: flex;
+    flex-direction: column;
 
-    .skillsetLeftPart {
-      flex: 1;
-      background-color: aqua;
-      min-height: 400px;
+    p {
+      padding-bottom: 1.25rem;
+      font-family: "Karla", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $color-highLight;
     }
 
-    .skillsetRightPart {
-    flex: 1;   
-    background-color: red;
-    }
+    div {
+      display: flex;
+      flex-direction: row;
 
+      .skillsetLeftPart {
+        flex: 1;
+        min-height: 400px;
+        .skillsetTextBox {
+          background-color: rgba($color-highLight, 0.15);
+          border: 2px solid $color-highLight;
+        }
+      }
+
+      .skillsetRightPart {
+        flex: 1;
+        background-color: red;
+        min-height: 400px;
+      }
+    }
   }
 }

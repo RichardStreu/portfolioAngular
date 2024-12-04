@@ -41,4 +41,8 @@ export class CSkillsetComponent {
     });
   }
 
+  constructor() {
+    this.chooseLanguage();
+  }
+
 }
