@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { SlideButtonComponent } from '../../../components/slide-button/slide-button.component';
+import { SkillItemComponent } from './skill-item/skill-item.component';
 
 @Component({
   selector: 'app-c-skillset',
   standalone: true,
-  imports: [SlideButtonComponent],
+  imports: [SlideButtonComponent, SkillItemComponent],
   templateUrl: './c-skillset.component.html',
   styleUrl: './c-skillset.component.scss',
 })

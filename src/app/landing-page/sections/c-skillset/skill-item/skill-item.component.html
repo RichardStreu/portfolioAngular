@@ -1,4 +1,5 @@
-<div class="skillItem">
-  <img [src]="skill.img" alt="">
+<div class="skillItem" [ngClass]="[skill.colorClass, skill.effectClass]">
+  <img src="../../../../../assets/img/skillImages/{{skill.imgPath}}" alt="">
   <p>{{skill.name}}</p>
 </div>
+

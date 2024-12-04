@@ -1,16 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 interface Skill {
   name: string;
-  img: string;
+  imgPath: string;
   effectClass: string;
-  fillColor: string;
+  colorClass: string;
 }
 
 @Component({
   selector: 'app-skill-item',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './skill-item.component.html',
   styleUrl: './skill-item.component.scss',
 })
