@@ -26,17 +26,59 @@
 
       .skillsetLeftPart {
         flex: 1;
-        min-height: 400px;
         .skillsetTextBox {
+          width: 520px;
           background-color: rgba($color-highLight, 0.15);
           border: 2px solid $color-highLight;
+          border-radius: 30px;
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            font-family: "Fira", sans-serif;
+            font-weight: bold;
+            font-size: 4rem;
+            color: $color-highLight;
+            padding: 0 0 40px 0;
+          }
+
+          p {
+            font-family: "Karla", sans-serif;
+            font-size: 1.13rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.2s ease-in-out;
+            padding: 0;
+
+            &:hover {
+              color: white;
+            }
+          }
+
+          .skillNeed {
+            font-family: "Fira", sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+          }
+
+          .skillAnother {
+            color: $color-highLight;
+            padding-left: 0.9rem;
+          }
+
+          .skillFeelFree {
+            padding-bottom: 40px;
+          }
         }
       }
 
       .skillsetRightPart {
         flex: 1;
         background-color: red;
-        min-height: 400px;
+        min-height: 200px;
       }
     }
   }
