@@ -86,7 +86,6 @@
           flex-wrap: wrap;
           gap: 72px;
           row-gap: 40px;
-          
         }
 
         .skillItem {
@@ -95,19 +94,9 @@
           align-items: center;
           width: 104px;
           height: 116px;
-        
-          svg {
-            width: 64px;
-            height: 64px;
-            transition: all 0.4s ease-in-out;
-        
-            &:hover {
-              background-color: rgba($color-highLight, 0.12);
-              border-radius: 0.25rem;
-              box-shadow: 0 0 35px 30px rgba($color-highLight, 0.12);
-            }
-          }
-        
+          position: relative;
+          cursor: pointer;
+
           p {
             padding-top: 0.5rem;
             font-family: "Fira", sans-serif;
@@ -116,7 +105,73 @@
             color: white;
             font-weight: 400;
           }
+
+          .extraSkillBox {
+            transition: all 0.4s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            z-index: 1;
+            left: -2px;
+            top: -120px;
+            width: 188px;
+            height: 112px;
+            background-color: white;
+            border-radius: 1rem;
+            padding: 0.5rem;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 20px;
+              bottom: -5px;
+              transform: rotate(45deg);
+              width: 70px;
+              height: 70px;
+              background: white;
+              border-radius: 0.5rem;
+            }
+
+            .extraSkillContent {
+              position: relative;
+              z-index: 2;
+              width: 100%;
+              height: 100%;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              background-color: yellowgreen;
+            }
+          }
+
+          svg {
+            min-width: 64px;
+            width: 64px;
+            min-height: 64px;
+            height: 64px;
+            transition: all 0.4s ease-in-out;
+
+            path {
+              fill: $color-highLight;
+            }
+
+            &:hover {
+              background-color: rgba($color-highLight, 0.12);
+              border-radius: 0.25rem;
+              box-shadow: 0 0 35px 30px rgba($color-highLight, 0.12);
+              transform: scale(1.2);
+            }
+
+            &:hover .extraSkillBox {
+              opacity: 1;
+            }
+          }
         }
+
+        #mindsetSVG:hover .extraSkillBox {
+          opacity: 1;
+        }
+
+
       }
     }
   }
