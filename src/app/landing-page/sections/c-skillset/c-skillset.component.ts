@@ -102,11 +102,6 @@ export class CSkillsetComponent {
       imgPath: "Scrum.svg",
       effectClass: "bounce",
       colorClass: "fillColorWhite"
-     },
-     {name: "Growth mindset",
-      imgPath: "GrowthMindset.svg",
-      effectClass: "scale",
-      colorClass: "fillColorHighLight"
-     },
+     }
   ]
 }
