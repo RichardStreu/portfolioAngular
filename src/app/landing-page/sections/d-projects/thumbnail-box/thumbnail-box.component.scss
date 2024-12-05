@@ -3,6 +3,7 @@
 .thumbnailBox {
   width: 295px;
   height: 192px;
+  transition: all 0.2s ease-in-out;
   border-radius: 1rem;
   position: absolute;
   z-index: 1;
