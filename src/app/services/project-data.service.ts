@@ -6,11 +6,9 @@ import { Project } from '../shared/interfaces';
   providedIn: 'root',
 })
 export class ProjectDataService {
-
   projects: Project[] = [];
 
   constructor() {
-
     this.projects = [
       {
         name: 'Join1',
@@ -74,7 +72,5 @@ export class ProjectDataService {
       },
     ];
   }
-
-  
 }
 
