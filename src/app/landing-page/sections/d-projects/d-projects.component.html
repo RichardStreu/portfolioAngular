@@ -10,13 +10,13 @@
     <div class="projectsContent">
       <div class="projectsBars">
         <hr>
-        @for (singleProject of projectData; track singleProject; let index = $index) {
-          <app-project-bar class="singleBar" [project]="singleProject" [index]="index"></app-project-bar>
+        @for (singleProject of projectData; track $index) {
+          <app-project-bar class="singleBar" [project]="singleProject" [index]="$index"></app-project-bar>
         }
       </div>
       <div class="projectsThumbnails">
-        @for (singleProject of projectData; track singleProject; let index = $index) {
-          <div class="thumbnailBox"></div>
+        @for (singleProject of projectData; track $index) {
+          <app-thumbnail-box [projectData]="projectData" [index]="$index"></app-thumbnail-box>
         }
       </div>
     </div>
