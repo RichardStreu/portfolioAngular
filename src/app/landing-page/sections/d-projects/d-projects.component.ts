@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProjectDataService } from '../../../services/project-data.service';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-d-projects',
@@ -10,6 +11,16 @@ import { ProjectDataService } from '../../../services/project-data.service';
 })
 export class DProjectsComponent {
 
-  constructor(private projectData: ProjectDataService) {}
+  languageService = inject(LanguageService);
+
+
+
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {});
+  }
+
+  constructor(private projectData: ProjectDataService) {
+    this.chooseLanguage();
+  }
 
 }

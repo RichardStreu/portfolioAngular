@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-project-modal',
@@ -9,4 +10,15 @@ import { Component } from '@angular/core';
 })
 export class ProjectModalComponent {
 
+  languageService = inject(LanguageService);
+
+
+
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {});
+  }
+
+  constructor() {
+    this.chooseLanguage();
+  }
 }
