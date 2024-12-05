@@ -1,1 +1,7 @@
-<div class="thumbnailBox" [ngStyle]="{ top: positionTop }"></div>
+<div [id]="'thumbnailBoxNr' + index" class="thumbnailBox" [ngStyle]="{ top: positionTop }">
+  <img
+    class="thumbnailImage"
+    [src]="'./assets/img/projectImages/' +  image"
+    alt=""
+  />
+</div>
