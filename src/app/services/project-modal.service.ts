@@ -17,6 +17,7 @@ export class ProjectModalService {
   changeProjectModalState(index: number) { 
     this.modalState = !this.modalState;
     this.isProjectModalOpen.next(this.modalState);
+    this.showClickedProject(index);
   }
 
   currentProjectIndex = new BehaviorSubject<number>(0);
