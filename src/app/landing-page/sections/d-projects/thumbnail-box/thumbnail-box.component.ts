@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject, Renderer2, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './thumbnail-box.component.html',
   styleUrl: './thumbnail-box.component.scss',
 })
-
 export class ThumbnailBoxComponent {
   @Input('projectData') projectData: any;
   @Input({ required: true }) index: number = 0;
@@ -28,11 +27,34 @@ export class ThumbnailBoxComponent {
     }
   }
 
-  constructor() {
-  }
-
   ngOnInit() {
     this.mathPositionTop();
     this.image = this.projectData[this.index].projectImg;
+  }
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  showThumbnail(index: number) {
+    let thumbnail = this.el.nativeElement.querySelector(
+      `#thumbnailBoxNr${index}`
+    );
+    if (thumbnail) {
+      this.renderer.addClass(thumbnail, 'd_block');
+      setTimeout(() => {
+        this.renderer.addClass(thumbnail, 'opacity_1');
+      }, 20);
+    }
+  }
+
+  hideThumbnail(index: number) {
+    let thumbnail = this.el.nativeElement.querySelector(
+      `#thumbnailBoxNr${index}`
+    );
+    if (thumbnail) {
+      this.renderer.removeClass(thumbnail, 'opacity_1');
+      setTimeout(() => {
+        this.renderer.removeClass(thumbnail, 'd_block');
+      }, 220);
+    }
   }
 }
