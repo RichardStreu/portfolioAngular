@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { ProjectDataService } from '../../../services/project-data.service';
 import { LanguageService } from '../../../services/language.service';
 import { ProjectBarComponent } from './project-bar/project-bar.component';
+import { ThumbnailBoxComponent } from './thumbnail-box/thumbnail-box.component';
 
 @Component({
   selector: 'app-d-projects',
   standalone: true,
-  imports: [ProjectBarComponent],
+  imports: [ProjectBarComponent, ThumbnailBoxComponent],
   templateUrl: './d-projects.component.html',
   styleUrl: './d-projects.component.scss'
 })
