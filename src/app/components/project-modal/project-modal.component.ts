@@ -26,22 +26,24 @@ export class ProjectModalComponent {
   descriptionText: string = '';
 
   chooseLanguage() {
+    console.log(this.projectData);
+    
     this.languageService.language.subscribe(() => {
       this.headlineText =
         this.languageService.currentLanguage == 'en'
-          ? this.projectData[this.index].headline.en
-          : this.projectData[this.index].headline.de;
+          ? this.projectData.projects[this.index].headline.en
+          : this.projectData.projects[this.index].headline.de;
       this.descriptionText =
         this.languageService.currentLanguage == 'en'
-          ? this.projectData[this.index].description.en
-          : this.projectData[this.index].description.de;
+          ? this.projectData.projects[this.index].description.en
+          : this.projectData.projects[this.index].description.de;
     });
   }
 
   constructor() {
     this.chooseLanguage();
     this.projectModalService.currentProjectIndex.subscribe((index: number) => {
-      this.index = index;
+      if (index) this.index = index;
     });
   }
 }
