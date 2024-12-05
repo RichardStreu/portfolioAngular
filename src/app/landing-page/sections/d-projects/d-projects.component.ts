@@ -1,18 +1,21 @@
 import { Component, inject } from '@angular/core';
 import { ProjectDataService } from '../../../services/project-data.service';
 import { LanguageService } from '../../../services/language.service';
+import { ProjectBarComponent } from './project-bar/project-bar.component';
 
 @Component({
   selector: 'app-d-projects',
   standalone: true,
-  imports: [],
+  imports: [ProjectBarComponent],
   templateUrl: './d-projects.component.html',
   styleUrl: './d-projects.component.scss'
 })
 export class DProjectsComponent {
 
   languageService = inject(LanguageService);
-  projectData = inject(ProjectDataService);
+  projectDataService = inject(ProjectDataService);
+
+  projectData:any;
 
   featuredText: string = '';
   exploreText: string = '';
@@ -27,6 +30,7 @@ export class DProjectsComponent {
   }
 
   constructor() {
+    this.projectData = this.projectDataService.projects
     this.chooseLanguage();
   }
 
