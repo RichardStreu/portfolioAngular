@@ -1,5 +1,6 @@
-import { Component, Input, Renderer2, ElementRef } from '@angular/core';
+import { Component, Input, Renderer2, ElementRef, inject } from '@angular/core';
 import { Project } from '../../../../shared/interfaces';
+import { ProjectModalService } from '../../../../services/project-modal.service';
 
 @Component({
   selector: 'app-project-bar',
@@ -9,6 +10,8 @@ import { Project } from '../../../../shared/interfaces';
   styleUrl: './project-bar.component.scss',
 })
 export class ProjectBarComponent {
+  projectModalService = inject(ProjectModalService);
+
   @Input('index') index: number = 0;
 
   @Input('project') project: Project = {
@@ -33,6 +36,10 @@ export class ProjectBarComponent {
   };
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  showHideProjectModal(index: number) {
+    this.projectModalService.changeProjectModalState(index);
+  }
 
   showThumbnail(index: number) {
     let thumbnail = document.getElementById(`thumbnailBoxNr${index}`);

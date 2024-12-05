@@ -2,6 +2,7 @@
   (mouseenter)="showThumbnail(index)"
   (mouseleave)="hideThumbnail(index)"
   class="projectBar"
+  (click)="showHideProjectModal(index)"
 >
   <div>
     <p>{{ project.name }}</p>
