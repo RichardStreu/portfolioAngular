@@ -59,20 +59,4 @@
   position: relative;
   background-color: grey;
 
-  .thumbnailBox {
-    width: 295px;
-    height: 192px;
-    border-radius: 1rem;
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
-    background: repeating-linear-gradient(
-        135deg,
-        transparent,
-        transparent 15px,
-        $color-highLight 15px,
-        $color-highLight 17px
-      );
-  }
 }
