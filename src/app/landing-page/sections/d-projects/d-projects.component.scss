@@ -62,28 +62,17 @@
   .thumbnailBox {
     width: 295px;
     height: 192px;
-    background-color: red;
-    border: 1px solid black;
     border-radius: 1rem;
     position: absolute;
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
-
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 295px;
-      height: 192px;
-      border-radius: 1rem;
-      background: repeating-linear-gradient(
-        45deg,
+    background: repeating-linear-gradient(
+        135deg,
         transparent,
-        transparent 25px,
-        $color-highLight 25px,
-        $color-highLight 27px
+        transparent 15px,
+        $color-highLight 15px,
+        $color-highLight 17px
       );
-    }
   }
 }
