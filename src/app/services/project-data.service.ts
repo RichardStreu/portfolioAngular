@@ -6,7 +6,6 @@ import { Project } from '../shared/interfaces';
   providedIn: 'root',
 })
 export class ProjectDataService {
-  test: string = 'test';
 
   projects: Project[] = [];
 
