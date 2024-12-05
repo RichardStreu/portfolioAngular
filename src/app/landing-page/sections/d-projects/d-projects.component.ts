@@ -3,11 +3,12 @@ import { ProjectDataService } from '../../../services/project-data.service';
 import { LanguageService } from '../../../services/language.service';
 import { ProjectBarComponent } from './project-bar/project-bar.component';
 import { ThumbnailBoxComponent } from './thumbnail-box/thumbnail-box.component';
+import { ProjectModalComponent } from '../../../components/project-modal/project-modal.component';
 
 @Component({
   selector: 'app-d-projects',
   standalone: true,
-  imports: [ProjectBarComponent, ThumbnailBoxComponent],
+  imports: [ProjectBarComponent, ThumbnailBoxComponent, ProjectModalComponent],
   templateUrl: './d-projects.component.html',
   styleUrl: './d-projects.component.scss'
 })
@@ -20,6 +21,8 @@ export class DProjectsComponent {
 
   featuredText: string = '';
   exploreText: string = '';
+
+  isProjectModalOpen: boolean = false;
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {

@@ -31,15 +31,13 @@ export class ProjectDataService {
         },
       },
       {
-        name: 'Join2',
+        name: 'DEVerando',
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
-          { skillName: 'REST-Api', skillImg: 'Rest-Api.svg' },
           { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
-          { skillName: 'SCSS', skillImg: 'CSS.svg' },
+          { skillName: 'CSS', skillImg: 'CSS.svg' },
           { skillName: 'HTML', skillImg: 'HTML.svg' },
-          { skillName: 'Firebase', skillImg: 'Firebase.svg' },
         ],
         headline: {
           en: 'What is this project about?',
@@ -51,15 +49,13 @@ export class ProjectDataService {
         },
       },
       {
-        name: 'Join3',
+        name: 'Photo Gallery',
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
-          { skillName: 'REST-Api', skillImg: 'Rest-Api.svg' },
           { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
-          { skillName: 'SCSS', skillImg: 'CSS.svg' },
+          { skillName: 'CSS', skillImg: 'CSS.svg' },
           { skillName: 'HTML', skillImg: 'HTML.svg' },
-          { skillName: 'Firebase', skillImg: 'Firebase.svg' },
         ],
         headline: {
           en: 'What is this project about?',
