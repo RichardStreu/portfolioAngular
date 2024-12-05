@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProjectDataService } from '../../../../services/project-data.service';
 import { CommonModule } from '@angular/common';
 
@@ -25,10 +25,9 @@ export class ThumbnailBoxComponent {
     }
   }
 
-  constructor() {
-    
-    
+  constructor() {}
 
+  ngOnInit() {
     this.mathPositionTop();
     console.log(this.projectData);
   }
