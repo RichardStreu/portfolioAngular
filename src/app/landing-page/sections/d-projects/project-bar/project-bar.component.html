@@ -1,4 +1,8 @@
-<div class="projectBar">
+<div
+  (mouseenter)="showThumbnail(index)"
+  (mouseleave)="hideThumbnail(index)"
+  class="projectBar"
+>
   <div>
     <p>{{ project.name }}</p>
     <div class="technologies">

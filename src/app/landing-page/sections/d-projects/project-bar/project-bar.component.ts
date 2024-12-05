@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Renderer2, ElementRef } from '@angular/core';
 import { Project } from '../../../../shared/interfaces';
 
 @Component({
@@ -31,4 +31,27 @@ export class ProjectBarComponent {
       de: 'Aufgabenmanager inspiriert vom Kanban System. Erstelle und organisiere Aufgaben mit Drag and Drop Funktionen, weise Benutzer und Kategorien zu.',
     },
   };
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  showThumbnail(index: number) {
+    let thumbnail = document.getElementById(`thumbnailBoxNr${index}`);
+    if (thumbnail) {
+      this.renderer.removeClass(thumbnail, 'd_none');
+      setTimeout(() => {
+      this.renderer.removeClass(thumbnail, 'opacity_0');
+      }, 20);
+    }
+    }
+
+  hideThumbnail(index: number) {
+
+    let thumbnail = document.getElementById(`thumbnailBoxNr${index}`);
+    if (thumbnail) {
+      this.renderer.addClass(thumbnail, 'opacity_0');
+      setTimeout(() => {
+        this.renderer.addClass(thumbnail, 'd_none');
+      }, 220);
+    }
+  }
 }
