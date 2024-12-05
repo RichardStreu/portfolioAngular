@@ -9,6 +9,7 @@ import { Project } from '../../../../shared/interfaces';
   styleUrl: './project-bar.component.scss',
 })
 export class ProjectBarComponent {
+  @Input('index') index: number = 0;
 
   @Input('project') project: Project = {
     name: 'Join',
