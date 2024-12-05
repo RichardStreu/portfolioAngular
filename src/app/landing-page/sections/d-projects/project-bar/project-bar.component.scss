@@ -3,6 +3,13 @@
 .projectBar {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba($color-highLight, 0.15);
+  }
+  
 
   div {
     display: flex;
