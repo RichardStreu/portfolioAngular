@@ -19,11 +19,11 @@ export class ThumbnailBoxComponent {
     if (this.index == 0) {
       this.positionTop = '0px';
     } else if (this.index < this.projectData.length - 1) {
-      let percent = (100 / (this.projectData.length - 1)) * this.index;
-      this.positionTop = `calc(${percent}% - 192px)`;
-      this.positionTop = 'calc(100% - 192px)';
+      let basicPercent = 100 / (this.projectData.length * 2);
+      let percent = basicPercent + (basicPercent * 2 * this.index);
+      this.positionTop = `calc(${percent}% - 96px)`;
     } else {
-      this.positionTop = 'calc(50% - 96px)';
+      this.positionTop = 'calc(100% - 192px)';
     }
   }
 
@@ -31,6 +31,5 @@ export class ThumbnailBoxComponent {
 
   ngOnInit() {
     this.mathPositionTop();
-    console.log(this.projectData);
   }
 }
