@@ -10,6 +10,9 @@
     <div class="projectsContent">
       <div class="projectsBars">
         <hr>
+        @for (project of projectData; track $index) {
+          <app-project-bar></app-project-bar>
+        }
       </div>
       <div class="projectsThumbnails"></div>
     </div>
