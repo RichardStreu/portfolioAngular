@@ -1,1 +1,38 @@
 @import "../../../../styles.scss";
+
+.projectsSection .contentWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsTextPart {
+  display: flex;
+  flex-direction: column;
+  p {
+    font-family: "Karla", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-highLight;
+    margin-bottom: 1.25rem;
+  }
+
+  .featuredText {
+    font-family: "Fira", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: $color-highLight;
+    margin-bottom: 2.5rem;
+  }
+
+  div {
+    width: 460px;
+
+    .exploreText {
+      font-family: "Karla", sans-serif;
+      font-size: 1.13rem;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 2.5rem;
+    }
+  }
+}
