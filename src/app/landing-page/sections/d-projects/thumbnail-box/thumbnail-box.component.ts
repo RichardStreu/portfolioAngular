@@ -18,7 +18,9 @@ export class ThumbnailBoxComponent {
   mathPositionTop() {
     if (this.index == 0) {
       this.positionTop = '0px';
-    } else if (this.index == this.projectData.length - 1) {
+    } else if (this.index < this.projectData.length - 1) {
+      let percent = (100 / (this.projectData.length - 1)) * this.index;
+      this.positionTop = `calc(${percent}% - 192px)`;
       this.positionTop = 'calc(100% - 192px)';
     } else {
       this.positionTop = 'calc(50% - 96px)';
