@@ -1,4 +1,19 @@
 <div class="projectBar">
-  <p>{{project.name}}</p>
-  <div class="technologies"></div>
+  <div>
+    <p>{{ project.name }}</p>
+    <div class="technologies">
+      @for (skill of project.skillsList; track skill; let index = $index) { @if
+      (index < project.skillsList.length - 1) {
+      <div class="singleSkill">
+        <p>{{ skill.skillName }}</p>
+        <hr />
+      </div>
+      } @else {
+      <div class="singleSkill">
+        <p>{{ skill.skillName }}</p>
+      </div>
+      }}
+    </div>
+  </div>
+  <hr />
 </div>
