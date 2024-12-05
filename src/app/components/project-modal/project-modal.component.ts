@@ -26,8 +26,6 @@ export class ProjectModalComponent {
   descriptionText: string = '';
 
   chooseLanguage() {
-    console.log(this.projectData);
-    
     this.languageService.language.subscribe(() => {
       this.headlineText =
         this.languageService.currentLanguage == 'en'
