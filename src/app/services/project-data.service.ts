@@ -13,7 +13,7 @@ export class ProjectDataService {
 
     this.projects = [
       {
-        name: 'Join',
+        name: 'Join1',
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
@@ -33,7 +33,7 @@ export class ProjectDataService {
         },
       },
       {
-        name: 'Join',
+        name: 'Join2',
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
@@ -53,7 +53,7 @@ export class ProjectDataService {
         },
       },
       {
-        name: 'Join',
+        name: 'Join3',
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
