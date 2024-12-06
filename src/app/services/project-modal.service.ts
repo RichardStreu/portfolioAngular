@@ -50,7 +50,6 @@ export class ProjectModalService {
   changeIsProjectModalOpen(index: number) {
     this.isProjectModalOpen = !this.isProjectModalOpen;
     this.isProjectModalOpen$.next(this.isProjectModalOpen);
-    this.currentProjectIndex$.next(index);
     this.controlScrolling();
     this.showClickedProject(index);
   }
@@ -72,9 +71,15 @@ export class ProjectModalService {
    * @param index - The index of the project to be shown.
    */
   showClickedProject(index: number) {
-    this.currentProjectIndex = index;
-    this.currentProjectIndex$.next(index);
-    console.log(index);
+    if (
+      index >= 0 &&
+      index < this.projectsLength &&
+      index !== this.currentProjectIndex
+    ) {
+      this.currentProjectIndex = index;
+      this.currentProjectIndex$.next(this.currentProjectIndex);
+      console.log(this.currentProjectIndex);
+    }
   }
 
   /**
