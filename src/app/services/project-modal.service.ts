@@ -86,19 +86,19 @@ export class ProjectModalService {
    * @param index - The index of the next project to be shown.
    */
   showNextProject() {
-    console.log("next start");
+    console.log('next start', this.currentProjectIndex);
+
     if (
       this.currentProjectIndex >= 0 &&
-      this.currentProjectIndex < this.projectsLength - 2
+      this.currentProjectIndex < this.projectsLength - 1
     ) {
       this.currentProjectIndex++;
-    }
-    if (this.currentProjectIndex === this.projectsLength - 1) {
+    } else if (this.currentProjectIndex === this.projectsLength - 1) {
       this.currentProjectIndex = 0;
     }
+
     this.currentProjectIndex$.next(this.currentProjectIndex);
-    console.log("next end");
-    
+    console.log('next end', this.currentProjectIndex);
   }
 
   /**
@@ -106,18 +106,18 @@ export class ProjectModalService {
    * @param index - The index of the previous project to be shown.
    */
   showPreviousProject() {
-    console.log("previos start");
+    console.log('previos start', this.currentProjectIndex);
     if (
       this.currentProjectIndex > 0 &&
-      this.currentProjectIndex < this.projectsLength - 1
+      this.currentProjectIndex <= this.projectsLength - 1
     ) {
       this.currentProjectIndex--;
-    }
-    if (this.currentProjectIndex === 0) {
+    } else if (this.currentProjectIndex === 0) {
       this.currentProjectIndex = this.projectsLength - 1;
     }
+
     this.currentProjectIndex$.next(this.currentProjectIndex);
-    console.log("previos end");
+
+    console.log('previos end', this.currentProjectIndex);
   }
-  
 }
