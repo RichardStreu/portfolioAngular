@@ -52,3 +52,18 @@ body {
 .opacity_1 {
   opacity: 1;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; 
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bgDark;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($color-highLight, 0.15);
+  border-radius: 100vh;
+}
+
