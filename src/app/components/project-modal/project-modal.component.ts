@@ -42,7 +42,7 @@ export class ProjectModalComponent {
     links: {
       github: '',
       live: '',
-    }
+    },
   };
 
   headlineText: string = '';
@@ -73,7 +73,10 @@ export class ProjectModalComponent {
   }
 
   closeProjectModal(event: any) {
-    if (event.target === event.currentTarget) {
+    console.log(event.target.id);
+
+    if (
+      event.target === event.currentTarget) {
       this.projectModalService.changeIsProjectModalOpen(this.index$);
     } else {
       return;
