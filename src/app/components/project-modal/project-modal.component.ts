@@ -18,9 +18,28 @@ export class ProjectModalComponent {
   projectData = inject(ProjectDataService);
   projectModalService = inject(ProjectModalService);
 
-  // @Input('index') index: number = 0;
-
   index$: number = 0;
+
+  currentProject: Project = {
+    name: 'Join1',
+    isCurrentlyShown: false,
+    projectImg: 'join.png',
+    skillsList: [
+      { skillName: 'REST-Api', skillImg: 'Rest-Api.svg' },
+      { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
+      { skillName: 'SCSS', skillImg: 'CSS.svg' },
+      { skillName: 'HTML', skillImg: 'HTML.svg' },
+      { skillName: 'Firebase', skillImg: 'Firebase.svg' },
+    ],
+    headline: {
+      en: 'What is this project about?',
+      de: 'Worum geht es in diesem Projekt?',
+    },
+    description: {
+      en: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
+      de: 'Aufgabenmanager inspiriert vom Kanban System. Erstelle und organisiere Aufgaben mit Drag and Drop Funktionen, weise Benutzer und Kategorien zu.',
+    },
+  };
 
   headlineText: string = '';
   descriptionText: string = '';
@@ -29,12 +48,12 @@ export class ProjectModalComponent {
     this.languageService.language.subscribe(() => {
       this.headlineText =
         this.languageService.currentLanguage == 'en'
-          ? this.projectData.projects[this.index$].headline.en
-          : this.projectData.projects[this.index$].headline.de;
+          ? this.currentProject.headline.en
+          : this.currentProject.headline.de;
       this.descriptionText =
         this.languageService.currentLanguage == 'en'
-          ? this.projectData.projects[this.index$].description.en
-          : this.projectData.projects[this.index$].description.de;
+          ? this.currentProject.description.en
+          : this.currentProject.description.de;
     });
   }
 
@@ -45,9 +64,8 @@ export class ProjectModalComponent {
   ngOnInit() {
     this.projectModalService.currentProjectIndex$.subscribe((index: number) => {
       if (index >= 0) this.index$ = index;
+      this.currentProject = this.projectData.projects[this.index$];
     });
-    console.log(this.index$);
-    
   }
 
   closeProjectModal() {
