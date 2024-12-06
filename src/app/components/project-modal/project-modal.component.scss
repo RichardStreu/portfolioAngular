@@ -43,6 +43,63 @@
         display: flex;
         flex-direction: column;
         background-color: rgba(aquamarine, 0.1);
+
+        .indexField {
+          font-family: "Karla", sans-serif;
+          font-weight: 700;
+          font-size: 6.25rem;
+          color: $color-highLight;
+          padding-bottom: 0 0 1.25rem 0;
+        }
+
+        .nameField {
+          font-family: "Fira Code", monospace;
+          font-weight: 700;
+          font-size: 3.25rem;
+          padding-bottom: 2rem;
+        }
+
+        .textBox {
+          padding-bottom: 2rem;
+
+          .headline {
+            font-family: "Fira", sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: $color-highLight;
+            padding-bottom: 1.25rem;
+          }
+
+          .description {
+            font-family: "Karla", sans-serif;
+            font-size: 1.13rem;
+          }
+        }
+
+        .skillBox {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
+
+          .singleSkill {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+
+            img {
+              width: 24px;
+              height: 24px;
+              object-fit: cover;
+            }
+
+            p {
+              font-family: "Karla", sans-serif;
+              font-size: 1rem;
+            }
+          }
+        }
       }
 
       .projectModalRightPart {

@@ -17,7 +17,7 @@ export class ProjectDataService {
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
-          { skillName: 'REST-Api', skillImg: 'Rest-Api.svg' },
+          { skillName: 'REST', skillImg: 'Rest-Api.svg' },
           { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
           { skillName: 'SCSS', skillImg: 'CSS.svg' },
           { skillName: 'HTML', skillImg: 'HTML.svg' },
