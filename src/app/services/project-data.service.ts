@@ -8,6 +8,8 @@ import { Project } from '../shared/interfaces';
 export class ProjectDataService {
   projects: Project[] = [];
 
+  projectsLength: number = 0;
+
   constructor() {
     this.projects = [
       {
@@ -67,6 +69,11 @@ export class ProjectDataService {
         },
       },
     ];
+
+    this.projectsLength = this.projects.length;
+  }
+
+  get getProjectsLength() {
+    return this.projectsLength;
   }
 }
-

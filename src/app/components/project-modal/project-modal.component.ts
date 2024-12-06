@@ -15,12 +15,12 @@ import { ProjectModalService } from '../../services/project-modal.service';
 })
 export class ProjectModalComponent {
   languageService = inject(LanguageService);
-  projectData: any = inject(ProjectDataService);
+  projectData = inject(ProjectDataService);
   projectModalService = inject(ProjectModalService);
 
   // @Input('index') index: number = 0;
 
-  index: number = 0;
+  index$: number = 0;
 
   headlineText: string = '';
   descriptionText: string = '';
@@ -29,19 +29,22 @@ export class ProjectModalComponent {
     this.languageService.language.subscribe(() => {
       this.headlineText =
         this.languageService.currentLanguage == 'en'
-          ? this.projectData.projects[this.index].headline.en
-          : this.projectData.projects[this.index].headline.de;
+          ? this.projectData.projects[this.index$].headline.en
+          : this.projectData.projects[this.index$].headline.de;
       this.descriptionText =
         this.languageService.currentLanguage == 'en'
-          ? this.projectData.projects[this.index].description.en
-          : this.projectData.projects[this.index].description.de;
+          ? this.projectData.projects[this.index$].description.en
+          : this.projectData.projects[this.index$].description.de;
     });
   }
 
   constructor() {
     this.chooseLanguage();
-    this.projectModalService.currentProjectIndex.subscribe((index: number) => {
-      if (index) this.index = index;
+  }
+
+  ngOnInit() {
+    this.projectModalService.currentProjectIndex$.subscribe((index: number) => {
+      if (index >= 0) this.index$ = index;
     });
   }
 }

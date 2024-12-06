@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ProjectDataService } from './project-data.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +10,11 @@ import { BehaviorSubject } from 'rxjs';
  * Service to manage the state of the project modal and the currently selected project.
  */
 export class ProjectModalService {
+
+  projectDataService = inject(ProjectDataService);
+
+  projectsLength: number = this.projectDataService.getProjectsLength;
+
   /**
    * Indicates whether the project modal is open.
    */
@@ -26,20 +33,30 @@ export class ProjectModalService {
   changeIsProjectModalOpen(index: number) {
     this.isProjectModalOpen = !this.isProjectModalOpen;
     this.isProjectModalOpen$.next(this.isProjectModalOpen);
-    this.currentProjectIndex.next(index);
+    this.currentProjectIndex$.next(index);
   }
+
+  /**
+   * The index of the currently selected project.
+   * This is used to keep track of which project is currently being viewed or edited.
+   * @type {number}
+   */
+  currentProjectIndex: number = 0;
 
   /**
    * Observable to track the index of the currently selected project.
    */
-  currentProjectIndex = new BehaviorSubject<number>(0);
+  currentProjectIndex$ = new BehaviorSubject<number>(this.currentProjectIndex);
 
   /**
    * Updates the current project index to the specified index.
    * @param index - The index of the project to be shown.
    */
   showClickedProject(index: number) {
-    this.currentProjectIndex.next(index);
+    this.currentProjectIndex = index;
+    this.currentProjectIndex$.next(index);
+    console.log(index);
+    
   }
 
   /**
@@ -47,7 +64,8 @@ export class ProjectModalService {
    * @param index - The index of the next project to be shown.
    */
   showNextProject(index: number) {
-    this.currentProjectIndex.next(index);
+    this.currentProjectIndex = index;
+    this.currentProjectIndex$.next(index);
   }
 
   /**
@@ -55,6 +73,7 @@ export class ProjectModalService {
    * @param index - The index of the previous project to be shown.
    */
   showPreviousProject(index: number) {
-    this.currentProjectIndex.next(index);
+    this.currentProjectIndex = index;
+    this.currentProjectIndex$.next(index);
   }
 }
