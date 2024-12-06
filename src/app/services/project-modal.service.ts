@@ -85,17 +85,33 @@ export class ProjectModalService {
    * Updates the current project index to the specified index.
    * @param index - The index of the next project to be shown.
    */
-  showNextProject(index: number) {
-    this.currentProjectIndex = index;
-    this.currentProjectIndex$.next(index);
+  showNextProject() {
+    if (
+      this.currentProjectIndex >= 0 &&
+      this.currentProjectIndex < this.projectsLength - 2
+    ) {
+      this.currentProjectIndex++;
+    }
+    if (this.currentProjectIndex === this.projectsLength - 1) {
+      this.currentProjectIndex = 0;
+    }
+    this.currentProjectIndex$.next(this.currentProjectIndex);
   }
 
   /**
    * Updates the current project index to the specified index.
    * @param index - The index of the previous project to be shown.
    */
-  showPreviousProject(index: number) {
-    this.currentProjectIndex = index;
-    this.currentProjectIndex$.next(index);
+  showPreviousProject() {
+    if (
+      this.currentProjectIndex > 0 &&
+      this.currentProjectIndex < this.projectsLength - 1
+    ) {
+      this.currentProjectIndex--;
+    }
+    if (this.currentProjectIndex === 0) {
+      this.currentProjectIndex = this.projectsLength - 1;
+    }
+    this.currentProjectIndex$.next(this.currentProjectIndex);
   }
 }

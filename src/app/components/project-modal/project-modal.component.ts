@@ -71,4 +71,8 @@ export class ProjectModalComponent {
   closeProjectModal() {
     this.projectModalService.changeIsProjectModalOpen(this.index$);
   }
+
+  showNextProject() {}
+
+  showPreviousProject() {}
 }
