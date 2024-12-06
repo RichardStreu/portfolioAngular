@@ -60,13 +60,24 @@
           align-items: center;
           width: 48px;
           height: 48px;
-          cursor: pointer;
-          background-color: red;
 
           svg {
             width: 18px;
             height: 18px;
+            cursor: pointer;
             transition: all 0.2s ease-in-out;
+
+            path {
+              transition: all 0.2s ease-in-out;
+            }
+
+            &:hover {
+              transform: scale(1.25);
+
+              path {
+                fill: $color-highLight;
+              }
+            }
           }
         }
 

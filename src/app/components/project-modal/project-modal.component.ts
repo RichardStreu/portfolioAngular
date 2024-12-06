@@ -73,10 +73,7 @@ export class ProjectModalComponent {
   }
 
   closeProjectModal(event: any) {
-    console.log(event.target.id);
-
-    if (
-      event.target === event.currentTarget) {
+    if (event.target === event.currentTarget) {
       this.projectModalService.changeIsProjectModalOpen(this.index$);
     } else {
       return;
