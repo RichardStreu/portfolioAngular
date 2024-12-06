@@ -72,7 +72,11 @@ export class ProjectModalComponent {
     this.projectModalService.changeIsProjectModalOpen(this.index$);
   }
 
-  showNextProject() {}
+  nextProject() {
+    this.projectModalService.showNextProject();
+  }
 
-  showPreviousProject() {}
+  previousProject() {
+    this.projectModalService.showPreviousProject();
+  }
 }
