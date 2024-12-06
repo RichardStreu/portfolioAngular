@@ -2,7 +2,6 @@ import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ProjectDataService } from './project-data.service';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -10,7 +9,6 @@ import { ProjectDataService } from './project-data.service';
  * Service to manage the state of the project modal and the currently selected project.
  */
 export class ProjectModalService {
-
   projectDataService = inject(ProjectDataService);
 
   projectsLength: number = this.projectDataService.getProjectsLength;
@@ -25,6 +23,25 @@ export class ProjectModalService {
    */
   isProjectModalOpen$ = new BehaviorSubject<boolean>(this.isProjectModalOpen);
 
+  calcScrollbarWidth() {
+    let viewportWidth = window.innerWidth;
+    let documentWidth = document.documentElement.clientWidth;
+    return viewportWidth - documentWidth;
+  }
+
+  /**
+   * Controls scrolling on the main document.
+   */
+  controlScrolling(): void {
+    if (this.isProjectModalOpen) {
+      document.body.style.paddingRight = this.calcScrollbarWidth() + 'px';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.paddingRight = '0px';
+      document.body.style.overflow = 'auto';
+    }
+  }
+
   /**
    * Toggles the state of the project modal and updates the observable.
    * Also sets the current project index.
@@ -34,6 +51,8 @@ export class ProjectModalService {
     this.isProjectModalOpen = !this.isProjectModalOpen;
     this.isProjectModalOpen$.next(this.isProjectModalOpen);
     this.currentProjectIndex$.next(index);
+    this.controlScrolling();
+    this.showClickedProject(index);
   }
 
   /**
@@ -56,7 +75,6 @@ export class ProjectModalService {
     this.currentProjectIndex = index;
     this.currentProjectIndex$.next(index);
     console.log(index);
-    
   }
 
   /**
