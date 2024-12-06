@@ -11,5 +11,6 @@ export class SlideButtonComponent {
 
   @Input("text") text: string = "";
   @Input("path") path?: string = "";
+  @Input("target") target?:boolean = false;
 
 }
