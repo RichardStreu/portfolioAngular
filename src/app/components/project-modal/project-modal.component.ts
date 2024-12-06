@@ -46,5 +46,11 @@ export class ProjectModalComponent {
     this.projectModalService.currentProjectIndex$.subscribe((index: number) => {
       if (index >= 0) this.index$ = index;
     });
+    console.log(this.index$);
+    
+  }
+
+  closeProjectModal() {
+    this.projectModalService.changeIsProjectModalOpen(this.index$);
   }
 }

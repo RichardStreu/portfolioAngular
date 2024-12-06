@@ -78,7 +78,6 @@ export class ProjectModalService {
     ) {
       this.currentProjectIndex = index;
       this.currentProjectIndex$.next(this.currentProjectIndex);
-      console.log(this.currentProjectIndex);
     }
   }
 
