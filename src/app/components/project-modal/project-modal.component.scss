@@ -32,6 +32,18 @@
       rgba(61, 207, 182, 0) 40%,
       rgba($color-highLight, 0.10) 100%
     );
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .projectModalLeftPart {
+      width: 480px;
+    }
+
+    .projectModalRightPart{
+      width: 520px;
+    }
     }
   }
 
