@@ -39,6 +39,10 @@ export class ProjectModalComponent {
       en: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
       de: 'Aufgabenmanager inspiriert vom Kanban System. Erstelle und organisiere Aufgaben mit Drag and Drop Funktionen, weise Benutzer und Kategorien zu.',
     },
+    links: {
+      github: '',
+      live: '',
+    }
   };
 
   headlineText: string = '';
