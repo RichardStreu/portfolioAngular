@@ -42,7 +42,6 @@
         min-height: 200px;
         display: flex;
         flex-direction: column;
-        background-color: rgba(aquamarine, 0.1);
 
         .indexField {
           font-family: "Karla", sans-serif;
@@ -61,6 +60,7 @@
 
         .textBox {
           padding-bottom: 2rem;
+          height: 160px;
 
           .headline {
             font-family: "Fira", sans-serif;
@@ -81,6 +81,7 @@
           flex-direction: row;
           align-items: center;
           gap: 16px;
+          padding-bottom: 2.5rem;
 
           .singleSkill {
             display: flex;
@@ -97,8 +98,15 @@
             p {
               font-family: "Karla", sans-serif;
               font-size: 1rem;
+              color: $color-highLight;
             }
           }
+        }
+
+        .linkBox {
+          display: flex;
+          flex-direction: row;
+          gap: 2rem;
         }
       }
 

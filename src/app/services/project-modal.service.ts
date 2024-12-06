@@ -86,8 +86,6 @@ export class ProjectModalService {
    * @param index - The index of the next project to be shown.
    */
   showNextProject() {
-    console.log('next start', this.currentProjectIndex);
-
     if (
       this.currentProjectIndex >= 0 &&
       this.currentProjectIndex < this.projectsLength - 1
@@ -98,7 +96,6 @@ export class ProjectModalService {
     }
 
     this.currentProjectIndex$.next(this.currentProjectIndex);
-    console.log('next end', this.currentProjectIndex);
   }
 
   /**
@@ -106,7 +103,6 @@ export class ProjectModalService {
    * @param index - The index of the previous project to be shown.
    */
   showPreviousProject() {
-    console.log('previos start', this.currentProjectIndex);
     if (
       this.currentProjectIndex > 0 &&
       this.currentProjectIndex <= this.projectsLength - 1
@@ -117,7 +113,5 @@ export class ProjectModalService {
     }
 
     this.currentProjectIndex$.next(this.currentProjectIndex);
-
-    console.log('previos end', this.currentProjectIndex);
   }
 }

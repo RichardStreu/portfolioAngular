@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { Project } from '../../shared/interfaces';
 import { BehaviorSubject } from 'rxjs';
 import { ProjectModalService } from '../../services/project-modal.service';
+import { SlideButtonComponent } from '../slide-button/slide-button.component';
 
 @Component({
   selector: 'app-project-modal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SlideButtonComponent],
   templateUrl: './project-modal.component.html',
   styleUrl: './project-modal.component.scss',
 })

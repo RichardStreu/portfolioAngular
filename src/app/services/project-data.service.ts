@@ -13,7 +13,7 @@ export class ProjectDataService {
   constructor() {
     this.projects = [
       {
-        name: 'Join1',
+        name: 'Join',
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
@@ -32,9 +32,9 @@ export class ProjectDataService {
           de: 'Aufgabenmanager inspiriert vom Kanban System. Erstelle und organisiere Aufgaben mit Drag and Drop Funktionen, weise Benutzer und Kategorien zu.',
         },
         links: {
-          github: '',
-          live: '',
-        }
+          github: 'https://github.com/RichardStreu/Developer-Akademie-Join',
+          live: 'https://join-richard-streu.netlify.app',
+        },
       },
       {
         name: 'DEVerando',
@@ -56,7 +56,7 @@ export class ProjectDataService {
         links: {
           github: '',
           live: '',
-        }
+        },
       },
       {
         name: 'Photo Gallery',
@@ -78,7 +78,7 @@ export class ProjectDataService {
         links: {
           github: '',
           live: '',
-        }
+        },
       },
     ];
 

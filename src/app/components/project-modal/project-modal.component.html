@@ -19,7 +19,10 @@
           </div>
           }
         </div>
-        <div class="linkBox"></div>
+        <div class="linkBox">
+          <app-slide-button [path]="currentProject.links.github" [text]="'GitHub'"></app-slide-button>
+          <app-slide-button [path]="currentProject.links.live" [text]="'Live Test'"></app-slide-button>
+        </div>
       </div>
       <div class="projectModalRightPart">
         <div
