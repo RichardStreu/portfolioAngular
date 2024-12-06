@@ -39,10 +39,13 @@ export class DProjectsComponent {
   constructor() {
     this.projectData = this.projectDataService.projects;
     this.chooseLanguage();
-    this.projectModalService.isProjectModalOpen.subscribe((boolean) => {
-      this.isProjectModalOpen = boolean;
-    });
   }
 
-  isProjectModalOpen: boolean = false;
+  isProjectModalOpen$: boolean = false;
+
+  ngOnInit() {
+    this.projectModalService.isProjectModalOpen$.subscribe((boolean) => {
+      this.isProjectModalOpen$ = boolean;
+    });
+  }
 }

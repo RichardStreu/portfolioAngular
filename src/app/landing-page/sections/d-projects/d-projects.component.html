@@ -9,19 +9,26 @@
     </div>
     <div class="projectsContent">
       <div class="projectsBars">
-        <hr>
+        <hr />
         @for (singleProject of projectData; track $index) {
-          <app-project-bar class="singleBar" [project]="singleProject" [index]="$index"></app-project-bar>
+        <app-project-bar
+          class="singleBar"
+          [project]="singleProject"
+          [index]="$index"
+        ></app-project-bar>
         }
       </div>
       <div class="projectsThumbnails">
         @for (singleProject of projectData; track $index) {
-          <app-thumbnail-box [projectData]="projectData" [index]="$index"></app-thumbnail-box>
+        <app-thumbnail-box
+          [projectData]="projectData"
+          [index]="$index"
+        ></app-thumbnail-box>
         }
       </div>
     </div>
   </div>
-  @if (isProjectModalOpen) {
-    <app-project-modal></app-project-modal>
+  @if (isProjectModalOpen$) {
+  <app-project-modal></app-project-modal>
   }
 </section>

@@ -38,7 +38,7 @@ export class ProjectBarComponent {
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   showHideProjectModal(index: number) {
-    this.projectModalService.changeProjectModalState(index);
+    this.projectModalService.changeIsProjectModalOpen(index);
   }
 
   showThumbnail(index: number) {
@@ -46,13 +46,12 @@ export class ProjectBarComponent {
     if (thumbnail) {
       this.renderer.removeClass(thumbnail, 'd_none');
       setTimeout(() => {
-      this.renderer.removeClass(thumbnail, 'opacity_0');
+        this.renderer.removeClass(thumbnail, 'opacity_0');
       }, 20);
     }
-    }
+  }
 
   hideThumbnail(index: number) {
-
     let thumbnail = document.getElementById(`thumbnailBoxNr${index}`);
     if (thumbnail) {
       this.renderer.addClass(thumbnail, 'opacity_0');

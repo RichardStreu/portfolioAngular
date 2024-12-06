@@ -2,21 +2,18 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProjectModalService {
+  constructor() {}
 
+  isProjectModalOpen: boolean = false;
 
-  constructor() { 
-  }
+  isProjectModalOpen$ = new BehaviorSubject<boolean>(this.isProjectModalOpen);
 
-  modalState: boolean = false;
-
-  isProjectModalOpen = new BehaviorSubject<boolean>(this.modalState);
-
-  changeProjectModalState(index: number) { 
-    this.modalState = !this.modalState;
-    this.isProjectModalOpen.next(this.modalState);
+  changeIsProjectModalOpen(index: number) {
+    this.isProjectModalOpen = !this.isProjectModalOpen;
+    this.isProjectModalOpen$.next(this.isProjectModalOpen);
     this.showClickedProject(index);
   }
 
