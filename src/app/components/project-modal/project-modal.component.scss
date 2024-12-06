@@ -11,11 +11,29 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
-  .projectModalBox {
+  .projectModalLayer {
     position: absolute;
     z-index: 100;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 1248px;
+    height: 656px;
+    border: 2px solid $color-highLight;
+    border-radius: 30px;
+    background-color: $color-bgDark;
+    overflow: hidden;
+
+    .projectModalBox {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+      to top right,
+      rgba(61, 207, 182, 0) 40%,
+      rgba($color-highLight, 0.10) 100%
+    );
+    }
   }
+
+  
 }

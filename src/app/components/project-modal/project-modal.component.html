@@ -1,6 +1,8 @@
-<div class="projectModal">
-  <div class="projectModalBox">
-    <p>This is a Modal</p>
-    <button (click)="closeProjectModal()">X</button>
-  </div>
+<div id="projectModal" class="projectModal" (click)="closeProjectModal($event)">
+  <div class="projectModalLayer">
+    <div class="projectModalBox">
+      <p>This is a Modal</p>
+      <button (click)="closeProjectModal($event)">X</button>
+    </div>
+  </div> 
 </div>

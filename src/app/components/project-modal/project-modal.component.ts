@@ -68,8 +68,12 @@ export class ProjectModalComponent {
     });
   }
 
-  closeProjectModal() {
-    this.projectModalService.changeIsProjectModalOpen(this.index$);
+  closeProjectModal(event: any) {
+    if (event.target === event.currentTarget) {
+      this.projectModalService.changeIsProjectModalOpen(this.index$);
+    } else {
+      return;
+    }
   }
 
   nextProject() {
