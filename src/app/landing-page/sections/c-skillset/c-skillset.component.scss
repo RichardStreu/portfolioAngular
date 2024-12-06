@@ -1,26 +1,217 @@
 @import "../../../../styles.scss";
 
 .skillsetSection {
-  height: 100dvh;
+  padding-bottom: 144px;
   background: radial-gradient(
     circle at -5% 50%,
-    rgba($color-highLight, 0.15), 
-    rgb(41, 41, 41) 20% 
+    rgba($color-highLight, 0.15),
+    rgb(41, 41, 41) 20%
   );
 
   .contentWrapper {
     display: flex;
+    flex-direction: column;
 
-    .skillsetLeftPart {
-      flex: 1;
-      background-color: aqua;
-      min-height: 400px;
+    p {
+      padding-bottom: 1.25rem;
+      font-family: "Karla", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $color-highLight;
     }
 
-    .skillsetRightPart {
-    flex: 1;   
-    background-color: red;
-    }
+    div {
+      display: flex;
+      flex-direction: row;
 
+      .skillsetLeftPart {
+        flex: 1;
+        .skillsetTextBox {
+          width: 520px;
+          background-color: rgba($color-highLight, 0.15);
+          border: 2px solid $color-highLight;
+          border-radius: 30px;
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            font-family: "Fira", sans-serif;
+            font-weight: bold;
+            font-size: 4rem;
+            color: $color-highLight;
+            padding: 0 0 40px 0;
+          }
+
+          p {
+            font-family: "Karla", sans-serif;
+            font-size: 1.13rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.2s ease-in-out;
+            padding: 0;
+
+            &:hover {
+              color: white;
+            }
+          }
+
+          .skillNeed {
+            font-family: "Fira", sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+          }
+
+          .skillAnother {
+            color: $color-highLight;
+            padding-left: 0.9rem;
+          }
+
+          .skillFeelFree {
+            padding-bottom: 40px;
+          }
+        }
+      }
+
+      .skillsetRightPart {
+        flex: 1;
+        min-height: 200px;
+
+        .skillSetSkillsBox {
+          width: 632px;
+          display: flex;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 72px;
+          row-gap: 40px;
+        }
+
+        .skillItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 104px;
+          height: 116px;
+          position: relative;
+          cursor: pointer;
+
+          p {
+            padding-top: 0.5rem;
+            font-family: "Fira", sans-serif;
+            font-size: 1.13rem;
+            text-align: center;
+            color: white;
+            font-weight: 400;
+          }
+
+          .extraSkillBox {
+            transition: all 0.4s ease-in-out;
+            position: absolute;
+            z-index: 2;
+            left: 3px;
+            top: -133px;
+            width: 188px;
+            height: 112px;
+            border-radius: 1rem;
+            padding: 0.5rem;
+
+            &::before {
+              content: "";
+              position: absolute;
+              z-index: 1;
+              left: 14px;
+              bottom: -2px;
+              transform: rotate(45deg);
+              width: 70px;
+              height: 70px;
+              background: white;
+              border-radius: 0.5rem;
+            }
+
+            .extraSkillContent {
+              position: relative;
+              z-index: 3;
+              width: 100%;
+              height: 100%;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              background-color: white;
+              display: flex;
+              flex-direction: column;
+
+              p {
+                font-family: "Karla", sans-serif;
+                font-size: 1rem;
+                text-align: center;
+                color: $color-highLight;
+                padding-bottom: 7px;
+              }
+
+              div {
+                justify-content: center;
+                gap: 1rem;
+
+                div {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0;
+
+                  img {
+                    width: 32px;
+                    height: 32px;
+                    padding-bottom: 3px;
+                  }
+
+                  p {
+                    font-family: "Karla", sans-serif;
+                    font-size: 0.75rem;
+                    text-align: center;
+                    color: $color-highLight;
+                    padding: 0;
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+
+          #extraSkillBox {
+            background-color: white;
+            transition: all 0.4s ease-in-out;
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: bottom center;
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          }
+
+          svg {
+            min-width: 64px;
+            width: 64px;
+            min-height: 64px;
+            height: 64px;
+            transition: all 0.4s ease-in-out;
+
+            path {
+              fill: $color-highLight;
+            }
+
+            &:hover {
+              background-color: rgba($color-highLight, 0.12);
+              border-radius: 0.25rem;
+              box-shadow: 0 0 35px 30px rgba($color-highLight, 0.12);
+              transform: scale(1.2);
+            }
+
+            &:hover ~ #extraSkillBox {
+              transform: scaleY(1);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 }

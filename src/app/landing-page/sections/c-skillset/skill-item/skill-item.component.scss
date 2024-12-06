@@ -1,0 +1,57 @@
+@import "../../../../../styles.scss";
+
+@keyframes bouncy {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fillColorWhite {
+  color: white;
+}
+
+.fillColorHighLight {
+  color: $color-highLight;
+}
+
+.bounce:hover {
+  animation: bouncy 0.8s infinite;
+}
+
+.scale:hover {
+  transform: scale(1.2);
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 104px;
+  height: 116px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      background-color: rgba($color-highLight, 0.12);
+      border-radius: 0.25rem;
+      box-shadow: 0 0 35px 30px rgba($color-highLight, 0.12);
+    }
+  }
+
+  p {
+    padding-top: 0.5rem;
+    font-family: "Fira", sans-serif;
+    font-size: 1.13rem;
+    text-align: center;
+    color: white;
+  }
+}

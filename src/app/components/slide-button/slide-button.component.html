@@ -1,3 +1,9 @@
+@if (target) {
+<a target="_blank" [href]="path">
+  <span>{{ text }}</span>
+</a>
+} @else {
 <a [href]="path">
   <span>{{ text }}</span>
 </a>
+}
