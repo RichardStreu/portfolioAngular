@@ -34,6 +34,7 @@ export class EReferencesComponent {
 
   ngAfterViewInit(): void {
     this.getElementSizes();
+    this.firstCarouselPositioning();
   }
   
 
@@ -60,6 +61,7 @@ export class EReferencesComponent {
   carouselContainerWidth: number = 0;
   carouselBoxWidth: number = 0;
   singleReferenceWidth: number = 0;
+  gapWidth: number = 48;
 
 
   getElementSizes() {
@@ -72,9 +74,16 @@ export class EReferencesComponent {
       this.carouselBoxWidth = (carouselBox as HTMLElement).offsetWidth;
       this.singleReferenceWidth = (singleReference as HTMLElement).offsetWidth;
     }
-
     console.log(this.carouselContainerWidth, this.carouselBoxWidth, this.singleReferenceWidth);
-    
+  }
+
+  firstCarouselPositioning() {
+    let firstRefMid = (this.singleReferenceWidth * 1.5) + this.gapWidth;
+    const carouselBox = document.querySelector('.carouselBox');
+    if (carouselBox) {
+      (carouselBox as HTMLElement).style.transition = 'none';
+      (carouselBox as HTMLElement).style.transform = `translateX(-${firstRefMid - (this.carouselContainerWidth / 2)}px)`;
+    }
   }
 
   previousSlide() {
