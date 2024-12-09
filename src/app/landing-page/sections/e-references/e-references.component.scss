@@ -18,7 +18,13 @@
       color: $color-highLight;
     }
 
-    .carousel {
+    .carouselContainer {
+      max-width: 100%;
+      overflow: hidden;
+
+      .carouselBox {
+
+      }
     }
 
     .navigationContainer {
