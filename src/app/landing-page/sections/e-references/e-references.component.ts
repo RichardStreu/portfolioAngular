@@ -17,7 +17,8 @@ export class EReferencesComponent {
   references: any = [];
   carouselArray: any = [];
 
-  currentReferenceIndex: number = 0;
+  currentDotIndex: number = 0;
+  currentReferenceIndex: number = 1;
 
   headlineText: string = '';
 
@@ -49,23 +50,25 @@ export class EReferencesComponent {
     this.carouselArray = carouselArray;
   }
 
-  getElementSizes() {
-
-  }
+  getElementSizes() {}
 
   previousSlide() {
-    if (this.currentReferenceIndex > 0) {
+    if (this.currentDotIndex > 0) {
+      this.currentDotIndex--;
       this.currentReferenceIndex--;
     } else {
-      this.currentReferenceIndex = this.references.length - 1;
+      this.currentDotIndex = this.references.length - 1;
+      this.currentReferenceIndex = this.carouselArray.length - 3;
     }
   }
 
   nextSlide() {
-    if (this.currentReferenceIndex < this.references.length - 1) {
+    if (this.currentDotIndex < this.references.length - 1) {
+      this.currentDotIndex++;
       this.currentReferenceIndex++;
     } else {
-      this.currentReferenceIndex = 0;
+      this.currentDotIndex = 0;
+      this.currentReferenceIndex = 1;
     }
   }
 }
