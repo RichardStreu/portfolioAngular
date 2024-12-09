@@ -5,7 +5,11 @@
       <div class="carouselBox">
         @for (item of carouselArray; track $index) {
         <div class="singleReference">
-          <p>{{referenceTextBlock}}</p>
+          @if (currentLanguage == "en") {
+            <p>{{item.referenceText.en}}</p>
+          }@else if (currentLanguage == "de") {
+            <p>{{item.referenceText.de}}</p>
+          }
           <div class="authorBox">
             <div class="line"></div>
             <p><span>{{item.name}}</span> - <span>{{item.position}}</span></p>

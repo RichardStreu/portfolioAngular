@@ -21,7 +21,7 @@ export class EReferencesComponent {
   currentReferenceIndex: number = 1;
 
   headlineText: string = '';
-  referenceTextBlock: string = '';
+  currentLanguage: string = '';
 
   constructor() {
     this.references = this.referenceDataService.references;
@@ -34,14 +34,11 @@ export class EReferencesComponent {
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
+      this.currentLanguage = this.languageService.currentLanguage;
       this.headlineText =
         this.languageService.currentLanguage == 'en'
           ? 'What my colleagues say about me'
           : 'Was meine Kollegen über mich sagen';
-      this.referenceTextBlock =
-        this.languageService.currentLanguage == 'en'
-          ? this.references[this.currentReferenceIndex].referenceText.en
-          : this.references[this.currentReferenceIndex].referenceText.de;
     });
   }
 
