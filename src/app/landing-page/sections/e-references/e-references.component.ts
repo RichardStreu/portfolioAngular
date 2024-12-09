@@ -16,6 +16,19 @@ export class EReferencesComponent {
   referenceDataService = inject(ReferenceDataService);
   languageService = inject(LanguageService);
 
-  headlienText: string = '';
+  headlineText: string = '';
+
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {
+      this.headlineText =
+        this.languageService.currentLanguage == 'en'
+          ? 'What my colleagues say about me'
+          : 'Was meine Kollegen über mich sagen';
+    });
+  }
+
+  constructor() {
+    this.chooseLanguage();
+  }
 
 }
