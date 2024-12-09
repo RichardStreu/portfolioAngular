@@ -32,6 +32,11 @@ export class EReferencesComponent {
     this.chooseLanguage();
   }
 
+  ngAfterViewInit(): void {
+    this.getElementSizes();
+  }
+  
+
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
       this.currentLanguage = this.languageService.currentLanguage;
@@ -52,7 +57,25 @@ export class EReferencesComponent {
     this.carouselArray = carouselArray;
   }
 
-  getElementSizes() {}
+  carouselContainerWidth: number = 0;
+  carouselBoxWidth: number = 0;
+  singleReferenceWidth: number = 0;
+
+
+  getElementSizes() {
+    const carouselContainer = document.querySelector('.carouselContainer');
+    const carouselBox = document.querySelector('.carouselBox');
+    const singleReference = document.querySelector('.singleReference');
+
+    if (carouselContainer && carouselBox && singleReference) {
+      this.carouselContainerWidth = (carouselContainer as HTMLElement).offsetWidth;
+      this.carouselBoxWidth = (carouselBox as HTMLElement).offsetWidth;
+      this.singleReferenceWidth = (singleReference as HTMLElement).offsetWidth;
+    }
+
+    console.log(this.carouselContainerWidth, this.carouselBoxWidth, this.singleReferenceWidth);
+    
+  }
 
   previousSlide() {
     if (this.currentDotIndex > 0) {
