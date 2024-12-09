@@ -25,5 +25,8 @@ export interface Skill {
 export interface Reference {
   name: string;
   position: string;
-  referenceText: string;
+  referenceText: {
+    en: string;
+    de: string;
+  }
 }
