@@ -21,3 +21,9 @@ export interface Skill {
   skillName: string;
   skillImg: string;
 }
+
+export interface Reference {
+  name: string;
+  position: string;
+  referenceText: string;
+}
