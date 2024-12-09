@@ -1,6 +1,19 @@
+@import "../../../../styles.scss";
+
 .referenceSection {
   padding-top: 144px;
   padding-bottom: 144px;
 
-  
+  .contentWrapper {
+
+    p {
+      font-family: "Fira Code", monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      padding-bottom: 2.5rem;
+      text-align: center;
+      color: $color-highLight;
+    }
+  }
+
 }
