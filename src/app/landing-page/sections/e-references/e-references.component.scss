@@ -45,7 +45,7 @@
 
         .singleReference {
           transition: all 0.2s ease-in-out;
-          height: 248px;
+          height: 256px;
           width: 632px;
           background-color: rgba($color-highLight, 0.08);
           border-radius: 30px;
@@ -55,6 +55,10 @@
 
           p {
             overflow: auto;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: white;
+            text-align: left;
           }
 
           .authorBox {
@@ -63,7 +67,6 @@
             align-items: center;
             gap: 1rem;
             padding-top: 1.25rem;
-            
 
             .line {
               height: 2px;

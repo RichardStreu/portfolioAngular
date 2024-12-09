@@ -21,16 +21,15 @@ export class EReferencesComponent {
   currentReferenceIndex: number = 1;
 
   headlineText: string = '';
-  referenceText: string = '';
+  referenceTextBlock: string = '';
 
   constructor() {
-    this.chooseLanguage();
     this.references = this.referenceDataService.references;
   }
 
   ngOnInit() {
     this.generateCarouselArray();
-    console.log(this.carouselArray);
+    this.chooseLanguage();
   }
 
   chooseLanguage() {
@@ -39,7 +38,7 @@ export class EReferencesComponent {
         this.languageService.currentLanguage == 'en'
           ? 'What my colleagues say about me'
           : 'Was meine Kollegen über mich sagen';
-      this.referenceText =
+      this.referenceTextBlock =
         this.languageService.currentLanguage == 'en'
           ? this.references[this.currentReferenceIndex].referenceText.en
           : this.references[this.currentReferenceIndex].referenceText.de;
