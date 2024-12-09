@@ -19,26 +19,72 @@
     }
 
     .carouselContainer {
-      max-width: 100%;
+      width: 100%;
       overflow: hidden;
-      mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
-      -webkit-mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
+      display: flex;
+      mask: linear-gradient(
+        90deg,
+        transparent,
+        white 3%,
+        white 97%,
+        transparent
+      );
+      -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 3%,
+        white 97%,
+        transparent
+      );
 
       .carouselBox {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        gap: 3rem;
 
         .singleReference {
           transition: all 0.2s ease-in-out;
-          height: 242px;
-          width: 500px;
-          
+          height: 248px;
+          width: 632px;
+          background-color: rgba($color-highLight, 0.08);
+          border-radius: 30px;
+          padding: 48px 40px;
+          display: flex;
+          flex-direction: column;
+
+          p {
+            overflow: auto;
+          }
+
+          .authorBox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.25rem;
+            
+
+            .line {
+              height: 2px;
+              flex: 1;
+              background-color: white;
+            }
+
+            p {
+              font-size: 1.13rem;
+              font-weight: 400;
+              font-family: "Karla", sans-serif;
+              color: white;
+              padding: 0;
+            }
+          }
         }
 
         .referenceFocus {
           height: 274px;
+          background-color: rgba($color-highLight, 0.15);
         }
-
       }
     }
 
@@ -67,7 +113,7 @@
         &:hover {
           transform: scale(1.25);
         }
-        
+
         path {
           transition: all 0.2s ease-in-out;
         }

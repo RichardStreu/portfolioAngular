@@ -4,7 +4,13 @@
     <div class="carouselContainer">
       <div class="carouselBox">
         @for (item of carouselArray; track $index) {
-        <div class="singleReference">Arsch</div>
+        <div class="singleReference">
+          <p>{{referenceText}}</p>
+          <div class="authorBox">
+            <div class="line"></div>
+            <p><span>{{item.name}}</span> - <span>{{item.position}}</span></p>
+          </div>
+        </div>
         }
       </div>
     </div>
