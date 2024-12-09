@@ -16,6 +16,8 @@ export class EReferencesComponent {
   referenceDataService = inject(ReferenceDataService);
   languageService = inject(LanguageService);
 
+  references: any = [];
+
   headlineText: string = '';
 
   chooseLanguage() {
@@ -29,6 +31,18 @@ export class EReferencesComponent {
 
   constructor() {
     this.chooseLanguage();
+    this.references = this.referenceDataService.references;
+  }
+
+  ngOnInit() {}
+
+  generateCarouselArray() {
+    let carouselArray = [
+      this.references[this.references.length - 1],
+      ...this.references,
+      this.references[0],
+      this.references[1],
+    ];
   }
 
 }
