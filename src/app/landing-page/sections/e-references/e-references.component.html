@@ -2,7 +2,11 @@
   <div class="contentWrapper">
     <p class="referenceHeadline">{{ headlineText }}</p>
     <div class="carouselContainer">
-      <div class="carouselBox"></div>
+      <div class="carouselBox">
+        @for (item of carouselArray; track $index) {
+        <div class="singleReference">Arsch</div>
+        }
+      </div>
     </div>
     <nav class="navigationContainer">
       <button class="navigationButton left" (click)="previousSlide()">
