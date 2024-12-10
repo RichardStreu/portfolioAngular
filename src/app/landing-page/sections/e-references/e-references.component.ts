@@ -67,6 +67,7 @@ export class EReferencesComponent {
   firstRefMid: number = 0;
   firstTranslateX: number = 0;
   lastTranslateX: number = 0;
+  carouselBox: any;
 
   getElementSizes() {
     const carouselContainer = document.querySelector('.carouselContainer');
@@ -91,45 +92,86 @@ export class EReferencesComponent {
     this.firstRefMid = this.singleReferenceWidth * 1.5 + this.gapWidth;
     this.firstTranslateX = this.firstRefMid - this.carouselContainerWidth / 2;
     this.lastTranslateX = this.firstTranslateX;
-    const carouselBox = document.querySelector('.carouselBox');
-    if (carouselBox) {
-      (carouselBox as HTMLElement).style.transform = `translateX(-${
-        this.firstTranslateX
-      }px)`;
+    this.carouselBox = document.querySelector('.carouselBox');
+    if (this.carouselBox) {
+      (
+        this.carouselBox as HTMLElement
+      ).style.transform = `translateX(-${this.firstTranslateX}px)`;
     }
   }
 
   previousSlide() {
-    const carouselBox = document.querySelector('.carouselBox');
-    if (carouselBox) {
+    if (this.carouselBox) {
       if (this.currentDotIndex > 0) {
-        this.currentDotIndex--;
-        this.currentReferenceIndex--;
-        (carouselBox as HTMLElement).style.transform = `translateX(${
-          this.lastTranslateX + this.singleReferenceWidth + this.gapWidth
-        }px)`;
-        this.lastTranslateX -= (this.singleReferenceWidth + this.gapWidth);	
+        this.previousSlideIfBlock();
       } else {
-        this.currentDotIndex = this.references.length - 1;
-        this.currentReferenceIndex = this.carouselArray.length - 3;
+        this.previousSlideElseBlock();
       }
     }
   }
 
+  previousSlideIfBlock() {
+    this.currentDotIndex--;
+    this.currentReferenceIndex--;
+    (this.carouselBox as HTMLElement).style.transform = `translateX(-${
+      this.lastTranslateX - this.singleReferenceWidth - this.gapWidth
+    }px)`;
+    this.lastTranslateX -= this.singleReferenceWidth + this.gapWidth;
+  }
+
+  previousSlideElseBlock() {
+    this.currentDotIndex = this.references.length - 1;
+    this.currentReferenceIndex--;
+    (this.carouselBox as HTMLElement).style.transform = `translateX(-${
+      this.lastTranslateX - this.singleReferenceWidth - this.gapWidth
+    }px)`;
+    // this.lastTranslateX -= this.singleReferenceWidth + this.gapWidth;
+
+    // this.currentReferenceIndex = this.carouselArray.length - 3;
+  }
+
   nextSlide() {
-    const carouselBox = document.querySelector('.carouselBox');
-    if (carouselBox) {
+    if (this.carouselBox) {
       if (this.currentDotIndex < this.references.length - 1) {
-        this.currentDotIndex++;
-        this.currentReferenceIndex++;
-        (carouselBox as HTMLElement).style.transform = `translateX(-${
-          this.lastTranslateX + this.singleReferenceWidth + this.gapWidth
-        }px)`;
-        this.lastTranslateX += (this.singleReferenceWidth + this.gapWidth);
+        this.nextSlideIfBlock();
       } else {
-        this.currentDotIndex = 0;
-        this.currentReferenceIndex = 1;
+        this.nextSlideElseBlock();
       }
     }
+  }
+
+  nextSlideIfBlock() {
+    this.currentDotIndex++;
+    this.currentReferenceIndex++;
+    (this.carouselBox as HTMLElement).style.transform = `translateX(-${
+      this.lastTranslateX + this.singleReferenceWidth + this.gapWidth
+    }px)`;
+    this.lastTranslateX += this.singleReferenceWidth + this.gapWidth;
+  }
+
+  nextSlideElseBlock() {
+    
+    this.currentReferenceIndex++;
+    (this.carouselBox as HTMLElement).style.transform = `translateX(-${
+      this.lastTranslateX + this.singleReferenceWidth + this.gapWidth
+    }px)`;
+    this.currentDotIndex = 0;
+    // this.currentReferenceIndex = 1;
+    setTimeout(() => {
+      this.isCarouselBoxTransition = false;
+      this.isSingleReferenceTransition = false;
+      this.currentReferenceIndex = 1;
+      (this.carouselBox as HTMLElement).style.transform = `translateX(-${this.firstTranslateX}px)`;
+      this.lastTranslateX = this.firstTranslateX;
+      setTimeout(() => {
+        this.currentReferenceIndex = 1;
+        this.isCarouselBoxTransition = true;
+        this.isSingleReferenceTransition = true;
+      }, 20);
+    }, 410);
+
+    // this.lastTranslateX += this.singleReferenceWidth + this.gapWidth;
+
+    // this.currentReferenceIndex = 1;
   }
 }
