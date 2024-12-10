@@ -4,7 +4,7 @@
     <div class="carouselContainer">
       <div class="carouselBox">
         @for (item of carouselArray; track $index) {
-        <div class="singleReference">
+        <div [ngClass]="{'singleReference': true, 'referenceFocus': $index == currentReferenceIndex}">
           @if (currentLanguage == "en") {
             <p>{{item.referenceText.en}}</p>
           }@else if (currentLanguage == "de") {

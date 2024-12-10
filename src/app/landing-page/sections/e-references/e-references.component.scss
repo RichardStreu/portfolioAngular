@@ -49,9 +49,19 @@
           width: 632px;
           background-color: rgba($color-highLight, 0.08);
           border-radius: 30px;
+          border: 2px solid $color-highLight;
           padding: 48px 40px;
           display: flex;
           flex-direction: column;
+
+          &::-webkit-scrollbar-track {
+            background: $color-bgDark;
+          }
+          
+          &::-webkit-scrollbar-thumb {
+            background-color: rgba($color-highLight, 0.15);
+            border-radius: 100vh;
+          }
 
           p {
             overflow: auto;
