@@ -24,21 +24,28 @@
     </div>
     <div class="inputBox">
       <label for="message">{{ labelMessageText }}</label>
-      <textarea 
-        name="message" 
+      <textarea
+        name="message"
         id="messageInput"
         class="messageInput"
         [placeholder]="placeholderMessageText"
-        [(ngModel)]="messageInputValue"></textarea>
+        [(ngModel)]="messageInputValue"
+      ></textarea>
     </div>
     <div class="privacyPolicyBox">
-      <input id="checkbox" class="checkbox" type="checkbox">
-      <p>{{privacyPolicyFirstText}}</p>
-      <a href="">{{privacyPolicyLinkText}}</a>
-      <p>{{privacyPolicySecondText}}</p>
+      <div class="checkBox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 4L4 7L9 1" />
+        </svg>
+      </div>
+      <p>{{ privacyPolicyFirstText }}</p>
+      <a href="">{{ privacyPolicyLinkText }}</a>
+      <p>{{ privacyPolicySecondText }}</p>
     </div>
     <div class="buttonBox">
-      <button class="submitButton" type="submit" value="submit">{{submitButtonText}}</button>
+      <button class="submitButton" type="submit" value="submit">
+        {{ submitButtonText }}
+      </button>
     </div>
   </form>
 </div>

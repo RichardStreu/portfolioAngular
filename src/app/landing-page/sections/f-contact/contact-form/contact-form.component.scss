@@ -1,0 +1,131 @@
+@import "../../../../../styles.scss";
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+
+  &:first-child {
+    border-top: 2px solid $color-highLight;
+  }
+
+  .inputBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid $color-highLight;
+    padding-bottom: 2rem;
+    padding: 2rem 2rem calc(2rem - 1px) 2rem;
+
+    label {
+      font-family: "Fira", monospace;
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: $color-highLight;
+      padding-bottom: 1rem;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid transparent;
+      line-height: 22px;
+      outline: none;
+      font-family: "Karla", sans-serif;
+      font-weight: 400;
+      font-size: 1.13rem;
+      color: white;
+      transition: all 0.2s ease-in-out;
+
+      &:-webkit-autofill {
+        background-color: transparent!important;
+        box-shadow: 0 0 0px 1000px $color-bgDark inset !important;
+        color: white !important;
+        -webkit-text-fill-color: white !important;
+        border: none!important;
+      }
+
+      &::placeholder {
+        font-family: "Karla", sans-serif;
+        font-weight: 400;
+        font-size: 1.13rem;
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $color-highLight!important;
+      }
+    }
+
+    textarea {
+      background-color: transparent;
+      border: none;
+      min-height: 1.13rem;
+      max-height: 88px;
+      resize: none;
+      outline: none;
+      font-family: "Karla", sans-serif;
+      font-weight: 400;
+      font-size: 1.13rem;
+      color: white;
+      transition: all 0.2s ease-in-out;
+
+      &::placeholder {
+        font-family: "Karla", sans-serif;
+        font-weight: 400;
+        font-size: 1.13rem;
+        color: white;
+      }
+    }
+  }
+
+  .privacyPolicyBox {
+    display: flex;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    .checkBox {
+      margin-right: 0.75rem;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      border: 2px solid $color-highLight;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        stroke: $color-highLight;
+      }
+    }
+
+    p {
+      font-family: "Karla", sans-serif;
+      font-size: 0.93rem;
+      color: white;
+    }
+
+    a {
+      font-family: "Karla", sans-serif;
+      font-size: 0.93rem;
+      color: $color-highLight;
+      text-decoration: none;
+      letter-spacing: 1px;
+      padding: 0 0.25rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  .buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
