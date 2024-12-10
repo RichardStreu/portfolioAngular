@@ -97,7 +97,13 @@
       align-items: center;
 
       svg {
+        transition: all 0.2s ease-in-out;
         stroke: $color-highLight;
+        opacity: 0;
+      }
+
+      .opacity_1 {
+        opacity: 1;
       }
     }
 
@@ -129,3 +135,5 @@
     justify-content: center;
   }
 }
+
+

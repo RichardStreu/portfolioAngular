@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../../../services/language.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss',
 })
@@ -82,6 +83,14 @@ export class ContactFormComponent {
 
   ngOnInit() {
     this.chooseLanguage();
+  }
+
+  isCheckboxChecked: boolean = false;
+
+  checkCheckBox() {
+    this.isCheckboxChecked = !this.isCheckboxChecked;
+    console.log(this.isCheckboxChecked);
+    
   }
 
   onSubmit() {}
