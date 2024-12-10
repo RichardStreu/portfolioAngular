@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../../../services/language.service';
 
 @Component({
   selector: 'app-contact-text',
@@ -8,5 +9,22 @@ import { Component } from '@angular/core';
   styleUrl: './contact-text.component.scss'
 })
 export class ContactTextComponent {
+  languageService = inject(LanguageService);
+
+  whoIAmText: string = '';
+
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {
+      this.whoIAmText =
+        this.languageService.currentLanguage == 'en'
+          ? 'Who I Am'
+          : 'Lerne mich kennen';
+    });
+  }
+
+  constructor() {
+    this.chooseLanguage();
+  }
+
 
 }
