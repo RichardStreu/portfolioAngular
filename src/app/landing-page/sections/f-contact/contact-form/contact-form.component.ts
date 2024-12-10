@@ -11,14 +11,29 @@ import { LanguageService } from '../../../../services/language.service';
 export class ContactFormComponent {
   languageService = inject(LanguageService);
 
-  whoIAmText: string = '';
+  whatsNameText: string = '';
+  exampleNameText: string = '';
+  nameValidationText: string = '';
+  whatsEmailText: string = '';
+  exampleEmailText: string = '';
+  emailValidationText: string = '';
+  whatsMessageText: string = '';
+  exampleMessageText: string = '';
+  messageValidationText: string = '';
+  privacyPolicyText: string = '';
+  privacyPolicyValidationText: string = '';
+  submitButtonText: string = '';
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
-      this.whoIAmText =
+      this.whatsNameText =
         this.languageService.currentLanguage == 'en'
-          ? 'Who I Am'
-          : 'Lerne mich kennen';
+          ? "What's your name?"
+          : 'Wie ist dein Name?';
+      this.exampleNameText =
+        this.languageService.currentLanguage == 'en'
+          ? 'Your name goes here'
+          : 'Dein Name hier';
     });
   }
 
