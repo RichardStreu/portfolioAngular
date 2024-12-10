@@ -23,7 +23,8 @@ export class EReferencesComponent {
   headlineText: string = '';
   currentLanguage: string = '';
 
-  isTransitionClass: boolean = true;
+  isSingleReferenceTransition: boolean = true;
+  isCarouselBoxTransition: boolean = true;
 
   constructor() {
     this.references = this.referenceDataService.references;
@@ -38,7 +39,6 @@ export class EReferencesComponent {
     this.getElementSizes();
     this.firstCarouselPositioning();
   }
-  
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
@@ -65,46 +65,64 @@ export class EReferencesComponent {
   singleReferenceWidth: number = 0;
   gapWidth: number = 48;
 
-
   getElementSizes() {
     const carouselContainer = document.querySelector('.carouselContainer');
     const carouselBox = document.querySelector('.carouselBox');
     const singleReference = document.querySelector('.singleReference');
 
     if (carouselContainer && carouselBox && singleReference) {
-      this.carouselContainerWidth = (carouselContainer as HTMLElement).offsetWidth;
+      this.carouselContainerWidth = (
+        carouselContainer as HTMLElement
+      ).offsetWidth;
       this.carouselBoxWidth = (carouselBox as HTMLElement).offsetWidth;
       this.singleReferenceWidth = (singleReference as HTMLElement).offsetWidth;
     }
-    console.log(this.carouselContainerWidth, this.carouselBoxWidth, this.singleReferenceWidth);
+    console.log(
+      this.carouselContainerWidth,
+      this.carouselBoxWidth,
+      this.singleReferenceWidth
+    );
   }
 
   firstCarouselPositioning() {
-    let firstRefMid = (this.singleReferenceWidth * 1.5) + this.gapWidth;
+    let firstRefMid = this.singleReferenceWidth * 1.5 + this.gapWidth;
     const carouselBox = document.querySelector('.carouselBox');
     if (carouselBox) {
-      (carouselBox as HTMLElement).style.transition = 'none';
-      (carouselBox as HTMLElement).style.transform = `translateX(-${firstRefMid - (this.carouselContainerWidth / 2)}px)`;
+      (carouselBox as HTMLElement).style.transform = `translateX(-${
+        firstRefMid - this.carouselContainerWidth / 2
+      }px)`;
     }
   }
 
   previousSlide() {
-    if (this.currentDotIndex > 0) {
-      this.currentDotIndex--;
-      this.currentReferenceIndex--;
-    } else {
-      this.currentDotIndex = this.references.length - 1;
-      this.currentReferenceIndex = this.carouselArray.length - 3;
+    const carouselBox = document.querySelector('.carouselBox');
+    if (carouselBox) {
+      if (this.currentDotIndex > 0) {
+        this.currentDotIndex--;
+        this.currentReferenceIndex--;
+        (carouselBox as HTMLElement).style.transform = `translateX(-${
+          this.singleReferenceWidth - this.gapWidth
+        }px)`;
+      } else {
+        this.currentDotIndex = this.references.length - 1;
+        this.currentReferenceIndex = this.carouselArray.length - 3;
+      }
     }
   }
 
   nextSlide() {
-    if (this.currentDotIndex < this.references.length - 1) {
-      this.currentDotIndex++;
-      this.currentReferenceIndex++;
-    } else {
-      this.currentDotIndex = 0;
-      this.currentReferenceIndex = 1;
+    const carouselBox = document.querySelector('.carouselBox');
+    if (carouselBox) {
+      if (this.currentDotIndex < this.references.length - 1) {
+        this.currentDotIndex++;
+        this.currentReferenceIndex++;
+        (carouselBox as HTMLElement).style.transform = `translateX(-${
+          this.singleReferenceWidth * 2 + this.gapWidth
+        }px)`;
+      } else {
+        this.currentDotIndex = 0;
+        this.currentReferenceIndex = 1;
+      }
     }
   }
 }
