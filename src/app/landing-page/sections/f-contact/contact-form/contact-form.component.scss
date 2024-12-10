@@ -18,6 +18,8 @@
     border-top: 2px solid $color-highLight;
   }
 
+  
+
   .inputBox {
     width: 100%;
     display: flex;
@@ -38,7 +40,7 @@
       background-color: transparent;
       border: none;
       border-bottom: 1px solid transparent;
-      line-height: 22px;
+      // line-height: 22px;
       outline: none;
       font-family: "Karla", sans-serif;
       font-weight: 400;
@@ -87,6 +89,10 @@
         color: white;
       }
     }
+  }
+
+  #messageBox {
+    padding: 2rem 2rem calc(2rem - 20px) 2rem;
   }
 
   .privacyPolicyBox {
