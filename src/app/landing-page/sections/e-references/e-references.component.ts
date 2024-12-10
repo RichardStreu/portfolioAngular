@@ -23,6 +23,8 @@ export class EReferencesComponent {
   headlineText: string = '';
   currentLanguage: string = '';
 
+  isTransitionClass: boolean = true;
+
   constructor() {
     this.references = this.referenceDataService.references;
   }
