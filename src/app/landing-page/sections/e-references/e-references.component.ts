@@ -100,14 +100,20 @@ export class EReferencesComponent {
     }
   }
 
+  isPreviousAble: boolean = true;
+
   previousSlide() {
-    if (this.carouselBox) {
+    if (this.carouselBox && this.isPreviousAble) {
+      this.isPreviousAble = false;
       if (this.currentDotIndex > 0) {
         this.previousSlideIfBlock();
       } else {
         this.previousSlideElseBlock();
       }
     }
+    setTimeout(() => {
+      this.isPreviousAble = true;
+    }, 500);
   }
 
   previousSlideIfBlock() {
@@ -124,31 +130,39 @@ export class EReferencesComponent {
     this.isSingleReferenceTransition = false;
     this.currentReferenceIndex += this.references.length;
     (this.carouselBox as HTMLElement).style.transform = `translateX(-${
-      this.lastTranslateX + (this.singleReferenceWidth * this.references.length) + (this.gapWidth * (this.references.length))
+      this.lastTranslateX +
+      this.singleReferenceWidth * this.references.length +
+      this.gapWidth * this.references.length
     }px)`;
-    this.lastTranslateX += (this.singleReferenceWidth * this.references.length) + (this.gapWidth * (this.references.length));
-    
-
+    this.lastTranslateX +=
+      this.singleReferenceWidth * this.references.length +
+      this.gapWidth * this.references.length;
     setTimeout(() => {
       this.isCarouselBoxTransition = true;
       this.isSingleReferenceTransition = true;
       this.currentReferenceIndex = this.references.length;
       this.currentDotIndex = 2;
       (this.carouselBox as HTMLElement).style.transform = `translateX(-${
-        this.lastTranslateX - (this.singleReferenceWidth + this.gapWidth) 
+        this.lastTranslateX - (this.singleReferenceWidth + this.gapWidth)
       }px)`;
-      this.lastTranslateX -= (this.singleReferenceWidth + this.gapWidth);
-    }, 1);
+      this.lastTranslateX -= this.singleReferenceWidth + this.gapWidth;
+    }, 10);
   }
 
+  isNextAble: boolean = true;
+
   nextSlide() {
-    if (this.carouselBox) {
+    if (this.carouselBox && this.isNextAble) {
+      this.isNextAble = false;
       if (this.currentDotIndex < this.references.length - 1) {
         this.nextSlideIfBlock();
       } else {
         this.nextSlideElseBlock();
       }
     }
+    setTimeout(() => {
+      this.isNextAble = true;
+    }, 500);
   }
 
   nextSlideIfBlock() {
