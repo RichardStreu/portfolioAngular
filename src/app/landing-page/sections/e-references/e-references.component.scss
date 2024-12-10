@@ -1,0 +1,179 @@
+@import "../../../../styles.scss";
+
+.referenceSection {
+  padding-top: 144px;
+  padding-bottom: 144px;
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-family: "Fira", monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      padding-bottom: 2.5rem;
+      text-align: center;
+      color: $color-highLight;
+    }
+
+    .carouselContainer {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      mask: linear-gradient(
+        90deg,
+        transparent,
+        white 6%,
+        white 94%,
+        transparent
+      );
+      -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 6%,
+        white 94%,
+        transparent
+      );
+
+      .carouselBox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+        height: 300px;
+
+        .singleReference {
+          height: 268px;
+          width: 632px;
+          background-color: rgba($color-highLight, 0.08);
+          border-radius: 30px;
+          border: 2px solid rgba($color-highLight, 0.7);
+          padding: 48px 40px;
+          display: flex;
+          flex-direction: column;
+
+          p {
+            overflow: auto;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: white;
+            text-align: left;
+            color: rgba(white, 0.5);
+          }
+
+          .authorBox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.25rem;
+
+            .line {
+              height: 2px;
+              flex: 1;
+              background-color: rgba(white, 0.5);
+            }
+
+            p {
+              font-size: 1.13rem;
+              font-weight: 400;
+              font-family: "Karla", sans-serif;
+              color: rgba(white, 0.5);
+              padding: 0;
+            }
+          }
+
+          .transition {
+            transition: all 0.4s ease-in-out;
+          }
+        }
+
+        ::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: rgba($color-highLight, 0.15);
+          border-radius: 100vh;
+        }
+
+        .referenceFocus {
+          height: 300px;
+          background-color: rgba($color-highLight, 0.15);
+          border: 2px solid $color-highLight;
+
+          p {
+            color: white !important;
+          }
+
+          .line {
+            background-color: white !important;
+          }
+        }
+      }
+    }
+
+    .navigationContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 2.5rem;
+    }
+
+    .navigationButton {
+      width: 32px;
+      height: 32px;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.25);
+        }
+
+        path {
+          transition: all 0.2s ease-in-out;
+        }
+
+        &:hover path {
+          fill: $color-highLight;
+        }
+      }
+    }
+
+    .dotBox {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 100vh;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .highLightBG {
+        background-color: $color-highLight;
+      }
+    }
+  }
+}
+
+.transition {
+  transition: all 0.4s ease-in-out;
+}

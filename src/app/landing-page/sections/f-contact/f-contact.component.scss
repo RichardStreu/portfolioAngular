@@ -1,0 +1,19 @@
+@import "../../../../styles.scss";
+
+.contact-section {
+  padding-bottom: 144px;
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+
+    .contactTextContainer {
+      flex: 1;
+    }
+
+    .contactFormContainer{
+      width: 616px;
+    }
+  }
+}

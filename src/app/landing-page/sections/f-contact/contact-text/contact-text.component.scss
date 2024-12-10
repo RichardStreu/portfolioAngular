@@ -1,0 +1,44 @@
+@import "../../../../../styles.scss";
+
+.contactText {
+  display: flex;
+  flex-direction: column;
+
+  .contactMe {
+    font-family: "Karla", sans-serif;
+    font-size: 1.5rem;
+    color: $color-highLight;
+    padding-bottom: 1.25rem;
+  }
+
+  .letsWork {
+    font-family: "Fira", monospace;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 700;
+    color: $color-highLight;
+    padding-bottom: 2.5rem;
+  }
+
+  .solve {
+    font-family: "Fira", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-highLight;
+    padding-bottom: 1rem;
+  }
+
+  .myWorkDev {
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    color: white;
+    padding-bottom: 1.25rem;
+
+    .letsTalk {
+      color: $color-highLight;
+      font-weight: 700;
+      padding-left: 0.5rem;
+    }
+  }
+}

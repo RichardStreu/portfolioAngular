@@ -1,1 +1,60 @@
-<p>e-references works!</p>
+<section class="referenceSection">
+  <div class="contentWrapper">
+    <p class="referenceHeadline">{{ headlineText }}</p>
+    <div class="carouselContainer">
+      <div class="carouselBox" [ngClass]="{'transition': isCarouselBoxTransition}">
+        @for (item of carouselArray; track $index) {
+        <div [ngClass]="{'singleReference': true, 'transition': isSingleReferenceTransition, 'referenceFocus': $index == currentReferenceIndex}">
+          @if (currentLanguage == "en") {
+            <p [ngClass]="{'transition': isSingleReferenceTransition}">{{item.referenceText.en}}</p>
+          }@else if (currentLanguage == "de") {
+            <p [ngClass]="{'transition': isSingleReferenceTransition}">{{item.referenceText.de}}</p>
+          }
+          <div class="authorBox" >
+            <div [ngClass]="{'line': true, 'transition': isSingleReferenceTransition}"></div>
+            <p><span [ngClass]="{'transition': isSingleReferenceTransition}">{{item.name}}</span> - <span [ngClass]="{'transition': isSingleReferenceTransition}">{{item.position}}</span></p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <nav class="navigationContainer">
+      <button class="navigationButton left" (click)="previousSlide()">
+        <svg
+          width="19"
+          height="20"
+          viewBox="0 0 19 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.22831 10.6667L9.47931 17.918C9.60931 18.0478 9.67731 18.2008 9.68331 18.377C9.68931 18.553 9.61876 18.7146 9.47165 18.8617C9.32476 19.0034 9.16754 19.0757 8.99998 19.0783C8.83243 19.0808 8.6752 19.0086 8.52831 18.8617L0.420647 10.754C0.304203 10.6376 0.222536 10.5187 0.175647 10.3973C0.128536 10.276 0.10498 10.1436 0.10498 10C0.10498 9.85644 0.128536 9.724 0.175647 9.60267C0.222536 9.48133 0.304203 9.36244 0.420647 9.246L8.52831 1.13833C8.65298 1.01367 8.80465 0.947001 8.98331 0.938334C9.16198 0.92989 9.32476 0.996556 9.47165 1.13833C9.61876 1.28545 9.69231 1.444 9.69231 1.614C9.69231 1.78422 9.61876 1.94278 9.47165 2.08967L2.22831 9.33333H17.6666C17.8564 9.33333 18.015 9.397 18.1423 9.52433C18.2696 9.65167 18.3333 9.81022 18.3333 10C18.3333 10.1898 18.2696 10.3483 18.1423 10.4757C18.015 10.603 17.8564 10.6667 17.6666 10.6667H2.22831Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+      <div class="dotBox">
+        @for (item of references; track $index) {
+        <div
+          class="dot"
+          [ngClass]="{ highLightBG: $index == currentDotIndex }"
+        ></div>
+        }
+      </div>
+      <button class="navigationButton right" (click)="nextSlide()">
+        <svg
+          width="19"
+          height="20"
+          viewBox="0 0 19 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.7716 10.6667H1.33329C1.14351 10.6667 0.984959 10.603 0.857626 10.4757C0.730293 10.3483 0.666626 10.1898 0.666626 9.99999C0.666626 9.81022 0.730293 9.65166 0.857626 9.52433C0.984959 9.39699 1.14351 9.33333 1.33329 9.33333H16.7716L9.52063 2.08199C9.39063 1.95222 9.32263 1.79922 9.31663 1.62299C9.31063 1.44699 9.38118 1.28544 9.52829 1.13833C9.67518 0.996549 9.8324 0.924327 9.99996 0.92166C10.1675 0.919216 10.3247 0.991438 10.4716 1.13833L18.5793 9.24599C18.6957 9.36244 18.7774 9.48133 18.8243 9.60266C18.8714 9.72399 18.895 9.85644 18.895 9.99999C18.895 10.1435 18.8714 10.276 18.8243 10.3973C18.7774 10.5187 18.6957 10.6375 18.5793 10.754L10.4716 18.8617C10.347 18.9863 10.1953 19.053 10.0166 19.0617C9.83796 19.0701 9.67518 19.0034 9.52829 18.8617C9.38118 18.7146 9.30763 18.556 9.30763 18.386C9.30763 18.2158 9.38118 18.0572 9.52829 17.9103L16.7716 10.6667Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</section>
