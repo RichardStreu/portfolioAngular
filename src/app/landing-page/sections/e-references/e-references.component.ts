@@ -64,6 +64,9 @@ export class EReferencesComponent {
   carouselBoxWidth: number = 0;
   singleReferenceWidth: number = 0;
   gapWidth: number = 48;
+  firstRefMid: number = 0;
+  firstTranslateX: number = 0;
+  lastTranslateX: number = 0;
 
   getElementSizes() {
     const carouselContainer = document.querySelector('.carouselContainer');
@@ -85,11 +88,13 @@ export class EReferencesComponent {
   }
 
   firstCarouselPositioning() {
-    let firstRefMid = this.singleReferenceWidth * 1.5 + this.gapWidth;
+    this.firstRefMid = this.singleReferenceWidth * 1.5 + this.gapWidth;
+    this.firstTranslateX = this.firstRefMid - this.carouselContainerWidth / 2;
+    this.lastTranslateX = this.firstTranslateX;
     const carouselBox = document.querySelector('.carouselBox');
     if (carouselBox) {
       (carouselBox as HTMLElement).style.transform = `translateX(-${
-        firstRefMid - this.carouselContainerWidth / 2
+        this.firstTranslateX
       }px)`;
     }
   }
@@ -100,9 +105,10 @@ export class EReferencesComponent {
       if (this.currentDotIndex > 0) {
         this.currentDotIndex--;
         this.currentReferenceIndex--;
-        (carouselBox as HTMLElement).style.transform = `translateX(-${
-          this.singleReferenceWidth - this.gapWidth
+        (carouselBox as HTMLElement).style.transform = `translateX(${
+          this.lastTranslateX + this.singleReferenceWidth + this.gapWidth
         }px)`;
+        this.lastTranslateX -= (this.singleReferenceWidth + this.gapWidth);	
       } else {
         this.currentDotIndex = this.references.length - 1;
         this.currentReferenceIndex = this.carouselArray.length - 3;
@@ -117,8 +123,9 @@ export class EReferencesComponent {
         this.currentDotIndex++;
         this.currentReferenceIndex++;
         (carouselBox as HTMLElement).style.transform = `translateX(-${
-          this.singleReferenceWidth * 2 + this.gapWidth
+          this.lastTranslateX + this.singleReferenceWidth + this.gapWidth
         }px)`;
+        this.lastTranslateX += (this.singleReferenceWidth + this.gapWidth);
       } else {
         this.currentDotIndex = 0;
         this.currentReferenceIndex = 1;
