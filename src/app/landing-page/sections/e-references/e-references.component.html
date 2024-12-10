@@ -6,13 +6,13 @@
         @for (item of carouselArray; track $index) {
         <div [ngClass]="{'singleReference': true, 'transition': isSingleReferenceTransition, 'referenceFocus': $index == currentReferenceIndex}">
           @if (currentLanguage == "en") {
-            <p>{{item.referenceText.en}}</p>
+            <p [ngClass]="{'transition': isSingleReferenceTransition}">{{item.referenceText.en}}</p>
           }@else if (currentLanguage == "de") {
-            <p>{{item.referenceText.de}}</p>
+            <p [ngClass]="{'transition': isSingleReferenceTransition}">{{item.referenceText.de}}</p>
           }
-          <div class="authorBox">
-            <div class="line"></div>
-            <p><span>{{item.name}}</span> - <span>{{item.position}}</span></p>
+          <div class="authorBox" >
+            <div [ngClass]="{'line': true, 'transition': isSingleReferenceTransition}"></div>
+            <p><span [ngClass]="{'transition': isSingleReferenceTransition}">{{item.name}}</span> - <span [ngClass]="{'transition': isSingleReferenceTransition}">{{item.position}}</span></p>
           </div>
         </div>
         }
