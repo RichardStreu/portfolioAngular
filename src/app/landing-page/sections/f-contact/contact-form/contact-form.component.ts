@@ -14,12 +14,15 @@ export class ContactFormComponent {
   whatsNameText: string = '';
   exampleNameText: string = '';
   nameValidationText: string = '';
+
   whatsEmailText: string = '';
   exampleEmailText: string = '';
   emailValidationText: string = '';
+
   whatsMessageText: string = '';
   exampleMessageText: string = '';
   messageValidationText: string = '';
+  
   privacyPolicyText: string = '';
   privacyPolicyValidationText: string = '';
   submitButtonText: string = '';
