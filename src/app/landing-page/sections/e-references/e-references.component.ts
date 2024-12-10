@@ -114,20 +114,50 @@ export class EReferencesComponent {
     this.currentDotIndex--;
     this.currentReferenceIndex--;
     (this.carouselBox as HTMLElement).style.transform = `translateX(-${
-      this.lastTranslateX - this.singleReferenceWidth - this.gapWidth
+      this.lastTranslateX - (this.singleReferenceWidth - this.gapWidth)
     }px)`;
     this.lastTranslateX -= this.singleReferenceWidth + this.gapWidth;
   }
 
   previousSlideElseBlock() {
-    this.currentDotIndex = this.references.length - 1;
-    this.currentReferenceIndex--;
+    this.isCarouselBoxTransition = false;
+    this.isSingleReferenceTransition = false;
+    this.currentReferenceIndex = 4;
     (this.carouselBox as HTMLElement).style.transform = `translateX(-${
-      this.lastTranslateX - this.singleReferenceWidth - this.gapWidth
+      this.lastTranslateX + (this.singleReferenceWidth * this.references.length) + (this.gapWidth * (this.references.length))
     }px)`;
-    // this.lastTranslateX -= this.singleReferenceWidth + this.gapWidth;
+    this.lastTranslateX += (this.singleReferenceWidth * this.references.length) + (this.gapWidth * (this.references.length));
 
-    // this.currentReferenceIndex = this.carouselArray.length - 3;
+    setTimeout(() => {
+      this.isCarouselBoxTransition = true;
+      this.isSingleReferenceTransition = true;
+      this.currentDotIndex = 2;
+      (this.carouselBox as HTMLElement).style.transform = `translateX(-${
+        this.lastTranslateX - (this.singleReferenceWidth + this.gapWidth) 
+      }px)`;
+      this.currentReferenceIndex = 3;
+      this.lastTranslateX -= (this.singleReferenceWidth + this.gapWidth);
+    }, 20);
+
+    // this.currentReferenceIndex--;
+    // (this.carouselBox as HTMLElement).style.transform = `translateX(-${
+    //   this.lastTranslateX - this.singleReferenceWidth - this.gapWidth
+    // }px)`;
+    // this.currentDotIndex = 2;
+    // setTimeout(() => {
+    //   this.isCarouselBoxTransition = false;
+    //   this.isSingleReferenceTransition = false;
+    //   this.currentReferenceIndex = 1;
+    //   (
+    //     this.carouselBox as HTMLElement
+    //   ).style.transform = `translateX(-${this.firstTranslateX}px)`;
+    //   this.lastTranslateX = this.firstTranslateX;
+    //   setTimeout(() => {
+    //     this.currentReferenceIndex = this.references.length - 1;
+    //     this.isCarouselBoxTransition = true;
+    //     this.isSingleReferenceTransition = true;
+    //   }, 20);
+    // }, 410);
   }
 
   nextSlide() {
@@ -150,18 +180,18 @@ export class EReferencesComponent {
   }
 
   nextSlideElseBlock() {
-    
     this.currentReferenceIndex++;
     (this.carouselBox as HTMLElement).style.transform = `translateX(-${
       this.lastTranslateX + this.singleReferenceWidth + this.gapWidth
     }px)`;
     this.currentDotIndex = 0;
-    // this.currentReferenceIndex = 1;
     setTimeout(() => {
       this.isCarouselBoxTransition = false;
       this.isSingleReferenceTransition = false;
       this.currentReferenceIndex = 1;
-      (this.carouselBox as HTMLElement).style.transform = `translateX(-${this.firstTranslateX}px)`;
+      (
+        this.carouselBox as HTMLElement
+      ).style.transform = `translateX(-${this.firstTranslateX}px)`;
       this.lastTranslateX = this.firstTranslateX;
       setTimeout(() => {
         this.currentReferenceIndex = 1;
@@ -169,9 +199,5 @@ export class EReferencesComponent {
         this.isSingleReferenceTransition = true;
       }, 20);
     }, 410);
-
-    // this.lastTranslateX += this.singleReferenceWidth + this.gapWidth;
-
-    // this.currentReferenceIndex = 1;
   }
 }
