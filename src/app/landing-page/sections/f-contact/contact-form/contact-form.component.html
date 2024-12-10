@@ -1,1 +1,44 @@
-<p>contact-form works!</p>
+<div class="formContainer">
+  <form action="">
+    <div class="inputBox">
+      <label for="name">{{ labelNameText }}</label>
+      <input
+        type="text"
+        id="nameInput"
+        class="nameInput"
+        name="name"
+        [placeholder]="placeholderNameText"
+        [(ngModel)]="nameInputValue"
+      />
+    </div>
+    <div class="inputBox">
+      <label for="email">{{ labelEmailText }}</label>
+      <input
+        type="email"
+        id="nameInput"
+        class="emailInput"
+        name="name"
+        [placeholder]="placeholderEmailText"
+        [(ngModel)]="emailInputValue"
+      />
+    </div>
+    <div class="inputBox">
+      <label for="message">{{ labelMessageText }}</label>
+      <textarea 
+        name="message" 
+        id="messageInput"
+        class="messageInput"
+        [placeholder]="placeholderMessageText"
+        [(ngModel)]="messageInputValue"></textarea>
+    </div>
+    <div class="privacyPolicyBox">
+      <input id="checkbox" class="checkbox" type="checkbox">
+      <p>{{privacyPolicyFirstText}}</p>
+      <a href="">{{privacyPolicyLinkText}}</a>
+      <p>{{privacyPolicySecondText}}</p>
+    </div>
+    <div class="buttonBox">
+      <button class="submitButton" type="submit" value="submit">{{submitButtonText}}</button>
+    </div>
+  </form>
+</div>
