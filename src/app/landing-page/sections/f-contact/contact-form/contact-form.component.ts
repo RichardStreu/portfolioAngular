@@ -15,15 +15,15 @@ export class ContactFormComponent {
 
   labelNameText: string = '';
   placeholderNameText: string = '';
-  nameInputValue: string = '';
+  nameInputNgModel: string = '';
 
   labelEmailText: string = '';
   placeholderEmailText: string = '';
-  emailInputValue: string = '';
+  emailInputNgModel: string = '';
 
   labelMessageText: string = '';
   placeholderMessageText: string = '';
-  messageInputValue: string = '';
+  messageInputNgModel: string = '';
 
   privacyPolicyFirstText: string = '';
   privacyPolicyLinkText: string = '';
@@ -93,6 +93,10 @@ export class ContactFormComponent {
   }
 
   onSubmit(contactForm: NgForm) {
-    console.log(contactForm);
+    let nameInput = contactForm.value.name;
+    let emailInput = contactForm.value.email;
+    let messageInput = contactForm.value.message;
+
+    console.log(nameInput, emailInput, messageInput);
   }
 }

@@ -8,7 +8,7 @@
         class="nameInput"
         name="name"
         [placeholder]="placeholderNameText"
-        [(ngModel)]="nameInputValue"
+        [(ngModel)]="nameInputNgModel"
         required
       />
     </div>
@@ -20,7 +20,7 @@
         class="emailInput"
         name="email"
         [placeholder]="placeholderEmailText"
-        [(ngModel)]="emailInputValue"
+        [(ngModel)]="emailInputNgModel"
         required
       />
     </div>
@@ -31,7 +31,7 @@
         id="messageInput"
         class="messageInput"
         [placeholder]="placeholderMessageText"
-        [(ngModel)]="messageInputValue"
+        [(ngModel)]="messageInputNgModel"
         required
       ></textarea>
     </div>
