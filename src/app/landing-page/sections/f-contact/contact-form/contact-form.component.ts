@@ -122,19 +122,19 @@ export class ContactFormComponent {
     this.nameDefaultWarning =
       this.languageService.currentLanguage == 'en'
         ? 'Please enter a valid name, e.g., "John Doe".'
-        : 'Bitte geben Sie einen gültigen Namen ein, z. B. "Max Mustermann".';
+        : 'Dein Name sollte so geschrieben sein, z. B. "Maxi Muster".';
   }
   chooseEmailDefaultWarning() {
     this.emailDefaultWarning =
       this.languageService.currentLanguage == 'en'
         ? 'Please enter a valid email address, e.g., "name@example.com".'
-        : 'Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. "name@example.com".';
+        : 'Bitte gib eine gültige E-Mail an, z. B. "maxi-muster@mail.de".';
   }
   chooseMessageDefaultWarning() {
     this.messageDefaultWarning =
       this.languageService.currentLanguage == 'en'
         ? 'Your message must be at least 2 words long.'
-        : 'Deine Nachricht muss mindestens 2 Worte lang sein.';
+        : 'Deine Nachricht muss mindestens zwei Wörter enthalten.';
   }
   chooseMessageCharacterWarning() {
     this.messageCharacterWarning =
@@ -146,7 +146,7 @@ export class ContactFormComponent {
     this.checkboxDefaultWarning =
       this.languageService.currentLanguage == 'en'
         ? 'Please accept the privacy policy.'
-        : 'Bitte akzeptieren Sie die Datenschutzrichtlinien.';
+        : 'Bitte lies und akzeptiere die Datenschutzrichtlinien.';
   }
 
   // constructor to call the function to change the language
