@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../../../services/language.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -90,8 +90,9 @@ export class ContactFormComponent {
   checkCheckBox() {
     this.isCheckboxChecked = !this.isCheckboxChecked;
     console.log(this.isCheckboxChecked);
-    
   }
 
-  onSubmit() {}
+  onSubmit(contactForm: NgForm) {
+    console.log(contactForm);
+  }
 }
