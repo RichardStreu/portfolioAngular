@@ -189,7 +189,10 @@ export class ContactFormComponent {
   isEmailWarning: boolean = false;
 
   focusEmailInput() {
-
+    if (this.isEmailWarning) {
+      this.emailInputNgModel = this.emailCacheNgModel;
+      this.isEmailWarning = false;
+    }
   }
 
   validateEmail() {
@@ -202,7 +205,10 @@ export class ContactFormComponent {
   isMessageWarning: boolean = false;
 
   focusMessageInput() {
-
+    if (this.isMessageWarning) {
+      this.messageInputNgModel = this.messageCacheNgModel;
+      this.isMessageWarning = false;
+    }
   }
 
   validateMessage() {
