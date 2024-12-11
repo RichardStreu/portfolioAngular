@@ -87,8 +87,8 @@ export class ContactFormComponent {
           : 'Sag Hallo ;)';
       this.nameDefaultWarning =
         this.languageService.currentLanguage == 'en'
-          ? 'Please enter your name'
-          : 'Bitte geben Sie Ihren Namen ein';
+          ? 'Please enter a valid name, e.g., "John Doe".'
+          : 'Bitte geben Sie einen gültigen Namen ein, z. B. "Max Mustermann".';
       this.emailDefaultWarning =
         this.languageService.currentLanguage == 'en'
           ? 'Please enter your email'
@@ -115,16 +115,23 @@ export class ContactFormComponent {
 
   // function to submit the form
   onSubmit(contactForm: NgForm) {
-    if (contactForm.valid && contactForm.submitted && this.isCheckboxChecked) {
-      let nameInput = contactForm.value.name;
-      let emailInput = contactForm.value.email;
-      let messageInput = contactForm.value.message;
+    this.validateAll();
+    if (this.areAllInputsValid) {
+      if (
+        contactForm.valid &&
+        contactForm.submitted &&
+        this.isCheckboxChecked
+      ) {
+        let nameInput = contactForm.value.name;
+        let emailInput = contactForm.value.email;
+        let messageInput = contactForm.value.message;
 
-      console.log(contactForm);
+        console.log(contactForm);
+      }
     }
   }
 
-  // name validation  
+  // name validation
   isNameValid: boolean = false;
   isNameWarning: boolean = false;
 
@@ -141,7 +148,7 @@ export class ContactFormComponent {
   isEmailWarning: boolean = false;
 
   focusEmailInput() {
-      console.log('FOCUS email');
+    console.log('FOCUS email');
   }
 
   validateEmail() {
@@ -157,20 +164,29 @@ export class ContactFormComponent {
   }
 
   validateMessage() {
-      console.log('VALIDTAE message');
+    console.log('VALIDTAE message');
   }
 
-   // function to check if the checkbox is checked
-   isCheckboxChecked: boolean = false;
+  // function to check if the checkbox is checked
+  isCheckboxChecked: boolean = false;
 
-   checkCheckBox() {
-     this.isCheckboxChecked = !this.isCheckboxChecked;
-     console.log(this.isCheckboxChecked);
-   }
- 
-   validateCheckbox() {}
+  checkCheckBox() {
+    this.isCheckboxChecked = !this.isCheckboxChecked;
+    if (this.checkboxValidationField.length > 0) {
+      this.checkboxValidationField = '';
+    }
+  }
 
-    // function to validate the input fields after blur
+  validateCheckbox() {
+    if (!this.isCheckboxChecked) {
+      this.checkboxValidationField = this.checkboxDefaultWarning;
+    } else {
+      this.checkboxValidationField = '';
+      this.isCheckboxChecked = true;
+    }
+  }
+
+  // function to validate the input fields after blur
   validateAfterBlur(inputField: String) {
     if (inputField == 'name' && this.nameInputNgModel.length > 0) {
       this.validateName();
@@ -192,7 +208,12 @@ export class ContactFormComponent {
     this.validateMessage();
     this.validateCheckbox();
 
-    if (this.isNameValid && this.isEmailValid && this.isMassageValid && this.isCheckboxChecked) {
+    if (
+      this.isNameValid &&
+      this.isEmailValid &&
+      this.isMassageValid &&
+      this.isCheckboxChecked
+    ) {
       this.areAllInputsValid = true;
     } else {
       this.areAllInputsValid = false;
