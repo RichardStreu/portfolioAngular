@@ -196,8 +196,18 @@ export class ContactFormComponent {
   }
 
   validateEmail() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     let email = this.emailInputNgModel;
+    let validEmail = emailRegex.test(email);
 
+    if (!validEmail) {
+      this.emailCacheNgModel = this.emailInputNgModel;
+      this.isEmailWarning = true;
+      this.emailInputNgModel = this.emailDefaultWarning;
+    }
+    else {
+      this.isEmailValid = true;
+    }
   }
 
   // message validation
