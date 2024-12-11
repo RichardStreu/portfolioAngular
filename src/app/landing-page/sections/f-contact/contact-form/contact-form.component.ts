@@ -151,20 +151,10 @@ export class ContactFormComponent {
   }
 
   // function to submit the form
-  onSubmit(contactForm: NgForm) {
+  onSubmit() {
     this.validateAll();
     if (this.areAllInputsValid) {
-      if (
-        contactForm.valid &&
-        contactForm.submitted &&
-        this.isCheckboxChecked
-      ) {
-        let nameInput = contactForm.value.name;
-        let emailInput = contactForm.value.email;
-        let messageInput = contactForm.value.message;
-
-        console.log(contactForm);
-      }
+   
     }
   }
 
@@ -173,17 +163,25 @@ export class ContactFormComponent {
   isNameWarning: boolean = false;
 
   focusNameInput() {
-    // console.log('FOCUS name');
+    if (this.isNameWarning) {
+      this.nameInputNgModel = this.nameCacheNgModel;
+      this.isNameWarning = false;
+    }
   }
 
   validateName() {
+    const nameRegex = /^[A-Za-z]+(-[A-Za-z]+)? [A-Za-z]+(-[A-Za-z]+)?$/;
     let name = this.nameInputNgModel;
-    if (name.length < 3) {
+    let validName = nameRegex.test(name);
+
+    if (name.length < 3 || !validName) {
       this.nameCacheNgModel = this.nameInputNgModel;
       this.isNameWarning = true;
       this.nameInputNgModel = this.nameDefaultWarning;
     }
-    // console.log('VALIDTAE name');
+    else {
+      this.isNameValid = true;
+    }
   }
 
   // email validation
@@ -191,12 +189,12 @@ export class ContactFormComponent {
   isEmailWarning: boolean = false;
 
   focusEmailInput() {
-    console.log('FOCUS email');
+
   }
 
   validateEmail() {
     let email = this.emailInputNgModel;
-    console.log('VALIDTAE email');
+
   }
 
   // message validation
@@ -204,12 +202,12 @@ export class ContactFormComponent {
   isMessageWarning: boolean = false;
 
   focusMessageInput() {
-    console.log('FOCUS message');
+
   }
 
   validateMessage() {
     let message = this.messageInputNgModel;
-    console.log('VALIDTAE message');
+
   }
 
   // function to check if the checkbox is checked
@@ -263,6 +261,9 @@ export class ContactFormComponent {
     } else {
       this.areAllInputsValid = false;
     }
+
+    console.log("Is Form Valid: " + this.areAllInputsValid);
+    
   }
 
   // function to reset the form
