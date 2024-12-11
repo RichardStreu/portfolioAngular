@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactFormComponent {
   languageService = inject(LanguageService);
+
   // variables to store the text for the contact form
   labelNameText: string = '';
   placeholderNameText: string = '';
@@ -35,6 +36,11 @@ export class ContactFormComponent {
   emailInputNgModel: string = '';
   messageInputNgModel: string = '';
   checkboxValidationField: string = '';
+
+  // variables to cache the input NgModels before validation warning
+  nameCacheNgModel: string = '';
+  emailCacheNgModel: string = '';
+  messageCacheNgModel: string = '';
 
   // function to change the language of the contact form
   chooseLanguage() {
@@ -107,13 +113,6 @@ export class ContactFormComponent {
     this.chooseLanguage();
   }
 
-  // function to check if the checkbox is checked
-  isCheckboxChecked: boolean = false;
-  checkCheckBox() {
-    this.isCheckboxChecked = !this.isCheckboxChecked;
-    console.log(this.isCheckboxChecked);
-  }
-
   // function to submit the form
   onSubmit(contactForm: NgForm) {
     if (contactForm.valid && contactForm.submitted && this.isCheckboxChecked) {
@@ -121,7 +120,78 @@ export class ContactFormComponent {
       let emailInput = contactForm.value.email;
       let messageInput = contactForm.value.message;
 
-      console.log(nameInput, emailInput, messageInput);
+      console.log(contactForm);
     }
   }
+
+  // name validation  
+  isNameValid: boolean = false;
+  isNameWarning: boolean = false;
+
+  focusNameInput() {
+    console.log('FOCUS name');
+  }
+
+  validateName() {
+    console.log('VALIDTAE name');
+  }
+
+  // email validation
+  isEmailValid: boolean = false;
+  isEmailWarning: boolean = false;
+
+  focusEmailInput() {
+      console.log('FOCUS email');
+  }
+
+  validateEmail() {
+    console.log('VALIDTAE email');
+  }
+
+  // message validation
+  isMassageValid: boolean = false;
+  isMessageWarning: boolean = false;
+
+  focusMessageInput() {
+    console.log('FOCUS message');
+  }
+
+  validateMessage() {
+      console.log('VALIDTAE message');
+  }
+
+   // function to check if the checkbox is checked
+   isCheckboxChecked: boolean = false;
+
+   checkCheckBox() {
+     this.isCheckboxChecked = !this.isCheckboxChecked;
+     console.log(this.isCheckboxChecked);
+   }
+ 
+   validateCheckbox() {}
+
+    // function to validate the input fields after blur
+  validateAfterBlur(inputField: String) {
+    if (inputField == 'name' && this.nameInputNgModel.length > 0) {
+      this.validateName();
+    } else if (inputField == 'email' && this.emailInputNgModel.length > 0) {
+      this.validateEmail();
+    } else if (inputField == 'message' && this.messageInputNgModel.length > 0) {
+      this.validateMessage();
+    } else {
+      return;
+    }
+  }
+
+  // function to validate all the input fields
+  areAllInputsValid: boolean = false;
+
+  validateAll() {
+    this.validateName();
+    this.validateEmail();
+    this.validateMessage();
+    this.validateCheckbox();
+  }
+
+  // function to reset the form
 }

@@ -3,9 +3,11 @@
     <div class="inputBox">
       <label for="name">{{ labelNameText }}</label>
       <input
+        (focus)="focusNameInput()"
+        (blur)="validateAfterBlur('name')"
         type="text"
         id="nameInput"
-        class="nameInput"
+        [ngClass]="{'nameInput': true, 'validationWarning': isNameWarning}"
         name="name"
         [placeholder]="placeholderNameText"
         [(ngModel)]="nameInputNgModel"
@@ -15,21 +17,26 @@
     <div class="inputBox">
       <label for="email">{{ labelEmailText }}</label>
       <input
+        (focus)="focusEmailInput()"
+        (blur)="validateAfterBlur('email')"
         type="email"
         id="nameInput"
-        class="emailInput"
+        [ngClass]="{'emailInput': true, 'validationWarning': isEmailWarning}"
         name="email"
         [placeholder]="placeholderEmailText"
         [(ngModel)]="emailInputNgModel"
         required
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
     </div>
     <div id="messageBox" class="inputBox">
       <label for="message">{{ labelMessageText }}</label>
       <textarea
+        (focus)="focusMessageInput()"
+        (blur)="validateAfterBlur('message')"
         name="message"
         id="messageInput"
-        class="messageInput"
+        [ngClass]="{'messageInput': true, 'validationWarning': isMessageWarning}"
         [placeholder]="placeholderMessageText"
         [(ngModel)]="messageInputNgModel"
         required
@@ -55,7 +62,7 @@
         <a href="">{{ privacyPolicyLinkText }}</a>
         <p>{{ privacyPolicySecondText }}</p>
       </div>
-      <p class="checkboxValidationField"></p>
+      <p class="checkboxValidationField">{{ checkboxValidationField }}&nbsp;</p>
     </div>
     <div class="buttonBox">
       <button class="submitButton" type="submit" value="submit">
