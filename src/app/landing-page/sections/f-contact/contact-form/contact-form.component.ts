@@ -162,8 +162,8 @@ export class ContactFormComponent {
   onSubmit() {
     this.validateAll();
     if (this.areAllInputsValid) {
-      console.log("Form submitted successfully!");
-      
+      console.log('Form submitted successfully!');
+      this.resetAllInputs();
     }
   }
 
@@ -338,5 +338,16 @@ export class ContactFormComponent {
     }
   }
 
-  // function to reset the form
+  resetAllInputs() {
+      this.isNameValid = false;
+      this.isEmailValid = false;
+      this.isMassageValid = false;
+      this.isCheckboxChecked = false;
+      this.nameInputNgModel = '';
+      this.nameCacheNgModel = '';
+      this.emailInputNgModel = '';
+      this.emailCacheNgModel = '';
+      this.messageInputNgModel = '';
+      this.messageCacheNgModel = '';
+  }
 }
