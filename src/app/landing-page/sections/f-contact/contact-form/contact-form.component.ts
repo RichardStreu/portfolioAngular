@@ -162,6 +162,8 @@ export class ContactFormComponent {
   onSubmit() {
     this.validateAll();
     if (this.areAllInputsValid) {
+      console.log("Form submitted successfully!");
+      
     }
   }
 
@@ -190,7 +192,11 @@ export class ContactFormComponent {
       return;
     }
 
-    if (name.length < 3 || !validName) {
+    if (charactersRegex.test(name)) {
+      this.isNameWarning = true;
+      this.nameCacheNgModel = this.nameInputNgModel;
+      this.nameInputNgModel = this.messageCharacterWarning;
+    } else if (name.length < 3 || !validName) {
       this.nameCacheNgModel = this.nameInputNgModel;
       this.isNameWarning = true;
       this.nameInputNgModel = this.nameDefaultWarning;
@@ -320,7 +326,6 @@ export class ContactFormComponent {
     this.validateEmail();
     this.validateMessage();
     this.validateCheckbox();
-
     if (
       this.isNameValid &&
       this.isEmailValid &&
@@ -331,8 +336,6 @@ export class ContactFormComponent {
     } else {
       this.areAllInputsValid = false;
     }
-
-    console.log('Is Form Valid: ' + this.areAllInputsValid);
   }
 
   // function to reset the form
