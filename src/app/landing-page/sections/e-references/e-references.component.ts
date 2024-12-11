@@ -81,11 +81,6 @@ export class EReferencesComponent {
       this.carouselBoxWidth = (carouselBox as HTMLElement).offsetWidth;
       this.singleReferenceWidth = (singleReference as HTMLElement).offsetWidth;
     }
-    console.log(
-      this.carouselContainerWidth,
-      this.carouselBoxWidth,
-      this.singleReferenceWidth
-    );
   }
 
   firstCarouselPositioning() {
