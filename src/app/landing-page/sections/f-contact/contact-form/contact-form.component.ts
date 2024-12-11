@@ -116,10 +116,12 @@ export class ContactFormComponent {
 
   // function to submit the form
   onSubmit(contactForm: NgForm) {
-    let nameInput = contactForm.value.name;
-    let emailInput = contactForm.value.email;
-    let messageInput = contactForm.value.message;
+    if (contactForm.valid && contactForm.submitted && this.isCheckboxChecked) {
+      let nameInput = contactForm.value.name;
+      let emailInput = contactForm.value.email;
+      let messageInput = contactForm.value.message;
 
-    console.log(nameInput, emailInput, messageInput);
+      console.log(nameInput, emailInput, messageInput);
+    }
   }
 }
