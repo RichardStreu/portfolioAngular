@@ -191,6 +191,12 @@ export class ContactFormComponent {
     this.validateEmail();
     this.validateMessage();
     this.validateCheckbox();
+
+    if (this.isNameValid && this.isEmailValid && this.isMassageValid && this.isCheckboxChecked) {
+      this.areAllInputsValid = true;
+    } else {
+      this.areAllInputsValid = false;
+    }
   }
 
   // function to reset the form
