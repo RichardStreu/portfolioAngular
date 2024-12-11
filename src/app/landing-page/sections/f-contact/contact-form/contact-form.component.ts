@@ -165,6 +165,7 @@ export class ContactFormComponent {
   focusNameInput() {
     if (this.isNameWarning) {
       this.nameInputNgModel = this.nameCacheNgModel;
+      this.nameCacheNgModel = '';
       this.isNameWarning = false;
     }
   }
@@ -191,6 +192,7 @@ export class ContactFormComponent {
   focusEmailInput() {
     if (this.isEmailWarning) {
       this.emailInputNgModel = this.emailCacheNgModel;
+      this.emailCacheNgModel = '';
       this.isEmailWarning = false;
     }
   }
