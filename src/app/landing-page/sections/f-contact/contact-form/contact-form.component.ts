@@ -29,6 +29,7 @@ export class ContactFormComponent {
   nameDefaultWarning: string = '';
   emailDefaultWarning: string = '';
   messageDefaultWarning: string = '';
+  messageCharacterWarning: string = '';
   checkboxDefaultWarning: string = '';
 
   // variables to assign messages to the input fields
@@ -56,6 +57,7 @@ export class ContactFormComponent {
       this.chooseNameDefaultWarning();
       this.chooseEmailDefaultWarning();
       this.chooseMessageDefaultWarning();
+      this.chooseMessageCharacterWarning();
       this.chooseCheckboxDefaultWarning();
     });
   }
@@ -131,8 +133,14 @@ export class ContactFormComponent {
   chooseMessageDefaultWarning() {
     this.messageDefaultWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Please enter your message'
-        : 'Bitte geben Sie Ihre Nachricht ein';
+        ? 'Your message must be at least 2 words long.'
+        : 'Deine Nachricht muss mindestens 2 Worte lang sein.';
+  }
+  chooseMessageCharacterWarning() {
+    this.messageCharacterWarning =
+      this.languageService.currentLanguage == 'en'
+        ? 'Please do not use the following special characters: < > " \' `.'
+        : 'Bitte verwende nicht die folgenden Sonderzeichen: < > " \' `.';
   }
   chooseCheckboxDefaultWarning() {
     this.checkboxDefaultWarning =
@@ -154,7 +162,6 @@ export class ContactFormComponent {
   onSubmit() {
     this.validateAll();
     if (this.areAllInputsValid) {
-   
     }
   }
 
@@ -175,13 +182,21 @@ export class ContactFormComponent {
     let name = this.nameInputNgModel;
     let validName = nameRegex.test(name);
 
+    if (
+      this.nameInputNgModel == this.nameDefaultWarning ||
+      this.nameInputNgModel == this.messageCharacterWarning
+    ) {
+      return;
+    }
+
     if (name.length < 3 || !validName) {
       this.nameCacheNgModel = this.nameInputNgModel;
       this.isNameWarning = true;
       this.nameInputNgModel = this.nameDefaultWarning;
-    }
-    else {
+    } else {
       this.isNameValid = true;
+      this.nameCacheNgModel = '';
+      this.isNameWarning = false;
     }
   }
 
@@ -202,13 +217,21 @@ export class ContactFormComponent {
     let email = this.emailInputNgModel;
     let validEmail = emailRegex.test(email);
 
+    if (
+      this.emailInputNgModel == this.emailDefaultWarning ||
+      this.emailInputNgModel == this.messageCharacterWarning
+    ) {
+      return;
+    }
+
     if (!validEmail) {
       this.emailCacheNgModel = this.emailInputNgModel;
       this.isEmailWarning = true;
       this.emailInputNgModel = this.emailDefaultWarning;
-    }
-    else {
+    } else {
       this.isEmailValid = true;
+      this.emailCacheNgModel = '';
+      this.isEmailWarning = false;
     }
   }
 
@@ -219,13 +242,36 @@ export class ContactFormComponent {
   focusMessageInput() {
     if (this.isMessageWarning) {
       this.messageInputNgModel = this.messageCacheNgModel;
+      this.messageCacheNgModel = '';
       this.isMessageWarning = false;
     }
   }
 
   validateMessage() {
     let message = this.messageInputNgModel;
+    let charactersRegex = /[<>"'`]/;
+    let wordsRegex = /^(\b\w+\b\s+){1,}\b\w+\b.*$/;
 
+    if (
+      this.messageInputNgModel == this.messageDefaultWarning ||
+      this.messageInputNgModel == this.messageCharacterWarning
+    ) {
+      return;
+    }
+
+    if (charactersRegex.test(message)) {
+      this.isMessageWarning = true;
+      this.messageCacheNgModel = this.messageInputNgModel;
+      this.messageInputNgModel = this.messageCharacterWarning;
+    } else if (!wordsRegex.test(message)) {
+      this.isMessageWarning = true;
+      this.messageCacheNgModel = this.messageInputNgModel;
+      this.messageInputNgModel = this.messageDefaultWarning;
+    } else {
+      this.isMassageValid = true;
+      this.messageCacheNgModel = '';
+      this.isMessageWarning = false;
+    }
   }
 
   // function to check if the checkbox is checked
@@ -280,9 +326,10 @@ export class ContactFormComponent {
       this.areAllInputsValid = false;
     }
 
-    console.log("Is Form Valid: " + this.areAllInputsValid);
-    
+    console.log('Is Form Valid: ' + this.areAllInputsValid);
   }
 
   // function to reset the form
 }
+
+
