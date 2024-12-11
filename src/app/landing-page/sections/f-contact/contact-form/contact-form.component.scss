@@ -63,10 +63,6 @@
         color: white;
       }
 
-      &:focus {
-        outline: none;
-        border-bottom: 1px solid $color-highLight!important;
-      }
     }
 
     textarea {
