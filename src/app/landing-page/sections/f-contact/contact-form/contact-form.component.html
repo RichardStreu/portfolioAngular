@@ -36,14 +36,26 @@
       ></textarea>
     </div>
     <div class="privacyPolicyBox">
-      <div (click)="checkCheckBox()" class="checkBox">
-        <svg [ngClass]="{'opacity_1': isCheckboxChecked}" width="10" height="8" viewBox="0 0 10 8" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M1 4L4 7L9 1" />
-        </svg>
+      <div>
+        <div (click)="checkCheckBox()" class="checkBox">
+          <svg
+            [ngClass]="{ opacity_1: isCheckboxChecked }"
+            width="10"
+            height="8"
+            viewBox="0 0 10 8"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M1 4L4 7L9 1" />
+          </svg>
+        </div>
+        <p>{{ privacyPolicyFirstText }}</p>
+        <a href="">{{ privacyPolicyLinkText }}</a>
+        <p>{{ privacyPolicySecondText }}</p>
       </div>
-      <p>{{ privacyPolicyFirstText }}</p>
-      <a href="">{{ privacyPolicyLinkText }}</a>
-      <p>{{ privacyPolicySecondText }}</p>
+      <p class="checkboxValidationField"></p>
     </div>
     <div class="buttonBox">
       <button class="submitButton" type="submit" value="submit">

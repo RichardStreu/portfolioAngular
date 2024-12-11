@@ -12,26 +12,31 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactFormComponent {
   languageService = inject(LanguageService);
-
+  // variables to store the text for the contact form
   labelNameText: string = '';
   placeholderNameText: string = '';
-  nameInputNgModel: string = '';
-
   labelEmailText: string = '';
   placeholderEmailText: string = '';
-  emailInputNgModel: string = '';
-
   labelMessageText: string = '';
   placeholderMessageText: string = '';
-  messageInputNgModel: string = '';
-
   privacyPolicyFirstText: string = '';
   privacyPolicyLinkText: string = '';
   privacyPolicySecondText: string = '';
-  privacyPolicyValidationText: string = '';
-
   submitButtonText: string = '';
 
+  // variables to store the validation warning messages for
+  nameDefaultWarning: string = '';
+  emailDefaultWarning: string = '';
+  messageDefaultWarning: string = '';
+  checkboxDefaultWarning: string = '';
+
+  // variables to assign messages to the input fields
+  nameInputNgModel: string = '';
+  emailInputNgModel: string = '';
+  messageInputNgModel: string = '';
+  checkboxValidationField: string = '';
+
+  // function to change the language of the contact form
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
       this.labelNameText =
@@ -74,9 +79,26 @@ export class ContactFormComponent {
         this.languageService.currentLanguage == 'en'
           ? 'Say Hello ;)'
           : 'Sag Hallo ;)';
+      this.nameDefaultWarning =
+        this.languageService.currentLanguage == 'en'
+          ? 'Please enter your name'
+          : 'Bitte geben Sie Ihren Namen ein';
+      this.emailDefaultWarning =
+        this.languageService.currentLanguage == 'en'
+          ? 'Please enter your email'
+          : 'Bitte geben Sie Ihre E-Mail ein';
+      this.messageDefaultWarning =
+        this.languageService.currentLanguage == 'en'
+          ? 'Please enter your message'
+          : 'Bitte geben Sie Ihre Nachricht ein';
+      this.checkboxDefaultWarning =
+        this.languageService.currentLanguage == 'en'
+          ? 'Please accept the privacy policy.'
+          : 'Bitte akzeptieren Sie die Datenschutzrichtlinien.';
     });
   }
 
+  // constructor to call the function to change the language
   constructor() {
     this.chooseLanguage();
   }
@@ -85,13 +107,14 @@ export class ContactFormComponent {
     this.chooseLanguage();
   }
 
+  // function to check if the checkbox is checked
   isCheckboxChecked: boolean = false;
-
   checkCheckBox() {
     this.isCheckboxChecked = !this.isCheckboxChecked;
     console.log(this.isCheckboxChecked);
   }
 
+  // function to submit the form
   onSubmit(contactForm: NgForm) {
     let nameInput = contactForm.value.name;
     let emailInput = contactForm.value.email;

@@ -18,8 +18,6 @@
     border-top: 2px solid $color-highLight;
   }
 
-  
-
   .inputBox {
     width: 100%;
     display: flex;
@@ -49,11 +47,11 @@
       transition: all 0.2s ease-in-out;
 
       &:-webkit-autofill {
-        background-color: transparent!important;
+        background-color: transparent !important;
         box-shadow: 0 0 0px 1000px $color-bgDark inset !important;
         color: white !important;
         -webkit-text-fill-color: white !important;
-        border: none!important;
+        border: none !important;
       }
 
       &::placeholder {
@@ -62,7 +60,6 @@
         font-size: 1.13rem;
         color: white;
       }
-
     }
 
     textarea {
@@ -93,52 +90,63 @@
 
   .privacyPolicyBox {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
 
-    .checkBox {
-      margin-right: 0.75rem;
-      cursor: pointer;
-      width: 18px;
-      height: 18px;
-      border: 2px solid $color-highLight;
-      border-radius: 4px;
+    div {
       display: flex;
-      justify-content: center;
       align-items: center;
 
-      svg {
+      .checkBox {
+        margin-right: 0.75rem;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        border: 2px solid $color-highLight;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          transition: all 0.2s ease-in-out;
+          stroke: $color-highLight;
+          opacity: 0;
+        }
+
+        .opacity_1 {
+          opacity: 1;
+        }
+      }
+
+      p {
+        font-family: "Karla", sans-serif;
+        font-size: 0.93rem;
+        color: white;
+      }
+
+      a {
+        font-family: "Karla", sans-serif;
+        font-size: 0.93rem;
+        color: $color-highLight;
+        text-decoration: none;
+        letter-spacing: 1px;
+        padding: 0 0.25rem;
         transition: all 0.2s ease-in-out;
-        stroke: $color-highLight;
-        opacity: 0;
-      }
 
-      .opacity_1 {
-        opacity: 1;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
-    p {
-      font-family: "Karla", sans-serif;
-      font-size: 0.93rem;
-      color: white;
-    }
-
-    a {
+    .checkboxValidationField {
       font-family: "Karla", sans-serif;
       font-size: 0.93rem;
       color: $color-highLight;
-      text-decoration: none;
-      letter-spacing: 1px;
-      padding: 0 0.25rem;
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      padding-top: 0.5rem;
     }
-
   }
 
   .buttonBox {
@@ -160,14 +168,14 @@
       position: relative;
       display: inline-block;
       overflow: hidden;
-    
+
       span {
         position: relative;
       }
-    
+
       &:hover {
         border: 2px solid $color-highLight;
-    
+
         span {
           transition: all 1s ease-in;
           display: inline-block;
@@ -181,5 +189,3 @@
     }
   }
 }
-
-
