@@ -178,6 +178,7 @@ export class ContactFormComponent {
   }
 
   validateName() {
+    const charactersRegex = /[<>"'`]/;
     const nameRegex = /^[A-Za-z]+(-[A-Za-z]+)? [A-Za-z]+(-[A-Za-z]+)?$/;
     let name = this.nameInputNgModel;
     let validName = nameRegex.test(name);
@@ -213,6 +214,7 @@ export class ContactFormComponent {
   }
 
   validateEmail() {
+    const charactersRegex = /[<>"'`]/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     let email = this.emailInputNgModel;
     let validEmail = emailRegex.test(email);
@@ -224,7 +226,11 @@ export class ContactFormComponent {
       return;
     }
 
-    if (!validEmail) {
+    if (charactersRegex.test(email)) {
+      this.isEmailWarning = true;
+      this.emailCacheNgModel = this.emailInputNgModel;
+      this.emailInputNgModel = this.messageCharacterWarning;
+    } else if (!validEmail) {
       this.emailCacheNgModel = this.emailInputNgModel;
       this.isEmailWarning = true;
       this.emailInputNgModel = this.emailDefaultWarning;
@@ -248,8 +254,8 @@ export class ContactFormComponent {
   }
 
   validateMessage() {
-    let message = this.messageInputNgModel;
-    let charactersRegex = /[<>"'`]/;
+    const message = this.messageInputNgModel;
+    const charactersRegex = /[<>"'`]/;
     let wordsRegex = /^(\b\w+\b\s+){1,}\b\w+\b.*$/;
 
     if (
@@ -331,5 +337,3 @@ export class ContactFormComponent {
 
   // function to reset the form
 }
-
-
