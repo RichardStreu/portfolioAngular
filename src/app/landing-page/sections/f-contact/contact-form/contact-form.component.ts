@@ -201,10 +201,8 @@ export class ContactFormComponent {
       //   });
     } else if (this.areAllInputsValid && this.mailTest) {
       this.doSubmitButtonSuccessAnimation();
-
       setTimeout(() => {
         this.doSubmitButtonSuccessAnimation();
-
         setTimeout(() => {
           this.resetAllInputs();
           setTimeout(() => {
