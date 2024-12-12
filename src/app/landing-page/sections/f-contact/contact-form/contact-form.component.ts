@@ -169,10 +169,10 @@ export class ContactFormComponent {
 
   ngOnInit() {
     this.chooseLanguage();
-  } 
+  }
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://richardstreu.dev/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -182,23 +182,51 @@ export class ContactFormComponent {
     },
   };
 
-  mailTest:boolean = true;
+  contactData = {
+    name: '',
+    email: '',
+    message: '',
+  };
+
+  fillContactData() {
+    this.contactData.name = this.nameInputNgModel;
+    this.contactData.email = this.emailInputNgModel;
+    this.contactData.message = this.messageInputNgModel;
+  }
+
+  clearContactData() {
+    this.contactData.name = '';
+    this.contactData.email = '';
+    this.contactData.message = '';
+  }
+
+  mailTest: boolean = true;
 
   // function to submit the form
   onSubmit() {
     this.validateAll();
+    this.fillContactData();
     if (this.areAllInputsValid && !this.mailTest) {
-      // this.http.post(this.post.endPoint, this.post.body(this.contactData))
-      //   .subscribe({
-      //     next: (response) => {
-
-      //       ngForm.resetForm();
-      //     },
-      //     error: (error) => {
-      //       console.error(error);
-      //     },
-      //     complete: () => console.info('send post complete'),
-      //   });
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            this.doSubmitButtonSuccessAnimation();
+            setTimeout(() => {
+              this.doSubmitButtonSuccessAnimation();
+              setTimeout(() => {
+                this.resetAllInputs();
+                setTimeout(() => {
+                  this.isRotateOut = false;
+                }, 400);
+              }, 400);
+            }, 2800);
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
     } else if (this.areAllInputsValid && this.mailTest) {
       this.doSubmitButtonSuccessAnimation();
       setTimeout(() => {
@@ -464,5 +492,4 @@ export class ContactFormComponent {
     textarea.style.height = 'auto'; // Reset the height to auto to make sure the textarea will shrink as well as grow
     textarea.style.height = `${textarea.scrollHeight}px`;
   }
-
 }
