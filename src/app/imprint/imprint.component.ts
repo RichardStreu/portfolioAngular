@@ -4,12 +4,12 @@ import { FooterComponent } from '../core/footer/footer.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-legal-notice',
+  selector: 'app-imprint',
   standalone: true,
   imports: [HeaderComponent, FooterComponent, CommonModule],
-  templateUrl: './legal-notice.component.html',
-  styleUrl: './legal-notice.component.scss'
+  templateUrl: './imprint.component.html',
+  styleUrl: './imprint.component.scss'
 })
-export class LegalNoticeComponent {
+export class ImprintComponent {
 
 }
