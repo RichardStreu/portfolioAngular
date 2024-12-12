@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-
 export class HeaderComponent {
   /**
    * Injects the LanguageService to manage language-related operations.
