@@ -33,6 +33,31 @@ export class ReferenceDataService {
           de: "Richard hat zum Erfolg des JOIN Projektes sehr beigetragen. Er hat eine super Stimmung ins Team gebracht und einen großen Teil im API-Service beigetragen. Durch seine tollen CSS-Kenntnisse und seine fortgeschrittenen JavaScript-Kenntnisse hat er einen großen Teil des Projekts eigenständig getragen und uns geholfen, das Projekt erfolgreich abzuschließen. Durch seine Pünktlichkeit, Zuverlässigkeit und seine einfallsreichen Ideen hat er das Team zusätzlich gestärkt und neu motiviert, um die Deadline einhalten zu können.",
         },
       },
+      {
+        name: 'David Werner',
+        position: 'Team Member',
+        referenceText: {
+          en: "Richard has made a significant contribution to the success of the JOIN project. He brought an excellent atmosphere to the team and played a major role in the API service. Thanks to his outstanding CSS skills and advanced JavaScript expertise, he carried a significant part of the project independently and helped us successfully complete it. His punctuality, reliability, and creative ideas further strengthened the team and motivated us to meet the deadline.",
+          de: "Richard hat zum Erfolg des JOIN Projektes sehr beigetragen. Er hat eine super Stimmung ins Team gebracht und einen großen Teil im API-Service beigetragen. Durch seine tollen CSS-Kenntnisse und seine fortgeschrittenen JavaScript-Kenntnisse hat er einen großen Teil des Projekts eigenständig getragen und uns geholfen, das Projekt erfolgreich abzuschließen. Durch seine Pünktlichkeit, Zuverlässigkeit und seine einfallsreichen Ideen hat er das Team zusätzlich gestärkt und neu motiviert, um die Deadline einhalten zu können.",
+        },
+      },
+      {
+        name: 'David Werner',
+        position: 'Team Member',
+        referenceText: {
+          en: "Richard has made a significant contribution to the success of the JOIN project. He brought an excellent atmosphere to the team and played a major role in the API service. Thanks to his outstanding CSS skills and advanced JavaScript expertise, he carried a significant part of the project independently and helped us successfully complete it. His punctuality, reliability, and creative ideas further strengthened the team and motivated us to meet the deadline.",
+          de: "Richard hat zum Erfolg des JOIN Projektes sehr beigetragen. Er hat eine super Stimmung ins Team gebracht und einen großen Teil im API-Service beigetragen. Durch seine tollen CSS-Kenntnisse und seine fortgeschrittenen JavaScript-Kenntnisse hat er einen großen Teil des Projekts eigenständig getragen und uns geholfen, das Projekt erfolgreich abzuschließen. Durch seine Pünktlichkeit, Zuverlässigkeit und seine einfallsreichen Ideen hat er das Team zusätzlich gestärkt und neu motiviert, um die Deadline einhalten zu können.",
+        },
+      },
+      {
+        name: 'David Werner',
+        position: 'Team Member',
+        referenceText: {
+          en: "Richard has made a significant contribution to the success of the JOIN project. He brought an excellent atmosphere to the team and played a major role in the API service. Thanks to his outstanding CSS skills and advanced JavaScript expertise, he carried a significant part of the project independently and helped us successfully complete it. His punctuality, reliability, and creative ideas further strengthened the team and motivated us to meet the deadline.",
+          de: "Richard hat zum Erfolg des JOIN Projektes sehr beigetragen. Er hat eine super Stimmung ins Team gebracht und einen großen Teil im API-Service beigetragen. Durch seine tollen CSS-Kenntnisse und seine fortgeschrittenen JavaScript-Kenntnisse hat er einen großen Teil des Projekts eigenständig getragen und uns geholfen, das Projekt erfolgreich abzuschließen. Durch seine Pünktlichkeit, Zuverlässigkeit und seine einfallsreichen Ideen hat er das Team zusätzlich gestärkt und neu motiviert, um die Deadline einhalten zu können.",
+        },
+      },
+      
     ];
   }
 }

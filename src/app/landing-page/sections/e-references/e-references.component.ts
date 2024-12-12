@@ -136,7 +136,7 @@ export class EReferencesComponent {
       this.isCarouselBoxTransition = true;
       this.isSingleReferenceTransition = true;
       this.currentReferenceIndex = this.references.length;
-      this.currentDotIndex = 2;
+      this.currentDotIndex = this.references.length - 1;
       (this.carouselBox as HTMLElement).style.transform = `translateX(-${
         this.lastTranslateX - (this.singleReferenceWidth + this.gapWidth)
       }px)`;
