@@ -23,7 +23,8 @@ export class ContactFormComponent {
   privacyPolicyFirstText: string = '';
   privacyPolicyLinkText: string = '';
   privacyPolicySecondText: string = '';
-  submitButtonText: string = '';
+  submitButtonDefaultText: string = '';
+  submitButtonSuccessText: string = '';
 
   // variables to store the validation warning messages for
   nameDefaultWarning: string = '';
@@ -32,11 +33,12 @@ export class ContactFormComponent {
   messageCharacterWarning: string = '';
   checkboxDefaultWarning: string = '';
 
-  // variables to assign messages to the input fields
+  // variables to assign text to input fields & submit button
   nameInputNgModel: string = '';
   emailInputNgModel: string = '';
   messageInputNgModel: string = '';
   checkboxValidationField: string = '';
+  submitButtonText: string = '';
 
   // variables to cache the input NgModels before validation warning
   nameCacheNgModel: string = '';
@@ -93,11 +95,17 @@ export class ContactFormComponent {
         ? 'and agree to the processing of my data as outlined.'
         : 'zu.';
   }
-  chooseSubmitButtonText() {
-    this.submitButtonText =
+  chooseSubmitButtonDefaultText() {
+    this.submitButtonDefaultText =
       this.languageService.currentLanguage == 'en'
         ? 'Say Hello ;)'
         : 'Sag Hallo ;)';
+  }
+  chooseSubmitButtonSuccessText() {
+    this.submitButtonSuccessText =
+      this.languageService.currentLanguage == 'en'
+        ? "Message sent! I'll be in touch soon."
+        : 'Nachricht gesendet! Ich melde mich bald.';
   }
   chooseNameDefaultWarning() {
     this.nameDefaultWarning =
@@ -140,7 +148,8 @@ export class ContactFormComponent {
       this.chooseLabelMessageText();
       this.choosePlaceholderMessageText();
       this.choosePrivacyPolicyTexts();
-      this.chooseSubmitButtonText();
+      this.chooseSubmitButtonDefaultText();
+      this.chooseSubmitButtonSuccessText();
       this.chooseNameDefaultWarning();
       this.chooseEmailDefaultWarning();
       this.chooseMessageDefaultWarning();
@@ -152,6 +161,7 @@ export class ContactFormComponent {
   // constructor to call the function to change the language
   constructor() {
     this.chooseLanguage();
+    this.submitButtonText = this.submitButtonDefaultText;
   }
 
   ngOnInit() {
