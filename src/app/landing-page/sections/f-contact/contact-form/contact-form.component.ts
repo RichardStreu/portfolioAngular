@@ -424,6 +424,7 @@ export class ContactFormComponent {
     this.isEmailValid = false;
     this.isMessageValid = false;
     this.isCheckboxChecked = false;
+    this.areAllInputsValid = false;
     this.nameInputNgModel = '';
     this.nameCacheNgModel = '';
     this.emailInputNgModel = '';
