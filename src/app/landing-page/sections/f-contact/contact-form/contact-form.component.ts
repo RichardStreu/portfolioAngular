@@ -111,7 +111,7 @@ export class ContactFormComponent {
     this.nameDefaultWarning =
       this.languageService.currentLanguage == 'en'
         ? 'Please enter a valid name, e.g., "John-Mia Doe".'
-        : 'Bitte schreib deinen Namen so, z. B. "Max-Mai Muster".';
+        : 'Bitte schreib deinen Namen so, z. B. "Max-Mia Muster".';
   }
   chooseEmailDefaultWarning() {
     this.emailDefaultWarning =
@@ -172,15 +172,36 @@ export class ContactFormComponent {
   onSubmit() {
     this.validateAll();
     if (this.areAllInputsValid) {
+      this.doSubmitButtonSuccessAnimation();
+
       setTimeout(() => {
-        this.submitButtonText = this.submitButtonSuccessText;
+        this.doSubmitButtonSuccessAnimation();
 
         setTimeout(() => {
-          this.submitButtonText = this.submitButtonDefaultText;
           this.resetAllInputs();
-        }, 2500);
-      }, 200);
+          setTimeout(() => {
+            this.isRotateOut = false;
+          }, 400);
+        }, 400);
+      }, 2800);
     }
+  }
+
+  isRotateIn: boolean = false;
+  isRotateOut: boolean = false;
+
+  doSubmitButtonSuccessAnimation() {
+    this.isRotateOut = false;
+    this.isRotateIn = true;
+    setTimeout(() => {
+      if (this.submitButtonText == this.submitButtonDefaultText) {
+        this.submitButtonText = this.submitButtonSuccessText;
+      } else {
+        this.submitButtonText = this.submitButtonDefaultText;
+      }
+      this.isRotateIn = false;
+      this.isRotateOut = true;
+    }, 400);
   }
 
   // name validation
