@@ -7,7 +7,7 @@
         (blur)="validateAfterBlur('name')"
         type="text"
         id="nameInput"
-        [ngClass]="{'nameInput': true, 'validationWarning': isNameWarning}"
+        [ngClass]="{ nameInput: true, validationWarning: isNameWarning }"
         name="name"
         [placeholder]="placeholderNameText"
         [(ngModel)]="nameInputNgModel"
@@ -21,7 +21,7 @@
         (blur)="validateAfterBlur('email')"
         type="email"
         id="nameInput"
-        [ngClass]="{'emailInput': true, 'validationWarning': isEmailWarning}"
+        [ngClass]="{ emailInput: true, validationWarning: isEmailWarning }"
         name="email"
         [placeholder]="placeholderEmailText"
         [(ngModel)]="emailInputNgModel"
@@ -38,7 +38,7 @@
         rows="1"
         name="message"
         id="messageInput"
-        [ngClass]="{'messageInput': true, 'validationWarning': isMessageWarning}"
+        [ngClass]="{ messageInput: true, validationWarning: isMessageWarning }"
         [placeholder]="placeholderMessageText"
         [(ngModel)]="messageInputNgModel"
         required
@@ -67,7 +67,15 @@
       <p class="checkboxValidationField">{{ checkboxValidationField }}&nbsp;</p>
     </div>
     <div class="buttonBox">
-      <button class="submitButton" type="submit" value="submit">
+      <button
+        [ngClass]="{
+          submitButton: true,
+          hoverValid: areAllInputsValid,
+          hoverInvalid: !areAllInputsValid
+        }"
+        type="submit"
+        value="submit"
+      >
         <span>{{ submitButtonText }}</span>
       </button>
     </div>
