@@ -438,4 +438,5 @@ export class ContactFormComponent {
     textarea.style.height = 'auto'; // Reset the height to auto to make sure the textarea will shrink as well as grow
     textarea.style.height = `${textarea.scrollHeight}px`;
   }
+
 }
