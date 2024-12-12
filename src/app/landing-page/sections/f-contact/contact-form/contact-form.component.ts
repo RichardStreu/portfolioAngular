@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../../../services/language.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-form',
@@ -12,6 +13,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactFormComponent {
   languageService = inject(LanguageService);
+
+  http = inject(HttpClient);
 
   // variables to store the text for the contact form
   labelNameText: string = '';
@@ -166,12 +169,37 @@ export class ContactFormComponent {
 
   ngOnInit() {
     this.chooseLanguage();
-  }
+  } 
+
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
+  mailTest:boolean = true;
 
   // function to submit the form
   onSubmit() {
     this.validateAll();
-    if (this.areAllInputsValid) {
+    if (this.areAllInputsValid && !this.mailTest) {
+      // this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      //   .subscribe({
+      //     next: (response) => {
+
+      //       ngForm.resetForm();
+      //     },
+      //     error: (error) => {
+      //       console.error(error);
+      //     },
+      //     complete: () => console.info('send post complete'),
+      //   });
+    } else if (this.areAllInputsValid && this.mailTest) {
       this.doSubmitButtonSuccessAnimation();
 
       setTimeout(() => {
