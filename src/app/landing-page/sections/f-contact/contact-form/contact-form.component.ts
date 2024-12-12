@@ -273,6 +273,7 @@ export class ContactFormComponent {
 
     if (charactersRegex.test(message)) {
       this.isMessageWarning = true;
+      this.isMassageValid = false;
       this.messageCacheNgModel = this.messageInputNgModel;
       this.messageInputNgModel = this.messageCharacterWarning;
     } else if (!wordsRegex.test(message)) {
@@ -293,6 +294,14 @@ export class ContactFormComponent {
     this.isCheckboxChecked = !this.isCheckboxChecked;
     if (this.checkboxValidationField.length > 0) {
       this.checkboxValidationField = '';
+    }
+    if (this.areAllInputsValid) {
+      this.areAllInputsValid = false;
+      return;
+    }
+    if (this.isNameValid && this.isEmailValid && this.isMassageValid) {
+      this.areAllInputsValid = true;
+      return;
     }
   }
 
