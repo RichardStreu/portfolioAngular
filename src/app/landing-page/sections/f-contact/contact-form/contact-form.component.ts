@@ -194,16 +194,28 @@ export class ContactFormComponent {
 
     if (charactersRegex.test(name)) {
       this.isNameWarning = true;
+      this.isNameValid = false;
+      this.areAllInputsValid = false;
       this.nameCacheNgModel = this.nameInputNgModel;
       this.nameInputNgModel = this.messageCharacterWarning;
     } else if (name.length < 3 || !validName) {
-      this.nameCacheNgModel = this.nameInputNgModel;
       this.isNameWarning = true;
+      this.isNameValid = false;
+      this.areAllInputsValid = false;
+      this.nameCacheNgModel = this.nameInputNgModel;
       this.nameInputNgModel = this.nameDefaultWarning;
     } else {
       this.isNameValid = true;
       this.nameCacheNgModel = '';
       this.isNameWarning = false;
+      if (
+        this.isNameValid &&
+        this.isEmailValid &&
+        this.isMessageValid &&
+        this.isCheckboxChecked
+      ) {
+        this.areAllInputsValid = true;
+      }
     }
   }
 
@@ -234,21 +246,33 @@ export class ContactFormComponent {
 
     if (charactersRegex.test(email)) {
       this.isEmailWarning = true;
+      this.isEmailValid = false;
+      this.areAllInputsValid = false;
       this.emailCacheNgModel = this.emailInputNgModel;
       this.emailInputNgModel = this.messageCharacterWarning;
     } else if (!validEmail) {
-      this.emailCacheNgModel = this.emailInputNgModel;
       this.isEmailWarning = true;
+      this.isEmailValid = false;
+      this.areAllInputsValid = false;
+      this.emailCacheNgModel = this.emailInputNgModel;
       this.emailInputNgModel = this.emailDefaultWarning;
     } else {
       this.isEmailValid = true;
       this.emailCacheNgModel = '';
       this.isEmailWarning = false;
+      if (
+        this.isNameValid &&
+        this.isEmailValid &&
+        this.isMessageValid &&
+        this.isCheckboxChecked
+      ) {
+        this.areAllInputsValid = true;
+      }
     }
   }
 
   // message validation
-  isMassageValid: boolean = false;
+  isMessageValid: boolean = false;
   isMessageWarning: boolean = false;
 
   focusMessageInput() {
@@ -273,17 +297,28 @@ export class ContactFormComponent {
 
     if (charactersRegex.test(message)) {
       this.isMessageWarning = true;
-      this.isMassageValid = false;
+      this.isMessageValid = false;
+      this.areAllInputsValid = false;
       this.messageCacheNgModel = this.messageInputNgModel;
       this.messageInputNgModel = this.messageCharacterWarning;
     } else if (!wordsRegex.test(message)) {
       this.isMessageWarning = true;
+      this.isMessageValid = false;
+      this.areAllInputsValid = false;
       this.messageCacheNgModel = this.messageInputNgModel;
       this.messageInputNgModel = this.messageDefaultWarning;
     } else {
-      this.isMassageValid = true;
+      this.isMessageValid = true;
       this.messageCacheNgModel = '';
       this.isMessageWarning = false;
+      if (
+        this.isNameValid &&
+        this.isEmailValid &&
+        this.isMessageValid &&
+        this.isCheckboxChecked
+      ) {
+        this.areAllInputsValid = true;
+      }
     }
   }
 
@@ -299,7 +334,7 @@ export class ContactFormComponent {
       this.areAllInputsValid = false;
       return;
     }
-    if (this.isNameValid && this.isEmailValid && this.isMassageValid) {
+    if (this.isNameValid && this.isEmailValid && this.isMessageValid) {
       this.areAllInputsValid = true;
       return;
     }
@@ -338,7 +373,7 @@ export class ContactFormComponent {
     if (
       this.isNameValid &&
       this.isEmailValid &&
-      this.isMassageValid &&
+      this.isMessageValid &&
       this.isCheckboxChecked
     ) {
       this.areAllInputsValid = true;
@@ -348,16 +383,16 @@ export class ContactFormComponent {
   }
 
   resetAllInputs() {
-      this.isNameValid = false;
-      this.isEmailValid = false;
-      this.isMassageValid = false;
-      this.isCheckboxChecked = false;
-      this.nameInputNgModel = '';
-      this.nameCacheNgModel = '';
-      this.emailInputNgModel = '';
-      this.emailCacheNgModel = '';
-      this.messageInputNgModel = '';
-      this.messageCacheNgModel = '';
+    this.isNameValid = false;
+    this.isEmailValid = false;
+    this.isMessageValid = false;
+    this.isCheckboxChecked = false;
+    this.nameInputNgModel = '';
+    this.nameCacheNgModel = '';
+    this.emailInputNgModel = '';
+    this.emailCacheNgModel = '';
+    this.messageInputNgModel = '';
+    this.messageCacheNgModel = '';
   }
 
   adjustTextareaHeight(event: Event): void {
@@ -366,6 +401,3 @@ export class ContactFormComponent {
     textarea.style.height = `${textarea.scrollHeight}px`;
   }
 }
-
-
-
