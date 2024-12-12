@@ -110,8 +110,8 @@ export class ContactFormComponent {
   chooseNameDefaultWarning() {
     this.nameDefaultWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Please enter a valid name, e.g., "John Doe".'
-        : 'Dein Name sollte so geschrieben sein, z. B. "Maxi Muster".';
+        ? 'Please enter a valid name, e.g., "John-Mia Doe".'
+        : 'Bitte schreib deinen Namen so, z. B. "Max-Mai Muster".';
   }
   chooseEmailDefaultWarning() {
     this.emailDefaultWarning =
@@ -172,8 +172,14 @@ export class ContactFormComponent {
   onSubmit() {
     this.validateAll();
     if (this.areAllInputsValid) {
-      console.log('Form submitted successfully!');
-      this.resetAllInputs();
+      setTimeout(() => {
+        this.submitButtonText = this.submitButtonSuccessText;
+
+        setTimeout(() => {
+          this.submitButtonText = this.submitButtonDefaultText;
+          this.resetAllInputs();
+        }, 2500);
+      }, 200);
     }
   }
 
