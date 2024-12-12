@@ -43,25 +43,6 @@ export class ContactFormComponent {
   emailCacheNgModel: string = '';
   messageCacheNgModel: string = '';
 
-  // function to change the language of the contact form
-  chooseLanguage() {
-    this.languageService.language.subscribe(() => {
-      this.chooseLabelNameText();
-      this.choosePlaceholderNameText();
-      this.chooseLabelEmailText();
-      this.choosePlaceholderEmailText();
-      this.chooseLabelMessageText();
-      this.choosePlaceholderMessageText();
-      this.choosePrivacyPolicyTexts();
-      this.chooseSubmitButtonText();
-      this.chooseNameDefaultWarning();
-      this.chooseEmailDefaultWarning();
-      this.chooseMessageDefaultWarning();
-      this.chooseMessageCharacterWarning();
-      this.chooseCheckboxDefaultWarning();
-    });
-  }
-
   chooseLabelNameText() {
     this.labelNameText =
       this.languageService.currentLanguage == 'en'
@@ -147,6 +128,25 @@ export class ContactFormComponent {
       this.languageService.currentLanguage == 'en'
         ? 'Please accept the privacy policy.'
         : 'Bitte lies und akzeptiere die Datenschutzrichtlinien.';
+  }
+
+  // function to change the language of the contact form
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {
+      this.chooseLabelNameText();
+      this.choosePlaceholderNameText();
+      this.chooseLabelEmailText();
+      this.choosePlaceholderEmailText();
+      this.chooseLabelMessageText();
+      this.choosePlaceholderMessageText();
+      this.choosePrivacyPolicyTexts();
+      this.chooseSubmitButtonText();
+      this.chooseNameDefaultWarning();
+      this.chooseEmailDefaultWarning();
+      this.chooseMessageDefaultWarning();
+      this.chooseMessageCharacterWarning();
+      this.chooseCheckboxDefaultWarning();
+    });
   }
 
   // constructor to call the function to change the language
@@ -350,4 +350,13 @@ export class ContactFormComponent {
       this.messageInputNgModel = '';
       this.messageCacheNgModel = '';
   }
+
+  adjustTextareaHeight(event: Event): void {
+    const textarea = event.target as HTMLTextAreaElement;
+    textarea.style.height = 'auto'; // Reset the height to auto to make sure the textarea will shrink as well as grow
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }
 }
+
+
+

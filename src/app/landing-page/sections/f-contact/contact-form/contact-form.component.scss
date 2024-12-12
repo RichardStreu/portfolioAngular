@@ -64,8 +64,9 @@
     textarea {
       background-color: transparent;
       border: none;
-      min-height: 1.13rem;
-      max-height: 88px;
+      // height: 1.13rem;
+      line-height: 1.25rem;
+      max-height: 160px;
       resize: none;
       outline: none;
       font-family: "Karla", sans-serif;
@@ -88,7 +89,7 @@
   }
 
   #messageBox {
-    padding: 2rem 2rem calc(2rem - 20px) 2rem;
+    padding: 2rem 2rem 2rem 2rem;
   }
 
   .privacyPolicyBox {
