@@ -19,7 +19,7 @@
     #richardStreuFooterLogo {
       height: 48px;
       width: auto;
-  
+
       #logoFooterPath {
         fill: $color-highLight;
       }
@@ -46,6 +46,30 @@
     a {
       color: white;
       text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+
+      &::before {
+        transition: all 0.2s ease-in-out;
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 100vh;
+        background-color: $color-highLight;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -1rem;
+        opacity: 0;
+      }
+
+      &:hover {
+        color: $color-highLight;
+        &::before {
+          opacity: 1;
+        }
+      }
     }
   }
 }
