@@ -58,5 +58,6 @@ export class HeaderComponent {
    */
   constructor() {
     this.chooseLanguage();
+    this.lang = this.languageService.lang;
   }
 }
