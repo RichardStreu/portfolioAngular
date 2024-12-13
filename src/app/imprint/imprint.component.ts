@@ -15,6 +15,7 @@ export class ImprintComponent {
 
   // variables to store the text for the contact form
   imprintText: string = "";
+  mainText: string = "";
 
   chooseImprintText() {
     this.imprintText =
@@ -23,11 +24,23 @@ export class ImprintComponent {
         : 'Impressum';
   }
 
+  chooseMainText() {
+    this.mainText =
+      this.languageService.currentLanguage == 'en'
+        ? `This is the imprint of the website`
+        : `Dies ist das Impressum der Webseite`;
+  }
+
   // function to change the language of the contact form
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
       this.chooseImprintText();
+      this.chooseMainText();
     });
+  }
+
+  constructor() {
+    this.chooseLanguage();
   }
 
 }
