@@ -146,8 +146,13 @@ export class ImprintComponent {
     });
   }
 
+  scrollToTop() {
+    window.scrollTo({ top: 0 });
+  }
+
   constructor() {
     this.chooseLanguage();
+    this.scrollToTop();
   }
 
 }
