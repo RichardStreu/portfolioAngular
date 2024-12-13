@@ -11,5 +11,23 @@ import { LanguageService } from '../services/language.service';
   styleUrl: './imprint.component.scss'
 })
 export class ImprintComponent {
+  languageService = inject(LanguageService);
+
+  // variables to store the text for the contact form
+  imprintText: string = "";
+
+  chooseImprintText() {
+    this.imprintText =
+      this.languageService.currentLanguage == 'en'
+        ? "Imprint"
+        : 'Impressum';
+  }
+
+  // function to change the language of the contact form
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {
+      this.chooseImprintText();
+    });
+  }
 
 }

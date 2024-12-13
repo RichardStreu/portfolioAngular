@@ -11,5 +11,23 @@ import { LanguageService } from '../services/language.service';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
+  languageService = inject(LanguageService);
+
+  // variables to store the text for the contact form
+  policyHeadlineText: string = "";
+
+  choosePolicyHeadlineText() {
+    this.policyHeadlineText =
+      this.languageService.currentLanguage == 'en'
+        ? "Privacy Policy"
+        : 'Datenschutzerklärung';
+  }
+
+  // function to change the language of the contact form
+  chooseLanguage() {
+    this.languageService.language.subscribe(() => {
+
+    });
+  }
 
 }
