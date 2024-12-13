@@ -1,11 +1,26 @@
 <header>
   <div class="contentWrapper">
     <div class="headerContent">
+      <div class="burgerMenuBox">
+        <div class="burgerMenu">
+          <a href="#aboutMeSection">{{ aboutMeText }}</a>
+          <a href="#skillsetSection">{{ skillsText }}</a>
+          <a href="#projectsSection">{{ projectsText }}</a>
+          <div
+            class="languageButton"
+            [class.active]="lang"
+            (click)="switchButton()"
+          >
+            <span>EN</span><span>DE</span>
+          </div>
+        </div>
+      </div>
       <div class="headerNavbar">
-        <div 
+        <div
           class="burgerIcon"
-          [ngClass]="{'burgerIcon': true, 'burgerVisible': isBurgerMenuVisible}"
-          (click)="showHideBurgerMenu()">
+          [ngClass]="{ burgerIcon: true, burgerVisible: isBurgerMenuVisible }"
+          (click)="showHideBurgerMenu()"
+        >
           <div></div>
           <div></div>
           <div></div>
