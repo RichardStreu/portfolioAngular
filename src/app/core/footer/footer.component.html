@@ -97,8 +97,13 @@
           >LinkedIn</a
         >
         <a href="mailto:contact@richardstreu.dev">Email</a>
-        <a [routerLink]="['legalNotice']">Legal Notice</a>
-        <a [routerLink]="['imprint']">Imprint</a>
+        <a [routerLink]="['legalNotice']">
+          @if (languageService.currentLanguage == "en") {Legal Notice}
+          @else {Datenschutz}</a>
+        <a [routerLink]="['imprint']">
+          @if (languageService.currentLanguage == "en") {Imprint}
+          @else {Impressum}
+        </a>
       </div>
     </div>
   </div>
