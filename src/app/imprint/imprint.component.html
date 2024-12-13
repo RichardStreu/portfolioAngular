@@ -1,16 +1,41 @@
 <main id="imprint" class="imprint">
   <div class="contentWrapper">
     <app-header></app-header>
-    <h2>{{ imprintText }}</h2>
+    <h2 class="imprintHeadline">{{ imprintText }}</h2>
     <p>{{ informationText }}</p>
-    <p>Richard Streu<br>
-      Schenkendorfstraße 24<br>
-      09322 Penig</p>
-    <p><b>{{ representedByText }}</b><br>
-      Richard Streu</p>
-    <p><b>{{ contactText }}</b><br>
-      Email: <a class="link" href="mailto:contact@richardstreu.dev">contact&#64;richardstreu.dev</a></p>
+    <br />
+    <p>
+      Richard Streu<br />
+      Schenkendorfstraße 24<br />
+      09322 Penig
+    </p>
+    <br />
+    <p>
+      <b>{{ representedByText }}</b
+      ><br />
+      Richard Streu
+    </p>
+    <p>
+      <b>{{ contactText }}</b
+      ><br />
+      Email:
+      <a class="link" href="mailto:contact@richardstreu.dev"
+        >contact&#64;richardstreu.dev</a
+      >
+    </p>
+    <br />
+    <br />
     <h2>{{ disclaimerText }}</h2>
     <h3>{{ contentText }}</h3>
+    <p>{{ contentDataText }}</p>
+    <br />
+    <h3>{{ linksText }}</h3>
+    <p>{{ linksDataText }}</p>
+    <br />
+    <h3>{{ copyRightText }}</h3>
+    <p>{{ copyRightDataText }}</p>
+    <br>
+    <h3>{{ protectionText }}</h3>
+    <p>{{ protectionDataText }}</p>
   </div>
 </main>

@@ -2,6 +2,11 @@
 
 .imprint {
   min-height: calc(100vh - 194px);
+  padding-bottom: 144px;
+
+  .imprintHeadline {
+    padding-top: 76px;
+  }
 
   .link {
     color: $color-highLight;
@@ -21,8 +26,5 @@
   h3 {
     padding-bottom: 1rem;
   }
-
-  p {
-    padding-bottom: 0.75rem;
-  }
 }
+
