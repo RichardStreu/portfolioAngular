@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -27,6 +28,12 @@ export class HeaderComponent {
   switchButton() {
     this.lang = !this.lang;
     this.languageService.switchLanguage();
+  }
+
+  isBurgerMenuVisible: boolean = false;
+
+  showHideBurgerMenu() {
+    this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
   }
 
   /**

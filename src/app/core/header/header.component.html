@@ -2,6 +2,14 @@
   <div class="contentWrapper">
     <div class="headerContent">
       <div class="headerNavbar">
+        <div 
+          class="burgerIcon"
+          [ngClass]="{'burgerIcon': true, 'burgerVisible': isBurgerMenuVisible}"
+          (click)="showHideBurgerMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
         <div
           class="languageButton"
           [class.active]="lang"
