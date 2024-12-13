@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../core/header/header.component';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-imprint',
