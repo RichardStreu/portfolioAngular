@@ -16,6 +16,9 @@ export class ImprintComponent {
   // variables to store the text for the contact form
   imprintText: string = "";
   mainText: string = "";
+  informationText: string = "";
+  representedByText: string = "";
+  contactText: string = "";
 
   chooseImprintText() {
     this.imprintText =
@@ -23,19 +26,32 @@ export class ImprintComponent {
         ? "Imprint"
         : 'Impressum';
   }
-
-  chooseMainText() {
-    this.mainText =
+  chooseInformationText() {
+    this.informationText =
       this.languageService.currentLanguage == 'en'
-        ? `This is the imprint of the website`
-        : `Dies ist das Impressum der Webseite`;
+        ? "Information according to § 5 DDG"
+        : 'Angaben gemäß § 5 DDG';
+  }
+  chooseRepresentedByText() {
+    this.representedByText =
+      this.languageService.currentLanguage == 'en'
+        ? "Represented by:"
+        : 'Vertreten durch:';
+  }
+  chooseContactText() {	
+    this.contactText =	
+      this.languageService.currentLanguage == 'en'	
+        ? "Contact"	
+        : 'Kontakt';	
   }
 
   // function to change the language of the contact form
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
       this.chooseImprintText();
-      this.chooseMainText();
+      this.chooseInformationText();
+      this.chooseRepresentedByText();
+      this.chooseContactText();	
     });
   }
 
