@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../core/header/header.component';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../services/language.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-imprint',
@@ -28,6 +29,8 @@ export class ImprintComponent {
   copyRightDataText = "";
   protectionText = "";
   protectionDataText = "";
+  websiteText = "";
+  fromText = "";
 
 
   chooseImprintText() {
@@ -96,6 +99,12 @@ export class ImprintComponent {
         ? "The content and works created by the site operators on these pages are subject to German copyright law. The duplication, processing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of legal violations, we will remove such content immediately."
         : 'Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.';
   }
+  chooseProtectionText() {
+    this.protectionText =
+      this.languageService.currentLanguage == 'en'
+        ? 'Data Protection'
+        : 'Datenschutz';
+  }
   chooseProtectionDataText() {
     this.protectionDataText =
       this.languageService.currentLanguage == 'en'
@@ -103,12 +112,17 @@ export class ImprintComponent {
         : "Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.";
 
   }
-
-  chooseProtectionText() {
-    this.protectionText =
+  chooseWebsiteText() {
+    this.websiteText =
       this.languageService.currentLanguage == 'en'
-        ? 'Data Protection'
-        : 'Datenschutz';
+        ? "Website imprint created by "
+        : 'Website Impressum erstellt durch ';
+  }
+  chooseFromText() {
+    this.fromText =
+      this.languageService.currentLanguage == 'en'
+        ? " from the "
+        : ' von der ';  
   }
 
   // function to change the language of the contact form
@@ -127,6 +141,8 @@ export class ImprintComponent {
       this.chooseCopyRightDataText();
       this.chooseProtectionText();
       this.chooseProtectionDataText();
+      this.chooseWebsiteText();
+      this.chooseFromText();
     });
   }
 
