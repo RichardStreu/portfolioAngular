@@ -19,6 +19,7 @@ export class ImprintComponent {
   informationText: string = "";
   representedByText: string = "";
   contactText: string = "";
+  disclaimerText: string = "";
 
   chooseImprintText() {
     this.imprintText =
@@ -44,6 +45,12 @@ export class ImprintComponent {
         ? "Contact"	
         : 'Kontakt';	
   }
+  chooseDisclaimerText() {
+    this.disclaimerText =
+      this.languageService.currentLanguage == 'en'
+        ? "Disclaimer"
+        : 'Haftungsausschluss';
+  }
 
   // function to change the language of the contact form
   chooseLanguage() {
@@ -52,6 +59,7 @@ export class ImprintComponent {
       this.chooseInformationText();
       this.chooseRepresentedByText();
       this.chooseContactText();	
+      this.chooseDisclaimerText();
     });
   }
 
