@@ -32,9 +32,11 @@ body {
 
 .contentWrapper {
   width: 100%;
-  max-width: 1248px;
+  max-width: calc(1248px + 4rem);
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .d_none {
