@@ -23,6 +23,8 @@ export class LegalNoticeComponent {
         : 'Datenschutzerklärung';
   }
 
+  policyEn = {}
+
   // function to change the language of the contact form
   chooseLanguage() {
     this.languageService.language.subscribe(() => {

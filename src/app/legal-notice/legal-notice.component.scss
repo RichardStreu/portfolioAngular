@@ -2,6 +2,11 @@
 
 .legal-notice {
   min-height: calc(100vh - 194px);
+  padding-bottom: 144px;
+
+  .policyHeadline {
+    padding-top: 76px;
+  }
 
   .link {
     color: $color-highLight;
@@ -12,5 +17,13 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  h2 {
+    padding-bottom: 1.25rem;
+  }
+
+  h3 {
+    padding-bottom: 1rem;
   }
 }
