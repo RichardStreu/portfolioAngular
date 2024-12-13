@@ -2,4 +2,15 @@
 
 .imprint {
   min-height: calc(100vh - 194px);
+
+  .link {
+    color: $color-highLight;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
