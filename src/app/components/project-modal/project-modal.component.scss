@@ -27,7 +27,12 @@
     @media screen and (max-width: 1350px) {
       width: 100%;
       max-width: 420px;
-      min-height: 100%;;
+      min-height: 100%;
+    }
+
+    @media screen and (max-width: 650px) {
+      border-radius: 0;
+      border: none;
     }
 
     .projectModalBox {
@@ -45,7 +50,8 @@
 
       @media screen and (max-width: 1350px) {
         flex-direction: column-reverse;
-        padding: 12px;
+        padding: 16px 12px;
+        justify-content: flex-end;
       }
 
       .projectModalLeftPart {
@@ -54,12 +60,20 @@
         display: flex;
         flex-direction: column;
 
+        @media screen and (max-width: 650px) {
+          width: 100%;
+        }
+
         .indexField {
           font-family: "Karla", sans-serif;
           font-weight: 700;
           font-size: 6.25rem;
           color: $color-highLight;
           padding-bottom: 0 0 1.25rem 0;
+
+          @media screen and (max-width: 650px) {
+            font-size: 4.5rem;
+          }
         }
 
         .nameField {
@@ -73,17 +87,30 @@
           padding-bottom: 2rem;
           height: 160px;
 
+          @media screen and (max-width: 650px) {
+            padding-bottom: 1.25rem;
+            height: auto;
+          }
+
           .headline {
             font-family: "Fira", sans-serif;
             font-weight: 700;
             font-size: 1.5rem;
             color: $color-highLight;
             padding-bottom: 1.25rem;
+
+            @media screen and (max-width: 650px) {
+              font-size: 1.25rem;
+            }
           }
 
           .description {
             font-family: "Karla", sans-serif;
             font-size: 1.13rem;
+
+            @media screen and (max-width: 650px) {
+              font-size: 1rem;
+            }
           }
         }
 
@@ -130,7 +157,7 @@
         align-items: end;
 
         @media screen and (max-width: 650px) {
-          width: 100%;;
+          width: 100%;
         }
 
         .closeButtonBox {
@@ -177,7 +204,6 @@
 
           @media screen and (max-width: 650px) {
             height: 216px;
-            
           }
 
           img {
@@ -197,7 +223,6 @@
 
             &:hover {
               transform: translate(24px, -24px);
-             
             }
           }
         }
