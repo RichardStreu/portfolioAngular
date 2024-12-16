@@ -8,18 +8,31 @@
 }
 
 .aboutMeContent {
-  height: 708px;
   width: 100%;
   display: flex;
 
+  @media screen and (max-width: 1250px) {
+    flex-direction: column;
+  }
+
   .aboutMeLeft {
     flex: 1;
+
+    @media screen and (max-width: 1250px) {
+      padding-bottom: 2.5rem;
+    }
 
     .imgSwipe {
       width: 568px;
       height: 568px;
       border-radius: 30px;
       position: relative;
+
+      @media screen and (max-width: 640px) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+      }
 
       background: repeating-linear-gradient(
         45deg,
