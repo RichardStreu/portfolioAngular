@@ -277,6 +277,10 @@ header {
     height: 48px;
     width: auto;
 
+    @media screen and (max-width: 600px) {
+      height: 40px;
+    }
+
     #logoPath {
       fill: $color-highLight;
     }
