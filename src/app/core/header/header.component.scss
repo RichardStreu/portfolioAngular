@@ -20,7 +20,7 @@ header {
   }
 
   .burgerMenuBox {
-    display: flex;
+    display: none;
     justify-content: center;
     position: absolute;
     padding-top: 112px;
@@ -35,9 +35,13 @@ header {
     border-bottom-left-radius: 30px;
     background-color: rgba(white, 0.12);
     backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(12px);
-    filter: drop-shadow(3px 6px 6px rgba($color-highLight, 0.75));
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: -3px 6px 6px rgba($color-highLight, 0.15);
     transition: all 0.4s ease-out;
+
+    @media screen and (max-width: 1100px) {
+      display: flex;
+    }
 
     .burgerMenu {
       display: flex;
