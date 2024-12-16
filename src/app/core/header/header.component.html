@@ -1,7 +1,7 @@
 <header>
   <div class="contentWrapper">
     <div class="headerContent">
-      <div [ngClass]="{ burgerMenuBox: true, d_none: !isBurgerMenuVisible }"
+      <div [ngClass]="{ burgerMenuBox: true, hiddenBurgerMenu: !isBurgerMenuVisible }"
         (click)="showHideBurgerMenu($event)">
         <div class="burgerMenu">
           <a href="#aboutMeSection"
