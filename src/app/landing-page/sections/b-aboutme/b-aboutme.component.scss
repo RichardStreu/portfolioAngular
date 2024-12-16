@@ -78,6 +78,10 @@
         font-family: "Karla", sans-serif;
         font-weight: 500;
         color: $color-highLight;
+
+        @media screen and (max-width: 640px) {
+          font-size: 1.13rem;
+        }
       }
 
       .aboutMeBox {
@@ -95,6 +99,14 @@
           font-size: 4rem;
           color: $color-highLight;
           padding-bottom: 1rem;
+
+          @media screen and (max-width: 640px) {
+            font-size: 3.5rem;
+          }
+
+          @media screen and (max-width: 380px) {
+            font-size: 2.75rem;
+          }
         }
 
         p {
@@ -102,6 +114,10 @@
           font-size: 1.13rem;
           color: white;
           padding-bottom: 1rem;
+
+          @media screen and (max-width: 640px) {
+            font-size: 1rem;
+          }
         }
 
         .aboutMeItems {
@@ -126,6 +142,10 @@
             color: rgba($color: white, $alpha: 0.7);
             transition: all 0.2s ease-in-out;
             padding-bottom: 0;
+
+            @media screen and (max-width: 640px) {
+              font-size: 1rem;
+            }
 
             &:hover {
               color: white;
