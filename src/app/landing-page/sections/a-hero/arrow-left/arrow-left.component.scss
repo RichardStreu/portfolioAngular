@@ -16,6 +16,10 @@
   gap: 24px;
   align-items: center;
 
+  @media screen and (max-width: 1100px) {
+    height: 256px;
+  }
+
   .line {
     height: 240px;
     width: 2px;
