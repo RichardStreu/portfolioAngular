@@ -1,7 +1,8 @@
 <header>
   <div class="contentWrapper">
     <div class="headerContent">
-      <div [ngClass]="{ burgerMenuBox: true, d_none: !isBurgerMenuVisible }">
+      <div [ngClass]="{ burgerMenuBox: true, d_none: !isBurgerMenuVisible }"
+        (click)="showHideBurgerMenu($event)">
         <div class="burgerMenu">
           <a href="#aboutMeSection"
             (click)="showHideBurgerMenu($event)">{{ aboutMeText }}</a>
@@ -24,9 +25,9 @@
           [ngClass]="{ burgerIcon: true, burgerVisible: isBurgerMenuVisible }"
           (click)="showHideBurgerMenu($event)"
         >
-          <div></div>
-          <div></div>
-          <div></div>
+          <div (click)="showHideBurgerMenu($event)"></div>
+          <div (click)="showHideBurgerMenu($event)"></div>
+          <div (click)="showHideBurgerMenu($event)"></div>
         </div>
         <div
           class="languageButton"
