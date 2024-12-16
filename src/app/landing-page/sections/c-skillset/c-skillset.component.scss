@@ -8,6 +8,10 @@
     rgb(41, 41, 41) 20%
   );
 
+  @media screen and (max-width: 1250px) {
+    padding-bottom: 100px;
+  }
+
   .contentWrapper {
     display: flex;
     flex-direction: column;
@@ -18,11 +22,20 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: $color-highLight;
+
+      @media screen and (max-width: 640px) {
+        font-size: 1.13rem;
+        padding-bottom: 1rem;
+      }
     }
 
     div {
       display: flex;
       flex-direction: row;
+
+      @media screen and (max-width: 1250px) {
+        flex-direction: column;
+      }
 
       .skillsetLeftPart {
         flex: 1;
@@ -35,12 +48,21 @@
           display: flex;
           flex-direction: column;
 
+          @media screen and (max-width: 1250px) {
+            width: 100%;
+            max-width: 568px;
+          }
+
           h2 {
             font-family: "Fira", sans-serif;
             font-weight: bold;
             font-size: 4rem;
             color: $color-highLight;
             padding: 0 0 40px 0;
+
+            @media screen and (max-width: 640px) {
+              font-size: 3.5rem;
+            }
           }
 
           p {
@@ -49,6 +71,10 @@
             color: rgba(255, 255, 255, 0.7);
             transition: all 0.2s ease-in-out;
             padding: 0;
+
+            @media screen and (max-width: 1250px) {
+              font-size: 1rem;
+            }
 
             &:hover {
               color: white;
@@ -62,6 +88,10 @@
             color: white;
             padding-top: 2rem;
             padding-bottom: 1rem;
+
+            @media screen and (max-width: 1250px) {
+              font-size: 1.25rem;
+            }
           }
 
           .skillAnother {
@@ -71,6 +101,10 @@
 
           .skillFeelFree {
             padding-bottom: 40px;
+
+            @media screen and (max-width: 1250px) {
+              font-size: 1rem;
+            }
           }
         }
       }
@@ -86,6 +120,14 @@
           flex-wrap: wrap;
           gap: 72px;
           row-gap: 40px;
+
+          @media screen and (max-width: 1250px) {
+            flex-direction: row;
+            padding-top: 2.5rem;
+            width: 100%;
+            max-width: 568px;
+            justify-content: space-evenly;
+          }
         }
 
         .skillItem {
@@ -142,6 +184,8 @@
               display: flex;
               flex-direction: column;
 
+              
+
               p {
                 font-family: "Karla", sans-serif;
                 font-size: 1rem;
@@ -153,6 +197,10 @@
               div {
                 justify-content: center;
                 gap: 1rem;
+
+                @media screen and (max-width: 1250px) {
+                  flex-direction: row;
+                }
 
                 div {
                   display: flex;

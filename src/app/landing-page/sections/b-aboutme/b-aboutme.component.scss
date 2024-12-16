@@ -78,6 +78,10 @@
       flex-direction: column;
       gap: 1.25rem;
 
+      @media screen and (max-width: 640px) {
+        gap: 1rem;
+      }
+
       > p {
         font-size: 1.5rem;
         font-family: "Karla", sans-serif;
