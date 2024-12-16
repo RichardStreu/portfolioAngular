@@ -24,6 +24,10 @@ a {
   display: inline-block;
   overflow: hidden;
 
+  @media screen and (max-width: 1100px) {
+    padding: 0.75rem 1.25rem;
+  }
+
   span {
     position: relative;
   }
