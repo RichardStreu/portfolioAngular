@@ -20,6 +20,10 @@
     height: 240px;
     width: 2px;
     background-color: $color-highLight;
+
+    @media screen and (max-width: 600px) {
+      height: 224px;
+    }
   }
 
   .scrollDownBox {
