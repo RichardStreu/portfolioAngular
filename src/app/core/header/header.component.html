@@ -3,9 +3,12 @@
     <div class="headerContent">
       <div [ngClass]="{ burgerMenuBox: true, d_none: !isBurgerMenuVisible }">
         <div class="burgerMenu">
-          <a href="#aboutMeSection">{{ aboutMeText }}</a>
-          <a href="#skillsetSection">{{ skillsText }}</a>
-          <a href="#projectsSection">{{ projectsText }}</a>
+          <a href="#aboutMeSection"
+            (click)="showHideBurgerMenu($event)">{{ aboutMeText }}</a>
+          <a href="#skillsetSection"
+            (click)="showHideBurgerMenu($event)">{{ skillsText }}</a>
+          <a href="#projectsSection"
+            (click)="showHideBurgerMenu($event)">{{ projectsText }}</a>
           <div
             class="languageButton"
             [class.active]="lang"
@@ -19,7 +22,7 @@
         <div
           class="burgerIcon"
           [ngClass]="{ burgerIcon: true, burgerVisible: isBurgerMenuVisible }"
-          (click)="showHideBurgerMenu()"
+          (click)="showHideBurgerMenu($event)"
         >
           <div></div>
           <div></div>

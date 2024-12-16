@@ -32,9 +32,11 @@ export class HeaderComponent {
 
   isBurgerMenuVisible: boolean = false;
 
-  showHideBurgerMenu() {
+  showHideBurgerMenu(event: any) {
+    if (event.target == event.currentTarget) {
     this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
   }
+}
 
   /**
    * Text content for the links in the header.
