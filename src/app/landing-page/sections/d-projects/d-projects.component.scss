@@ -14,6 +14,10 @@
     font-weight: 700;
     color: $color-highLight;
     margin-bottom: 1.25rem;
+
+    @media screen and (max-width: 1250px) {
+      font-size: 1.13rem;
+    }
   }
 
   .featuredText {
@@ -22,6 +26,10 @@
     font-weight: 700;
     color: $color-highLight;
     margin-bottom: 2.5rem;
+
+    @media screen and (max-width: 1250px) {
+      font-size: 3.5rem;
+    }
   }
 
   div {
@@ -33,6 +41,10 @@
       font-weight: 400;
       color: white;
       margin-bottom: 2.5rem;
+
+      @media screen and (max-width: 1250px) {
+        font-size: 1rem;
+      }
     }
   }
 }
@@ -44,6 +56,10 @@
 
   .projectsBars {
     width: 880px;
+
+    @media screen and (max-width: 1350px) {
+      width: 100%;
+    }
   }
 
   hr {
