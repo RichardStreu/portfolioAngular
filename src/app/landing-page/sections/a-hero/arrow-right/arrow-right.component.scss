@@ -12,6 +12,10 @@
     height: 256px;
   }
 
+  @media (max-height: 900px ) {
+    height: 232px;
+  }
+
   > a {
     transform-origin: top left;
     transform: rotate(-90deg) translate(24px, -50%);

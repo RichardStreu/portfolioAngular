@@ -20,6 +20,10 @@
     height: 256px;
   }
 
+  @media (max-height: 900px ) {
+    height: 232px;
+  }
+
   .line {
     height: 240px;
     width: 2px;
