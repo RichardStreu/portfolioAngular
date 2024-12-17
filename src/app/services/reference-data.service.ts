@@ -10,7 +10,7 @@ export class ReferenceDataService {
   constructor() {
     this.references = [
       {
-        name: 'Marco Lapiello',
+        name: 'M. Lapiello',
         position: 'Team Member',
         referenceText: {
           en: 'Richard played a pivotal role in the success of the project. Notably, he successfully designed the majority of our API service, which was central to the project’s functionality. Additionally, his excellent expertise in CSS significantly enhanced the design of our interface. Richard was always punctual, reliable, and consistently supportive of the team.',
@@ -18,7 +18,7 @@ export class ReferenceDataService {
         },
       },
       {
-        name: 'Mirko Rinke',
+        name: 'M. Rinke',
         position: 'Team Member',
         referenceText: {
           en: 'Richard contributed to the technical implementation with his JavaScript and CSS skills, driving the project forward functionally. Our collaboration was highly productive and effectively advanced the project.',
@@ -26,7 +26,7 @@ export class ReferenceDataService {
         },
       },
       {
-        name: 'David Werner',
+        name: 'D. Werner',
         position: 'Team Member',
         referenceText: {
           en: 'Richard has made a significant contribution to the success of the JOIN project. He brought an excellent atmosphere to the team and played a major role in the API service. Thanks to his outstanding CSS skills and advanced JavaScript expertise, he carried a significant part of the project independently and helped us successfully complete it. His punctuality, reliability, and creative ideas further strengthened the team and motivated us to meet the deadline.',
