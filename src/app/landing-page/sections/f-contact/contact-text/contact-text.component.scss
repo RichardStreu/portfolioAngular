@@ -9,6 +9,10 @@
     font-size: 1.5rem;
     color: $color-highLight;
     padding-bottom: 1.25rem;
+
+    @media (max-width: 1250px ) {
+      font-size: 1.13rem;
+    }
   }
 
   .letsWork {
@@ -18,6 +22,10 @@
     font-weight: 700;
     color: $color-highLight;
     padding-bottom: 2.5rem;
+
+    @media (max-width: 1250px ) {
+      font-size: 3.5rem;
+    }
   }
 
   .solve {
@@ -26,6 +34,10 @@
     font-weight: 700;
     color: $color-highLight;
     padding-bottom: 1rem;
+
+    @media (max-width: 1250px ) {
+      font-size: 1.25rem;
+    }
   }
 
   .myWorkDev {
@@ -42,3 +54,5 @@
     }
   }
 }
+
+

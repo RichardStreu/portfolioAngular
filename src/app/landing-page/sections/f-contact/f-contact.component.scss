@@ -3,10 +3,18 @@
 .contact-section {
   padding-bottom: 144px;
 
+  @media (max-width: 1250px ) {
+    padding-bottom: 100px;
+  }
+
   .contentWrapper {
     display: flex;
     flex-direction: row;
     gap: 64px;
+
+    @media (max-width: 1000px ) {
+      flex-direction: column;
+    }
 
     .contactTextContainer {
       flex: 1;
@@ -14,6 +22,11 @@
 
     .contactFormContainer{
       width: 616px;
+
+      @media (max-width: 1000px ) {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }
