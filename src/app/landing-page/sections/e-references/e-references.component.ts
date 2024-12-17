@@ -61,17 +61,13 @@ export class EReferencesComponent {
     } else {
       this.gapWidth = 48;
     }
-
-    // Falls bereits ein Timeout läuft, abbrechen und neu setzen
     if (this.resizeTimeout) {
       clearTimeout(this.resizeTimeout);
     }
-
-    // Timer neu starten, führt nach 1 Sekunde getElementSizes() und firstCarouselPositioning() aus
     this.resizeTimeout = setTimeout(() => {
       this.getElementSizes();
       this.firstCarouselPositioning();
-    }, 1000); // 1000 ms = 1 Sekunde
+    }, 1000);
   }
 
   chooseLanguage() {
