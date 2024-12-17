@@ -1,75 +1,102 @@
 @import "../../../styles.scss";
 
-.contentWrapper div {
-  display: flex;
-  justify-content: space-between;
-
-  .footerLogoBox {
+.contentWrapper {
+  div {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 0.5rem;
+    justify-content: space-between;
     padding-bottom: 64px;
 
-    svg {
-      margin-bottom: 1.5rem;
+    @media (max-width: 900px) {
+      padding-bottom: 32px;
     }
 
-    #richardStreuFooterLogo {
-      height: 48px;
-      width: auto;
+    .footerLogoBox {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      padding-bottom: 0;
 
-      #logoFooterPath {
-        fill: $color-highLight;
-      }
-    }
-  }
 
-  .footerCopyBox {
-    color: $color-highLight;
-    font-family: "Fira";
-    font-size: 1.15rem;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 110px;
-  }
-
-  .footerLinkBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding-bottom: 64px;
-
-    a {
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      position: relative;
-
-      &::before {
-        transition: all 0.2s ease-in-out;
-        content: "";
-        width: 6px;
-        height: 6px;
-        border-radius: 100vh;
-        background-color: $color-highLight;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-43%);
-        left: -0.75rem;
-        opacity: 0;
+      svg {
+        margin-bottom: 1.5rem;
       }
 
-      &:hover {
-        color: $color-highLight;
-        &::before {
-          opacity: 1;
+      #richardStreuFooterLogo {
+        height: 48px;
+        width: auto;
+
+        #logoFooterPath {
+          fill: $color-highLight;
         }
       }
+    }
+
+    .footerCopyBox {
+      color: $color-highLight;
+      font-family: "Fira";
+      font-size: 1.15rem;
+      display: flex;
+      align-items: start;
+      padding-top: 64px;
+      padding-bottom: 0;
+
+      @media (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    .footerLinkBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding-bottom: 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+
+        &::before {
+          transition: all 0.2s ease-in-out;
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 100vh;
+          background-color: $color-highLight;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-43%);
+          left: -0.75rem;
+          opacity: 0;
+        }
+
+        &:hover {
+          color: $color-highLight;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .footerCopyBoxResponsive {
+    display: none;
+    color: $color-highLight;
+    font-family: "Fira";
+    font-size: 1.13rem;
+    align-items: flex-end;
+    padding-bottom: 25px;
+    text-align: center;
+
+    @media (max-width: 900px) {
+      display: block;
     }
   }
 }
