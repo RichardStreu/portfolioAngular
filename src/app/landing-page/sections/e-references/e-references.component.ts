@@ -56,6 +56,11 @@ export class EReferencesComponent {
       this.gapWidth = 16;
       this.getElementSizes();
       this.firstCarouselPositioning();
+    }
+    else if (width < 450) {
+      this.gapWidth = 8;
+      this.getElementSizes();
+      this.firstCarouselPositioning();
     } else {
       this.gapWidth = 48;
       this.getElementSizes();
