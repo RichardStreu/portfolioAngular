@@ -4,6 +4,11 @@
   padding-top: 144px;
   padding-bottom: 144px;
 
+  @media screen and (max-width: 1250px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
   .contentWrapper {
     display: flex;
     flex-direction: column;
@@ -16,6 +21,11 @@
       padding-bottom: 2.5rem;
       text-align: center;
       color: $color-highLight;
+
+      @media screen and (max-width: 1250px) {
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
+      }
     }
 
     .carouselContainer {
@@ -54,6 +64,10 @@
           display: flex;
           flex-direction: column;
 
+          @media screen and (max-width: 1250px) {
+            padding: 40px 40px;
+          }
+
           p {
             overflow: auto;
             font-family: "Karla", sans-serif;
@@ -63,6 +77,10 @@
             color: white;
             text-align: left;
             color: rgba(white, 0.5);
+
+            @media screen and (max-width: 1250px) {
+              font-size: 1.13rem;
+            }
           }
 
           .authorBox {
@@ -84,6 +102,10 @@
               font-family: "Karla", sans-serif;
               color: rgba(white, 0.5);
               padding: 0;
+
+              @media screen and (max-width: 1250px) {
+                font-size: 1rem;
+              }
             }
           }
 
