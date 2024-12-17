@@ -46,7 +46,11 @@
     flex-direction: column;
     border-bottom: 2px solid $color-highLight;
     padding-bottom: 2rem;
-    padding: 2rem 2rem calc(2rem - 1px) 2rem;
+    padding: 2rem 2rem calc(2rem - 2px) 2rem;
+
+    @media (max-width: 1250px ) {
+      padding: 2rem 0.75rem calc(2rem - 2px) 0.75rem;
+    }
 
     label {
       font-family: "Fira", monospace;
@@ -132,6 +136,10 @@
 
   #messageBox {
     padding: 2rem 2rem 2rem 2rem;
+
+    @media (max-width: 1250px ) {
+      padding: 2rem 0.75rem 2rem 0.75rem;
+    }
   }
 
   .privacyPolicyBox {
