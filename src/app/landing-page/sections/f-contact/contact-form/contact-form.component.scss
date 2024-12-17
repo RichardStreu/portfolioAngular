@@ -120,9 +120,16 @@
     padding-top: 2.5rem;
     padding-bottom: calc(2.5rem - 25px);
 
+    
+
     div {
       display: flex;
       align-items: center;
+      line-height: 1.5rem;
+
+      @media (max-width: 1000px ) {
+        flex-wrap: wrap;
+      }
 
       .checkBox {
         margin-right: 0.75rem;
@@ -150,6 +157,7 @@
         font-family: "Karla", sans-serif;
         font-size: 0.93rem;
         color: white;
+        text-wrap: nowrap;
       }
 
       a {
@@ -160,6 +168,7 @@
         letter-spacing: 1px;
         padding: 0 0.25rem;
         transition: all 0.2s ease-in-out;
+        text-wrap: nowrap;
 
         &:hover {
           text-decoration: underline;
