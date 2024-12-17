@@ -113,6 +113,13 @@
         flex: 1;
         min-height: 200px;
 
+        @media screen and (max-width: 1250px) {
+          display: flex;
+          flex-direction: row;
+          justify-content: end;
+        }
+
+
         .skillSetSkillsBox {
           width: 632px;
           display: flex;
@@ -127,6 +134,7 @@
             width: 100%;
             max-width: 568px;
             justify-content: space-evenly;
+          
           }
         }
 
