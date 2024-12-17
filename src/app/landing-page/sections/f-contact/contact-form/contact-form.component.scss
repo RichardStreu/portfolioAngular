@@ -148,7 +148,7 @@
     flex-direction: row;
 
     padding-top: 2.5rem;
-    padding-bottom: calc(2.5rem - 0px);
+    padding-bottom: calc(0.5rem - 0px);
 
     div {
       display: flex;
@@ -207,14 +207,16 @@
         }
       }
     }
+  }
 
-    .checkboxValidationField {
-      font-family: "Karla", sans-serif;
-      font-size: 0.93rem;
-      color: $color-red;
-      padding-top: 0.5rem;
-      line-height: 1rem;
-    }
+  .checkboxValidationField {
+    font-family: "Karla", sans-serif;
+    font-size: 0.93rem;
+    color: $color-red !important;
+    padding-top: 0.5rem;
+    padding-left: 30px;
+    line-height: 1rem;
+    padding-bottom: 2.5rem !important;
   }
 
   .buttonBox {
