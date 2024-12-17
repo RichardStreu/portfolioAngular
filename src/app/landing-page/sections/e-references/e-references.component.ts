@@ -30,9 +30,11 @@ export class EReferencesComponent {
 
   constructor() {
     this.references = this.referenceDataService.references;
+    this.onResize();
   }
 
   ngOnInit() {
+    this.onResize();
     this.generateCarouselArray();
     this.chooseLanguage();
   }
@@ -43,29 +45,33 @@ export class EReferencesComponent {
     this.firstCarouselPositioning();
   }
 
+  isResizing: boolean = false;
+  resizeTimeout: any;
+
   @HostListener('window:resize', ['$event'])
   onResize() {
     let width = window.innerWidth;
-    console.log(width);
 
-    if (width < 800) {
+    if (width < 800 && width >= 550) {
       this.gapWidth = 24;
-      this.getElementSizes();
-      this.firstCarouselPositioning();
-    } else if (width < 550) {
+    } else if (width < 550 && width >= 450) {
       this.gapWidth = 16;
-      this.getElementSizes();
-      this.firstCarouselPositioning();
-    }
-    else if (width < 450) {
+    } else if (width < 450) {
       this.gapWidth = 8;
-      this.getElementSizes();
-      this.firstCarouselPositioning();
     } else {
       this.gapWidth = 48;
+    }
+
+    // Falls bereits ein Timeout läuft, abbrechen und neu setzen
+    if (this.resizeTimeout) {
+      clearTimeout(this.resizeTimeout);
+    }
+
+    // Timer neu starten, führt nach 1 Sekunde getElementSizes() und firstCarouselPositioning() aus
+    this.resizeTimeout = setTimeout(() => {
       this.getElementSizes();
       this.firstCarouselPositioning();
-    }
+    }, 1000); // 1000 ms = 1 Sekunde
   }
 
   chooseLanguage() {
@@ -112,6 +118,7 @@ export class EReferencesComponent {
   }
 
   firstCarouselPositioning() {
+    this.getElementSizes();
     this.firstRefMid = this.singleReferenceWidth * 1.5 + this.gapWidth;
     this.firstTranslateX = this.firstRefMid - this.carouselContainerWidth / 2;
     this.lastTranslateX = this.firstTranslateX;
@@ -126,6 +133,7 @@ export class EReferencesComponent {
   isPreviousAble: boolean = true;
 
   previousSlide() {
+    this.getElementSizes();
     if (this.carouselBox && this.isPreviousAble) {
       this.isPreviousAble = false;
       if (this.currentDotIndex > 0) {
@@ -175,6 +183,7 @@ export class EReferencesComponent {
   isNextAble: boolean = true;
 
   nextSlide() {
+    this.getElementSizes();
     if (this.carouselBox && this.isNextAble) {
       this.isNextAble = false;
       if (this.currentDotIndex < this.references.length - 1) {
