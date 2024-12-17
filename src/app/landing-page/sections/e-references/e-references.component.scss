@@ -82,9 +82,13 @@
             color: white;
             text-align: left;
             color: rgba(white, 0.5);
+            padding: 0;
+            flex: 1;
 
             @media screen and (max-width: 1250px) {
               font-size: 1.13rem;
+              display: flex;
+              align-items: center;
             }
           }
 
