@@ -47,13 +47,19 @@ export class EReferencesComponent {
   onResize() {
     let width = window.innerWidth;
     console.log(width);
-    
+
     if (width < 800) {
       this.gapWidth = 24;
-    }
-
-    if (width < 550) {
+      this.getElementSizes();
+      this.firstCarouselPositioning();
+    } else if (width < 550) {
       this.gapWidth = 16;
+      this.getElementSizes();
+      this.firstCarouselPositioning();
+    } else {
+      this.gapWidth = 48;
+      this.getElementSizes();
+      this.firstCarouselPositioning();
     }
   }
 
