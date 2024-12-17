@@ -30,7 +30,6 @@ export class EReferencesComponent {
 
   constructor() {
     this.references = this.referenceDataService.references;
-    this.onResize();
   }
 
   ngOnInit() {
@@ -39,6 +38,7 @@ export class EReferencesComponent {
   }
 
   ngAfterViewInit(): void {
+    this.onResize();
     this.getElementSizes();
     this.firstCarouselPositioning();
   }
