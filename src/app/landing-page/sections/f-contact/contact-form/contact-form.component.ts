@@ -113,13 +113,13 @@ export class ContactFormComponent {
   chooseNameDefaultWarning() {
     this.nameDefaultWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Please enter a valid name, e.g., "John-Mia Doe".'
+        ? 'Enter a valid name, e.g., "John-Mia Doe".'
         : 'Bitte schreib deinen Namen so, z. B. "Max-Mia Muster".';
   }
   chooseEmailDefaultWarning() {
     this.emailDefaultWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Please enter a valid email address, e.g., "name@example.com".'
+        ? 'Enter a valid email, e.g., "name@mail.com".'
         : 'Bitte gib eine gültige E-Mail an, z. B. "maxi-muster@mail.de".';
   }
   chooseMessageDefaultWarning() {
