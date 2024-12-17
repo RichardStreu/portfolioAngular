@@ -2,17 +2,45 @@
   <div class="contentWrapper">
     <p class="referenceHeadline">{{ headlineText }}</p>
     <div class="carouselContainer">
-      <div class="carouselBox" [ngClass]="{'transition': isCarouselBoxTransition}">
+      <div
+        class="carouselBox"
+        [ngClass]="{ transition: isCarouselBoxTransition }"
+      >
         @for (item of carouselArray; track $index) {
-        <div [ngClass]="{'singleReference': true, 'transition': isSingleReferenceTransition, 'referenceFocus': $index == currentReferenceIndex}">
+        <div
+          [ngClass]="{
+            singleReference: true,
+            transition: isSingleReferenceTransition,
+            referenceFocus: $index == currentReferenceIndex
+          }"
+        >
           @if (currentLanguage == "en") {
-            <p [ngClass]="{'transition': isSingleReferenceTransition}">{{item.referenceText.en}}</p>
+          <p [ngClass]="{ transition: isSingleReferenceTransition }">
+            {{ item.referenceText.en }}
+          </p>
           }@else if (currentLanguage == "de") {
-            <p [ngClass]="{'transition': isSingleReferenceTransition}">{{item.referenceText.de}}</p>
+          <p [ngClass]="{ transition: isSingleReferenceTransition }">
+            {{ item.referenceText.de }}
+          </p>
           }
-          <div class="authorBox" >
-            <div [ngClass]="{'line': true, 'transition': isSingleReferenceTransition}"></div>
-            <p><span [ngClass]="{'transition': isSingleReferenceTransition}">{{item.name}}</span> - <span [ngClass]="{'transition': isSingleReferenceTransition}">{{item.position}}</span></p>
+          <div class="authorBox">
+            <div
+              [ngClass]="{
+                line: true,
+                transition: isSingleReferenceTransition
+              }"
+            ></div>
+            <div>
+              <p>
+                <span [ngClass]="{ transition: isSingleReferenceTransition }">{{
+                  item.name
+                }}</span>
+                -
+                <span [ngClass]="{ transition: isSingleReferenceTransition }">{{
+                  item.position
+                }}</span>
+              </p>
+            </div>
           </div>
         </div>
         }
