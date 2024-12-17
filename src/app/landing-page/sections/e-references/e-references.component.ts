@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { ReferenceDataService } from '../../../services/reference-data.service';
 
@@ -26,8 +26,11 @@ export class EReferencesComponent {
   isSingleReferenceTransition: boolean = true;
   isCarouselBoxTransition: boolean = true;
 
+  windowWidth: number = 0;
+
   constructor() {
     this.references = this.referenceDataService.references;
+    this.onResize();
   }
 
   ngOnInit() {
@@ -38,6 +41,20 @@ export class EReferencesComponent {
   ngAfterViewInit(): void {
     this.getElementSizes();
     this.firstCarouselPositioning();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    let width = window.innerWidth;
+    console.log(width);
+    
+    if (width < 800) {
+      this.gapWidth = 24;
+    }
+
+    if (width < 550) {
+      this.gapWidth = 16;
+    }
   }
 
   chooseLanguage() {

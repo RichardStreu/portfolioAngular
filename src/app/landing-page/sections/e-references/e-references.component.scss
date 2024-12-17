@@ -59,6 +59,14 @@
           height: 360px;
         }
 
+        @media screen and (max-width: 800px) {
+          gap: 1.5rem;
+        }
+
+        @media screen and (max-width: 550px) {
+          gap: 1rem;
+        }
+
         .singleReference {
           height: 268px;
           width: 632px;
@@ -78,6 +86,15 @@
             width: 60vw;
           }
 
+          @media screen and (max-width: 800px) {
+            width: 68vw;
+            padding: 40px 32px;
+          }
+
+          @media screen and (max-width: 550px) {
+            width: 76vw;
+          }
+
           
 
           p {
@@ -95,7 +112,7 @@
             @media screen and (max-width: 1250px) {
               font-size: 1.13rem;
               display: flex;
-              align-items: center;
+              align-items: start;
             }
           }
 
