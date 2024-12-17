@@ -117,25 +117,18 @@
   .privacyPolicyBox {
     display: flex;
     flex-direction: row;
-    padding-top: 2.5rem;
-    padding-bottom: calc(2.5rem - 25px);
 
-    
+    padding-top: 2.5rem;
+    padding-bottom: calc(2.5rem - 0px);
 
     div {
       display: flex;
       align-items: center;
-      line-height: 1.5rem;
-
-      @media (max-width: 1000px ) {
-        flex-wrap: wrap;
-      }
-
+    
       .checkBox {
-        margin-right: 0.75rem;
         cursor: pointer;
-        width: 18px;
-        height: 18px;
+        width: 18px!important;
+        height: 18px!important;
         border: 2px solid $color-highLight;
         border-radius: 4px;
         display: flex;
@@ -153,25 +146,34 @@
         }
       }
 
-      p {
-        font-family: "Karla", sans-serif;
-        font-size: 0.93rem;
-        color: white;
-        text-wrap: wrap;
-      }
+      div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        line-height: 1.25rem;
+        padding-left: 0.75rem;
 
-      a {
-        font-family: "Karla", sans-serif;
-        font-size: 0.93rem;
-        color: $color-highLight;
-        text-decoration: none;
-        letter-spacing: 1px;
-        padding: 0 0.25rem;
-        transition: all 0.2s ease-in-out;
-        text-wrap: nowrap;
+        p {
+          font-family: "Karla", sans-serif;
+          font-size: 0.93rem;
+          color: white;
+          text-wrap: wrap;
+        }
 
-        &:hover {
-          text-decoration: underline;
+        a {
+          font-family: "Karla", sans-serif;
+          font-size: 0.93rem;
+          color: $color-highLight;
+          text-decoration: none;
+          letter-spacing: 1px;
+          padding: 0 0.25rem;
+          transition: all 0.2s ease-in-out;
+          text-wrap: nowrap;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -233,7 +235,7 @@
 
         span {
           display: inline-block;
-          
+
           color: $color-red;
         }
       }
@@ -244,7 +246,7 @@
       border: 2px solid $color-highLight;
       color: $color-highLight;
     }
-    
+
     .rotateIn {
       animation: rotateIn 0.4s ease-In forwards;
       border: 2px solid $color-highLight;
