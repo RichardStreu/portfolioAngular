@@ -25,11 +25,11 @@ header {
     position: absolute;
     padding-top: 112px;
     padding-right: 3px;
-    top: -3px;
+    top: 0px;
     right: -35px;
     z-index: 1000;
     width: 280px;
-    height: calc(100dvh + 6px);
+    height: 100vh;
     border: 1px solid rgba($color-highLight, 0.3);
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
