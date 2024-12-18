@@ -11,7 +11,7 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 1350px) {
     min-height: 100%;
   }
 
@@ -29,7 +29,7 @@
     overflow: hidden;
 
     @media screen and (max-width: 1350px) {
-      width: 100%;
+      min-width: fit-content;
       max-width: 420px;
       min-height: 100%;
     }
@@ -213,7 +213,6 @@
 
       .projectModalRightPart {
         width: 520px;
-        min-height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -264,6 +263,11 @@
             $color-highLight 25px,
             $color-highLight 27px
           );
+
+          @media screen and (max-width: 1350px) {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+          }
 
           @media screen and (max-width: 650px) {
             height: 216px;
