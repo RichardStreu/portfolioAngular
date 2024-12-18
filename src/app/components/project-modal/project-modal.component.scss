@@ -33,7 +33,7 @@
       max-width: 420px;
       min-height: 100%;
       overflow: auto;
-      
+
       &::-webkit-scrollbar {
         // height: 200px;
         display: none;
@@ -65,7 +65,7 @@
         flex-direction: column-reverse;
         padding: 16px 16px;
         justify-content: flex-end;
-        min-height: 100%; 
+        min-height: 100%;
         // max-width: 520px;
       }
 
@@ -296,8 +296,10 @@
               border-radius: 16px;
             }
 
-            &:hover {
-              transform: translate(24px, -24px);
+            @media (hover: hover) {
+              &:hover {
+                transform: translate(24px, -24px);
+              }
             }
           }
         }
