@@ -6,7 +6,6 @@ header {
     rgba(41, 41, 41, 1) 30%,
     rgba(41, 41, 41, 0)
   );
-  transition: transform 0.4s ease-out;
 
   .headerContent {
     height: 98px;
@@ -303,8 +302,4 @@ header {
       fill: $color-highLight;
     }
   }
-}
-
-.header-hidden {
-  transform: translateY(-100%);
 }
