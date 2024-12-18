@@ -1,5 +1,16 @@
 @import "../../../../styles.scss";
 
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 3000;
+  top: 0;
+}
+
+.headerHidden {
+  transform: translateY(-100%);
+}
+
 .heroSection {
   background: linear-gradient(
     to top right,
@@ -9,6 +20,7 @@
   height: 100dvh;
   position: relative;
   overflow: hidden;
+  padding-top: 98px;
 
   .contentWrapper {
     position: relative;
@@ -48,7 +60,7 @@
       padding-top: 20dvh;
 
       @media (max-height: 900px ) {
-        padding-top: 5dvh;
+        padding-top: 10dvh;
       }
 
       .job {

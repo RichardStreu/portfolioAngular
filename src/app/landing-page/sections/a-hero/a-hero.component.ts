@@ -5,6 +5,7 @@ import { ArrowRightComponent } from './arrow-right/arrow-right.component';
 import { SlideButtonComponent } from '../../../components/slide-button/slide-button.component';
 import { SlideBarComponent } from '../../../components/slide-bar/slide-bar.component';
 import { LanguageService } from '../../../services/language.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-a-hero',
@@ -15,6 +16,7 @@ import { LanguageService } from '../../../services/language.service';
     ArrowRightComponent,
     SlideButtonComponent,
     SlideBarComponent,
+    CommonModule
   ],
   templateUrl: './a-hero.component.html',
   styleUrl: './a-hero.component.scss',
