@@ -31,6 +31,11 @@ export class HeaderComponent {
     if (event.target == event.currentTarget) {
     this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
   }
+  if (this.isBurgerMenuVisible) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 }
 
   // Text content for the links in the header.
