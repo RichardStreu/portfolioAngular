@@ -113,26 +113,26 @@ export class ContactFormComponent {
   chooseNameDefaultWarning() {
     this.nameDefaultWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Enter a valid name, e.g., "John-Mia Doe".'
-        : 'Bitte schreib deinen Namen so, z. B. "Max-Mia Muster".';
+        ? 'Enter first and last name'
+        : 'Gib Vor- und Nachnamen ein';
   }
   chooseEmailDefaultWarning() {
     this.emailDefaultWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Enter a valid email, e.g., "name@mail.com".'
-        : 'Bitte gib eine gültige E-Mail an, z. B. "maxi-muster@mail.de".';
+        ? 'Enter a valid E-Mail'
+        : 'Gültige E-Mail erforderlich';
   }
   chooseMessageDefaultWarning() {
     this.messageDefaultWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Your message must be at least 2 words long.'
-        : 'Deine Nachricht muss mindestens zwei Wörter enthalten.';
+      ? 'Message must be at least 2 words.'
+      : 'Mindestens 2 Wörter erforderlich.';
   }
   chooseMessageCharacterWarning() {
     this.messageCharacterWarning =
       this.languageService.currentLanguage == 'en'
-        ? 'Please do not use the following special characters: < > " \' `.'
-        : 'Bitte verwende nicht die folgenden Sonderzeichen: < > " \' `.';
+        ? 'Invalid characters included: < > " \' `'
+        : 'Ungültige Zeichen enthalten: < > " \' `';
   }
   chooseCheckboxDefaultWarning() {
     this.checkboxDefaultWarning =
@@ -272,7 +272,7 @@ export class ContactFormComponent {
 
   validateName() {
     const charactersRegex = /[<>"'`]/;
-    const nameRegex = /^[A-Za-z]+(-[A-Za-z]+)? [A-Za-z]+(-[A-Za-z]+)?$/;
+    const nameRegex = /^[A-Za-z]+ [A-Za-z]+( [A-Za-z]+)*$/;
     let name = this.nameInputNgModel;
     let validName = nameRegex.test(name);
 
