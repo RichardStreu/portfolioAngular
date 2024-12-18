@@ -4,7 +4,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 80;
+  z-index: 3000;
   width: 100vw;
   height: 100dvh;
   background-color: rgba(black, 0.1);
@@ -17,7 +17,7 @@
 
   .projectModalLayer {
     position: absolute;
-    z-index: 100;
+    z-index: 3100;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
