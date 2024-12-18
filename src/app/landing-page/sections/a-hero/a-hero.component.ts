@@ -64,19 +64,17 @@ export class AHeroComponent {
 
   isHeaderHidden = false; // Zustand des Headers
   private lastScrollPosition = 0;
+  window: any = window;
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const currentScrollPosition = window.scrollY;
-
-    if (currentScrollPosition > this.lastScrollPosition && currentScrollPosition > 50) {
-      this.isHeaderHidden = true; 
-    } else {
-      this.isHeaderHidden = false; 
+  showHideHeader() {
+    if (this.window.scrollY > 100) {
+      if (this.window.scrollY > this.lastScrollPosition) {
+        this.isHeaderHidden = true;
+      } else {
+        this.isHeaderHidden = false;
+      }
+      this.lastScrollPosition = this.window.scrollY;
     }
-
-    this.lastScrollPosition = currentScrollPosition;
-
-    console.log(currentScrollPosition);
   }
 }
