@@ -65,6 +65,7 @@ export class AHeroComponent {
   isHeaderHidden = false; // Zustand des Headers
   private lastScrollPosition = 0;
   window: any = window;
+  isScrolling: boolean = false;
 
   @HostListener('window:scroll', [])
   showHideHeader() {
