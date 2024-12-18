@@ -47,7 +47,7 @@ body {
 }
 
 .d_none {
-  display: none!important;
+  display: none !important;
 }
 
 .d_block {
@@ -74,4 +74,37 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: rgba($color-highLight, 0.15);
   border-radius: 100vh;
+}
+
+.scrollbar-mobile {
+  overflow-y: auto; // Aktiviert vertikales Scrollen
+  -webkit-overflow-scrolling: touch; // Sanftes Scrollen wie auf iOS
+  scrollbar-width: thin; // Dünne Scrollbar für Firefox
+  scrollbar-color: rgba($color-highLight, 0.5) transparent; // Farbe für Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Scrollbar standardmäßig ausblenden
+  }
+
+  &:hover::-webkit-scrollbar,
+  &:focus-within::-webkit-scrollbar {
+    display: block; // Scrollbar beim Scrollen, Hover oder Fokus anzeigen
+    width: 5px; // Dünne Scrollbar
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color-highLight, 0.5); // Farbe der Scrollbar
+    border-radius: 10px; // Abgerundete Ecken
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; // Unsichtbarer Hintergrund
+  }
+
+  // @media (hover: hover) {
+  //   &:hover::-webkit-scrollbar,
+  //   &:focus-within::-webkit-scrollbar {
+  //     display: block; // Scrollbar speziell auf mobilen Geräten
+  //   }
+  // }
 }

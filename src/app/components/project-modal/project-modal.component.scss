@@ -34,10 +34,10 @@
       min-height: 100%;
       overflow: auto;
 
-      &::-webkit-scrollbar {
-        // height: 200px;
-        display: none;
-      }
+      // &::-webkit-scrollbar {
+      //   // height: 200px;
+      //   display: none;
+      // }
     }
 
     @media screen and (max-width: 650px) {
