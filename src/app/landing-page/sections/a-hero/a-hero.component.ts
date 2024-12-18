@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { HeaderComponent } from '../../../core/header/header.component';
 import { ArrowLeftComponent } from './arrow-left/arrow-left.component';
 import { ArrowRightComponent } from './arrow-right/arrow-right.component';
@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
     ArrowRightComponent,
     SlideButtonComponent,
     SlideBarComponent,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './a-hero.component.html',
   styleUrl: './a-hero.component.scss',
@@ -60,5 +60,23 @@ export class AHeroComponent {
    */
   constructor() {
     this.chooseLanguage();
+  }
+
+  isHeaderHidden = false; // Zustand des Headers
+  private lastScrollPosition = 0;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const currentScrollPosition = window.scrollY;
+
+    if (currentScrollPosition > this.lastScrollPosition && currentScrollPosition > 50) {
+      this.isHeaderHidden = true; 
+    } else {
+      this.isHeaderHidden = false; 
+    }
+
+    this.lastScrollPosition = currentScrollPosition;
+
+    console.log(currentScrollPosition);
   }
 }
