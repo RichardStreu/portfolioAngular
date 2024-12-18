@@ -32,9 +32,17 @@
       min-width: fit-content;
       max-width: 420px;
       min-height: 100%;
+      overflow: auto;
+      
+      &::-webkit-scrollbar {
+        // height: 200px;
+        display: none;
+      }
     }
 
     @media screen and (max-width: 650px) {
+      min-width: 100vw;
+      max-width: 420px;
       border-radius: 0;
       border: none;
       overflow-y: auto;
@@ -55,12 +63,10 @@
 
       @media screen and (max-width: 1350px) {
         flex-direction: column-reverse;
-        padding: 16px 12px;
+        padding: 16px 16px;
         justify-content: flex-end;
-        
-        min-height: 100%;
-        
-
+        min-height: 100%; 
+        // max-width: 520px;
       }
 
       .projectModalLeftPart {
@@ -69,7 +75,7 @@
         display: flex;
         flex-direction: column;
 
-        @media screen and (max-width: 650px) {
+        @media screen and (max-width: 1350px) {
           width: 100%;
         }
 
@@ -170,6 +176,8 @@
           justify-content: end;
           gap: 1rem;
           padding-top: 2rem;
+          padding-bottom: 2rem;
+          padding-right: 0.5rem;
 
           @media (min-width: 1351px) {
             display: none;
