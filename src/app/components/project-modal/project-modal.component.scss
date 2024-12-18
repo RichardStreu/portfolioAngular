@@ -42,7 +42,7 @@
 
     @media screen and (max-width: 650px) {
       min-width: 100vw;
-      max-width: 420px;
+      width: 100vw;
       border-radius: 0;
       border: none;
       overflow-y: auto;
@@ -66,7 +66,10 @@
         padding: 16px 16px;
         justify-content: flex-end;
         min-height: 100%;
-        // max-width: 520px;
+      }
+
+      @media screen and (max-width: 650px) {
+        padding: 16px 8px;
       }
 
       .projectModalLeftPart {
@@ -89,6 +92,10 @@
           @media screen and (max-width: 650px) {
             font-size: 4.5rem;
           }
+
+          @media screen and (max-width: 360px) {
+            font-size: 4rem;
+          }
         }
 
         .nameField {
@@ -96,6 +103,10 @@
           font-weight: 700;
           font-size: 3.25rem;
           padding-bottom: 2rem;
+
+          @media screen and (max-width: 360px) {
+            font-size: 2.75rem;
+          }
         }
 
         .textBox {
