@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 2000;
   top: 0;
+  transition: transform 0.4s ease-in-out;
 }
 
 .headerHidden {
