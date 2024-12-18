@@ -11,20 +11,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  /**
-   * Injects the LanguageService to manage language-related operations.
-   */
+  // Injects the LanguageService to manage language-related operations.
   languageService = inject(LanguageService);
 
-  /**
-   * A boolean flag indicating the current language state.
-   * `true` for the secondary language, `false` for the primary language.
-   */
+
+  // A boolean flag indicating the current language state.
+  // `true` for the secondary language, `false` for the primary language.
   lang: boolean = false;
 
-  /**
-   * Toggles the language state and switches the language using the LanguageService.
-   */
+  // Toggles the language state and switches the language using the LanguageService.
   switchButton() {
     this.lang = !this.lang;
     this.languageService.switchLanguage();
@@ -38,19 +33,15 @@ export class HeaderComponent {
   }
 }
 
-  /**
-   * Text content for the links in the header.
-   */
+  // Text content for the links in the header.
   aboutMeText: string = 'About Me';
 
   skillsText: string = 'Skills';
 
   projectsText: string = 'Projects';
 
-  /**
-   * Subscribes to language changes and updates the text content of the header sections
-   * based on the current language.
-   */
+  // Subscribes to language changes and updates the text content of the header sections
+  // based on the current language.
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
       this.aboutMeText =
@@ -62,9 +53,7 @@ export class HeaderComponent {
     });
   }
 
-  /**
-   * Initializes the HeaderComponent and sets up the language subscription.
-   */
+  // Initializes the HeaderComponent and sets up the language subscription.
   constructor() {
     this.chooseLanguage();
     this.lang = this.languageService.lang;
