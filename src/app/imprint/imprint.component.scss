@@ -2,29 +2,38 @@
 
 .imprint {
   min-height: calc(100vh - 194px);
-  padding-bottom: 144px;
 
-  .imprintHeadline {
-    padding-top: 76px;
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
   }
 
-  .link {
-    color: $color-highLight;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    cursor: pointer;
+  .contentWrapper {
+    .imprintHeadline {
+      padding-top: 144px;
+    }
 
-    &:hover {
-      text-decoration: underline;
+    .link {
+      color: $color-highLight;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    h2 {
+      padding-bottom: 1.25rem;
+    }
+
+    h3 {
+      padding-bottom: 1rem;
     }
   }
-
-  h2 {
-    padding-bottom: 1.25rem;
-  }
-
-  h3 {
-    padding-bottom: 1rem;
-  }
 }
-
