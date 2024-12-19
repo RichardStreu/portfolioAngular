@@ -3,16 +3,16 @@
 
 header {
   background: linear-gradient(
-    to bottom,
-    rgba(41, 41, 41, 1) 0%,
-    rgba(41, 41, 41, 0.99) 15%,
-    rgba(41, 41, 41, 0.95) 35%,
-    rgba(41, 41, 41, 0.83) 55%,
-    rgba(41, 41, 41, 0.7) 70%,
-    rgba(41, 41, 41, 0.5) 80%,
-    rgba(41, 41, 41, 0.30) 90%,
-    rgba(41, 41, 41, 0) 100%
-  );
+  to bottom,
+  rgba(41, 41, 41, 1) 0%,    /* Sehr dunkel */
+  rgba(41, 41, 41, 0.98) 20%, /* Langsam heller */
+  rgba(41, 41, 41, 0.9) 40%,  /* Übergang in weniger Dunkel */
+  rgba(41, 41, 41, 0.75) 60%, /* Deutlich transparenter */
+  rgba(41, 41, 41, 0.5) 75%,  /* Noch transparenter */
+  rgba(41, 41, 41, 0.3) 90%,  /* Fast durchsichtig */
+  rgba(41, 41, 41, 0) 100%  
+);
+
   
   .headerContent {
     height: 98px;

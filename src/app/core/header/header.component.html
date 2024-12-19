@@ -1,6 +1,6 @@
 <header>
   <div class="contentWrapper">
-    <div class="headerContent">
+    <div id="headerContent" class="headerContent">
       <div [ngClass]="{ burgerMenuBox: true, hiddenBurgerMenu: !isBurgerMenuVisible }"
         (click)="showHideBurgerMenu($event)">
         <div class="burgerMenu">
@@ -21,6 +21,7 @@
       </div>
       <div class="headerNavbar">
         <div
+        id="burgerIcon"
           class="burgerIcon"
           [ngClass]="{ burgerIcon: true, burgerVisible: isBurgerMenuVisible }"
           (click)="showHideBurgerMenu($event)"

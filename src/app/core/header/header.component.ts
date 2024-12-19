@@ -14,7 +14,6 @@ export class HeaderComponent {
   // Injects the LanguageService to manage language-related operations.
   languageService = inject(LanguageService);
 
-
   // A boolean flag indicating the current language state.
   // `true` for the secondary language, `false` for the primary language.
   lang: boolean = false;
@@ -29,14 +28,19 @@ export class HeaderComponent {
 
   showHideBurgerMenu(event: any) {
     if (event.target == event.currentTarget) {
-    this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
+      this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
+    }
+    const headerContentRef = document.getElementById('headerContent');
+    if (this.isBurgerMenuVisible) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '8px';
+      if (headerContentRef) headerContentRef.style.paddingRight = '8px';
+    } else {
+      document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '0px';
+      if (headerContentRef) headerContentRef.style.paddingRight = '0px';
+    }
   }
-  if (this.isBurgerMenuVisible) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'auto';
-  }
-}
 
   // Text content for the links in the header.
   aboutMeText: string = 'About Me';
