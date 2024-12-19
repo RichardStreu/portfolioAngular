@@ -22,30 +22,37 @@ export class HeaderComponent {
   switchButton() {
     this.lang = !this.lang;
     this.languageService.switchLanguage();
-    console.log(window.scrollY);
-    
   }
 
+  // A boolean flag indicating the visibility state of the burger menu.
   isBurgerMenuVisible: boolean = false;
 
-  @Output()updateBurgerVisibility = new EventEmitter();
+  // EventEmitter to notify parent components about the burger menu visibility change.
+  @Output() updateBurgerVisibility = new EventEmitter();
 
+  // Emit the current visibility state of the burger menu.
   submitBurgerVisibility() {
     this.updateBurgerVisibility.emit(this.isBurgerMenuVisible);
   }
 
+  // Toggle the visibility of the burger menu and adjust the page's overflow and padding.
   showHideBurgerMenu(event: any) {
-    console.log(window.scrollY);
+    // Check if the event target is the same as the event current target.
     if (event.target == event.currentTarget) {
+      // Toggle the burger menu visibility state.
       this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
+      // Emit the updated visibility state.
       this.submitBurgerVisibility();
     }
+    // Get the reference to the header content element.
     const headerContentRef = document.getElementById('headerContent');
+    // If the burger menu is visible, prevent body scrolling and adjust padding.
     if (this.isBurgerMenuVisible) {
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = '8px';
       if (headerContentRef) headerContentRef.style.paddingRight = '8px';
     } else {
+      // If the burger menu is hidden, allow body scrolling and reset padding.
       document.body.style.overflow = 'auto';
       document.body.style.paddingRight = '0px';
       if (headerContentRef) headerContentRef.style.paddingRight = '0px';
