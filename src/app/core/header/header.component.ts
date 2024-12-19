@@ -18,6 +18,8 @@ export class HeaderComponent {
   // `true` for the secondary language, `false` for the primary language.
   lang: boolean = false;
 
+  isMobileDevice: boolean = false;
+
   // Toggles the language state and switches the language using the LanguageService.
   switchButton() {
     this.lang = !this.lang;
@@ -54,15 +56,23 @@ export class HeaderComponent {
     const headerContentRef = document.getElementById('headerContent');
     // If the burger menu is visible, prevent body scrolling and adjust padding.
     if (this.isBurgerMenuVisible) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = '8px';
       if (headerContentRef) headerContentRef.style.paddingRight = '8px';
+      if (!this.isMobileDevice) this.hideScrollBar();
     } else {
       // If the burger menu is hidden, allow body scrolling and reset padding.
-      document.body.style.overflow = 'auto';
-      document.body.style.paddingRight = '0px';
       if (headerContentRef) headerContentRef.style.paddingRight = '0px';
+      if (!this.isMobileDevice) this.showScrollBar();
     }
+  }
+
+  hideScrollBar() {
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = '8px';
+  }
+
+  showScrollBar() {
+    document.body.style.overflow = 'auto';
+    document.body.style.paddingRight = '0px';
   }
 
   // Text content for the links in the header.
@@ -90,6 +100,10 @@ export class HeaderComponent {
   constructor() {
     this.chooseLanguage();
     this.lang = this.languageService.lang;
+  }
+
+  ngOnInit() {
+    this.isMobileDevice = window.innerWidth <= 768;
   }
 
   scrollToTop() {
