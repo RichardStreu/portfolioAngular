@@ -210,7 +210,7 @@ export class ContactFormComponent {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
-          next: (response) => {
+          next: (response) => {                        
             this.doSubmitButtonSuccessAnimation();
             setTimeout(() => {
               this.doSubmitButtonSuccessAnimation();
