@@ -1,12 +1,18 @@
 @import "../../../styles.scss";
 
 .contentWrapper {
+  padding-top: 144px;
+
+  @media (max-width: 1250px) {
+    padding-top: 100px;
+  }
+
   div {
     display: flex;
     justify-content: space-between;
     padding-bottom: 64px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1250px) {
       padding-bottom: 32px;
     }
 

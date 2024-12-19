@@ -2,13 +2,11 @@
 
 .aboutMeSection .contentWrapper {
   padding-top: 144px;
-  padding-bottom: 144px;
   display: flex;
   align-items: center;
 
   @media screen and (max-width: 640px) {
     padding-top: 100px;
-    padding-bottom: 100px;
   }
 }
 

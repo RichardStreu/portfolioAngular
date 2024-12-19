@@ -3,6 +3,11 @@
 .projectsSection .contentWrapper {
   display: flex;
   flex-direction: column;
+  padding-top: 144px;
+
+  @media screen and (max-width: 1250px) {
+    padding-top: 100px;
+  }
 }
 
 .projectsTextPart {
