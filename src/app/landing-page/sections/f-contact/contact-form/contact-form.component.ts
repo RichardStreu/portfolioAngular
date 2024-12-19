@@ -200,7 +200,7 @@ export class ContactFormComponent {
     this.contactData.message = '';
   }
 
-  mailTest: boolean = true;
+  mailTest: boolean = false;
 
   // function to submit the form
   onSubmit() {
