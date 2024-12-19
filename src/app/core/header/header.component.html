@@ -4,13 +4,14 @@
       <div [ngClass]="{ burgerMenuBox: true, hiddenBurgerMenu: !isBurgerMenuVisible }"
         (click)="showHideBurgerMenu($event)">
         <div class="burgerMenu">
-          <a href="#aboutMeSection"
+          <a href="#aboutmeComponent"
             (click)="showHideBurgerMenu($event)">{{ aboutMeText }}</a>
-          <a href="#skillsetSection"
+          <a href="#skillsetComponent"
             (click)="showHideBurgerMenu($event)">{{ skillsText }}</a>
-          <a href="#projectsSection"
+          <a href="#projectsComponent"
             (click)="showHideBurgerMenu($event)">{{ projectsText }}</a>
-          <a href="">{{ contactText }}</a>
+          <a href="#contactComponent"
+            (click)="showHideBurgerMenu($event)">{{ contactText }}</a>
           <div
             class="languageButton"
             [class.active]="lang"
@@ -38,9 +39,10 @@
         >
           <span>EN</span><span>DE</span>
         </div>
-        <a href="#aboutMeSection">{{ aboutMeText }}</a>
-        <a href="#skillsetSection">{{ skillsText }}</a>
-        <a href="#projectsSection">{{ projectsText }}</a>
+        <a href="#aboutmeComponent">{{ aboutMeText }}</a>
+        <a href="#skillsetComponent">{{ skillsText }}</a>
+        <a href="#projectsComponent">{{ projectsText }}</a>
+        <a href="#contactComponent">{{ contactText }}</a>
       </div>
 
       <a [routerLink]="['']">
