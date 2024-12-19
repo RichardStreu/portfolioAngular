@@ -2,32 +2,43 @@
 
 .legal-notice {
   min-height: calc(100vh - 194px);
-  padding-bottom: 144px;
 
-  .policyHeadline {
-    padding-top: 76px;
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
   }
 
-  .link {
-    color: $color-highLight;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    cursor: pointer;
+  .contentWrapper {
 
-    &:hover {
-      text-decoration: underline;
+    .privacy-Policy {
+      padding-top: 144px;
     }
-  }
 
-  ul {
-    padding-left: 1.25rem;
-  }
+    .link {
+      color: $color-highLight;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      cursor: pointer;
 
-  h2 {
-    padding-bottom: 1.25rem;
-  }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
 
-  h3 {
-    padding-bottom: 1rem;
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    h2 {
+      padding-bottom: 1.25rem;
+    }
+
+    h3 {
+      padding-bottom: 1rem;
+    }
   }
 }
