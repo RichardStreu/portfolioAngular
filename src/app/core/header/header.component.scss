@@ -55,6 +55,10 @@ header {
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
+      position: absolute;
+      top: 98px;
+      left: 50%;
+      transform: translateX(-50%);
 
       a {
         font-family: "Fira";
