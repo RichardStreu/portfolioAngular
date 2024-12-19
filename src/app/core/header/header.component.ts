@@ -61,10 +61,9 @@ export class HeaderComponent {
 
   // Text content for the links in the header.
   aboutMeText: string = 'About Me';
-
   skillsText: string = 'Skills';
-
   projectsText: string = 'Projects';
+  contactText: string = 'Contact';
 
   // Subscribes to language changes and updates the text content of the header sections
   // based on the current language.
@@ -76,6 +75,8 @@ export class HeaderComponent {
         this.languageService.currentLanguage == 'en' ? 'Skills' : 'Fähigkeiten';
       this.projectsText =
         this.languageService.currentLanguage == 'en' ? 'Projects' : 'Projekte';
+      this.contactText =
+        this.languageService.currentLanguage == 'en' ? 'Contact' : 'Kontakt';
     });
   }
 
