@@ -17,11 +17,10 @@ export class ProjectDataService {
         isCurrentlyShown: false,
         projectImg: 'join.png',
         skillsList: [
-          { skillName: 'REST', skillImg: 'Rest-Api.svg' },
+          { skillName: 'Firebase', skillImg: 'Firebase.svg' },
           { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
           { skillName: 'SCSS', skillImg: 'CSS.svg' },
           { skillName: 'HTML', skillImg: 'HTML.svg' },
-          { skillName: 'Firebase', skillImg: 'Firebase.svg' },
         ],
         headline: {
           en: 'What is this project about?',

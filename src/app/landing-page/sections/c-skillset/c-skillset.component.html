@@ -4,14 +4,14 @@
     <div class="skillsetContent">
       <div class="skillsetLeftPart">
         <div class="skillsetTextBox">
-          <h2>{{ skillSetText }}</h2>
+          <h2 lang="de" class="wordBreak">{{ skillSetText }}</h2>
           <p class="skillDescripton">{{ skillSetDescriptionText }}</p>
           <p class="skillNeed">
             {{ youNeedText
             }}<span class="skillAnother">{{ anotherSkillText }}</span>
           </p>
           <p class="skillFeelFree">{{ feelFreeText }}</p>
-          <app-slide-button [path]="" [text]="buttonText"></app-slide-button>
+          <app-slide-button [path]="'#contact-section'" [text]="buttonText"></app-slide-button>
         </div>
       </div>
       <div class="skillsetRightPart">

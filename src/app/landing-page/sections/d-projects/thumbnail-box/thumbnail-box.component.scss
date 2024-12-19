@@ -17,6 +17,10 @@
     $color-highLight 17px
   );
 
+  @media screen and (max-width: 1350px) {
+    display: none;
+  }
+
   .thumbnailImage {
     width: 295px;
     height: 192px;

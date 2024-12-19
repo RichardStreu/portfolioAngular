@@ -18,6 +18,8 @@ export class LanguageService {
    */
   currentLanguage: string;
 
+  lang: boolean = false;
+
   /**
    * Initializes the LanguageService with the default language set to 'en'.
    */
@@ -34,9 +36,11 @@ export class LanguageService {
     if (this.currentLanguage == 'en') {
       this.currentLanguage = 'de';
       this.language.next('de');
+      this.lang = true;
     } else {
       this.currentLanguage = 'en';
       this.language.next('en');
+      this.lang = false;
     }
   }
 }

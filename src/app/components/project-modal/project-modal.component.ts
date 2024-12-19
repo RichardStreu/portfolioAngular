@@ -19,6 +19,8 @@ export class ProjectModalComponent {
   projectData = inject(ProjectDataService);
   projectModalService = inject(ProjectModalService);
 
+  window = window;
+
   index$: number = 0;
 
   currentProject: Project = {

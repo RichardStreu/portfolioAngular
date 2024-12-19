@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { ReferenceDataService } from '../../../services/reference-data.service';
 
@@ -26,18 +26,48 @@ export class EReferencesComponent {
   isSingleReferenceTransition: boolean = true;
   isCarouselBoxTransition: boolean = true;
 
+  windowWidth: number = 0;
+
   constructor() {
     this.references = this.referenceDataService.references;
+    this.onResize();
   }
 
   ngOnInit() {
+    this.onResize();
     this.generateCarouselArray();
     this.chooseLanguage();
   }
 
   ngAfterViewInit(): void {
+    this.onResize();
     this.getElementSizes();
     this.firstCarouselPositioning();
+  }
+
+  isResizing: boolean = false;
+  resizeTimeout: any;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    let width = window.innerWidth;
+
+    if (width < 800 && width >= 550) {
+      this.gapWidth = 24;
+    } else if (width < 550 && width >= 450) {
+      this.gapWidth = 16;
+    } else if (width < 450) {
+      this.gapWidth = 8;
+    } else {
+      this.gapWidth = 48;
+    }
+    if (this.resizeTimeout) {
+      clearTimeout(this.resizeTimeout);
+    }
+    this.resizeTimeout = setTimeout(() => {
+      this.getElementSizes();
+      this.firstCarouselPositioning();
+    }, 1000);
   }
 
   chooseLanguage() {
@@ -81,14 +111,10 @@ export class EReferencesComponent {
       this.carouselBoxWidth = (carouselBox as HTMLElement).offsetWidth;
       this.singleReferenceWidth = (singleReference as HTMLElement).offsetWidth;
     }
-    console.log(
-      this.carouselContainerWidth,
-      this.carouselBoxWidth,
-      this.singleReferenceWidth
-    );
   }
 
   firstCarouselPositioning() {
+    this.getElementSizes();
     this.firstRefMid = this.singleReferenceWidth * 1.5 + this.gapWidth;
     this.firstTranslateX = this.firstRefMid - this.carouselContainerWidth / 2;
     this.lastTranslateX = this.firstTranslateX;
@@ -103,6 +129,7 @@ export class EReferencesComponent {
   isPreviousAble: boolean = true;
 
   previousSlide() {
+    this.getElementSizes();
     if (this.carouselBox && this.isPreviousAble) {
       this.isPreviousAble = false;
       if (this.currentDotIndex > 0) {
@@ -141,7 +168,7 @@ export class EReferencesComponent {
       this.isCarouselBoxTransition = true;
       this.isSingleReferenceTransition = true;
       this.currentReferenceIndex = this.references.length;
-      this.currentDotIndex = 2;
+      this.currentDotIndex = this.references.length - 1;
       (this.carouselBox as HTMLElement).style.transform = `translateX(-${
         this.lastTranslateX - (this.singleReferenceWidth + this.gapWidth)
       }px)`;
@@ -152,6 +179,7 @@ export class EReferencesComponent {
   isNextAble: boolean = true;
 
   nextSlide() {
+    this.getElementSizes();
     if (this.carouselBox && this.isNextAble) {
       this.isNextAble = false;
       if (this.currentDotIndex < this.references.length - 1) {

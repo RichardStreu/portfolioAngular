@@ -4,16 +4,20 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 80;
+  z-index: 3000;
   width: 100vw;
   height: 100dvh;
   background-color: rgba(black, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
+  @media screen and (max-width: 1350px) {
+    min-height: 100%;
+  }
+
   .projectModalLayer {
     position: absolute;
-    z-index: 100;
+    z-index: 3100;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,6 +27,26 @@
     border-radius: 30px;
     background-color: $color-bgDark;
     overflow: hidden;
+
+    @media screen and (max-width: 1350px) {
+      min-width: fit-content;
+      max-width: 420px;
+      min-height: 100%;
+      overflow: auto;
+
+      // &::-webkit-scrollbar {
+      //   // height: 200px;
+      //   display: none;
+      // }
+    }
+
+    @media screen and (max-width: 650px) {
+      min-width: 100vw;
+      width: 100vw;
+      border-radius: 0;
+      border: none;
+      overflow-y: auto;
+    }
 
     .projectModalBox {
       width: 100%;
@@ -37,11 +61,26 @@
       justify-content: space-evenly;
       align-items: center;
 
+      @media screen and (max-width: 1350px) {
+        flex-direction: column-reverse;
+        padding: 16px 16px;
+        justify-content: flex-end;
+        min-height: 100%;
+      }
+
+      @media screen and (max-width: 650px) {
+        padding: 16px 8px;
+      }
+
       .projectModalLeftPart {
         width: 480px;
         min-height: 200px;
         display: flex;
         flex-direction: column;
+
+        @media screen and (max-width: 1350px) {
+          width: 100%;
+        }
 
         .indexField {
           font-family: "Karla", sans-serif;
@@ -49,6 +88,14 @@
           font-size: 6.25rem;
           color: $color-highLight;
           padding-bottom: 0 0 1.25rem 0;
+
+          @media screen and (max-width: 650px) {
+            font-size: 4.5rem;
+          }
+
+          @media screen and (max-width: 360px) {
+            font-size: 4rem;
+          }
         }
 
         .nameField {
@@ -56,11 +103,20 @@
           font-weight: 700;
           font-size: 3.25rem;
           padding-bottom: 2rem;
+
+          @media screen and (max-width: 360px) {
+            font-size: 2.75rem;
+          }
         }
 
         .textBox {
           padding-bottom: 2rem;
           height: 160px;
+
+          @media screen and (max-width: 650px) {
+            padding-bottom: 1.25rem;
+            height: auto;
+          }
 
           .headline {
             font-family: "Fira", sans-serif;
@@ -68,11 +124,19 @@
             font-size: 1.5rem;
             color: $color-highLight;
             padding-bottom: 1.25rem;
+
+            @media screen and (max-width: 650px) {
+              font-size: 1.25rem;
+            }
           }
 
           .description {
             font-family: "Karla", sans-serif;
             font-size: 1.13rem;
+
+            @media screen and (max-width: 650px) {
+              font-size: 1rem;
+            }
           }
         }
 
@@ -82,6 +146,10 @@
           align-items: center;
           gap: 16px;
           padding-bottom: 2.5rem;
+
+          @media screen and (max-width: 650px) {
+            flex-wrap: wrap;
+          }
 
           .singleSkill {
             display: flex;
@@ -107,16 +175,71 @@
           display: flex;
           flex-direction: row;
           gap: 2rem;
+
+          @media screen and (max-width: 650px) {
+            justify-content: center;
+          }
+        }
+
+        .arrowBox {
+          display: flex;
+          flex-direction: row;
+          justify-content: end;
+          gap: 1rem;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+          padding-right: 0.5rem;
+
+          @media (min-width: 1351px) {
+            display: none;
+          }
+
+          .previousArrow {
+            transform: rotate(180deg);
+          }
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            background-color: transparent;
+            border: none;
+
+            svg {
+              width: 24px;
+              height: 22px;
+              transition: all 0.2s ease-in-out;
+              cursor: pointer;
+
+              &:hover {
+                transform: scale(1.25);
+
+                path {
+                  fill: $color-highLight;
+                }
+              }
+
+              path {
+                transition: all 0.2s ease-in-out;
+                fill: white;
+              }
+            }
+          }
         }
       }
 
       .projectModalRightPart {
         width: 520px;
-        min-height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: end;
+
+        @media screen and (max-width: 650px) {
+          width: 100%;
+        }
 
         .closeButtonBox {
           display: flex;
@@ -160,6 +283,15 @@
             $color-highLight 27px
           );
 
+          @media screen and (max-width: 1350px) {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+          }
+
+          @media screen and (max-width: 650px) {
+            height: 216px;
+          }
+
           img {
             width: calc(100% + 2px);
             height: calc(100% + 2px);
@@ -171,8 +303,14 @@
             top: -1px;
             left: -1px;
 
-            &:hover {
-              transform: translate(24px, -24px);
+            @media screen and (max-width: 650px) {
+              border-radius: 16px;
+            }
+
+            @media (hover: hover) {
+              &:hover {
+                transform: translate(24px, -24px);
+              }
             }
           }
         }
@@ -181,6 +319,10 @@
           display: flex;
           flex-direction: row;
           gap: 1rem;
+
+          @media (max-width: 1350px) {
+            display: none;
+          }
 
           .previousArrow {
             transform: rotate(180deg);

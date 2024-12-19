@@ -18,17 +18,28 @@
     justify-content: space-between;
     padding: 2.5rem 2rem;
 
+    @media screen and (max-width: 850px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+
     p {
       font-family: "Fira", sans-serif;
       font-weight: 700;
       font-size: 1.5rem;
       color: white;
+      text-align: center;
     }
 
     .technologies {
       padding: 0px;
       display: flex;
       align-items: center;
+
+      @media screen and (max-width: 850px) {
+        flex-direction: row;
+        gap: 0;
+      }
 
       .singleSkill {
         padding: 0px;
@@ -47,6 +58,11 @@
           background-color: $color-highLight;
           margin-left: 6px;
           margin-right: 6px;
+        }
+
+        @media screen and (max-width: 850px) {
+          flex-direction: row;
+          gap: 0;
         }
       }
     }

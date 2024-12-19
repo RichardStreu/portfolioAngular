@@ -1,13 +1,13 @@
 <section class="heroSection">
-  <app-header></app-header>
+  <app-header (updateBurgerVisibility)="setBurgerMenuVisibility($event)" id="header" [ngClass]="{'headerHidden': isHeaderHidden}"></app-header>
   <div class="contentWrapper">
     <app-arrow-left class="arrowLeft"></app-arrow-left>
     <div class="nameContainer">
       <p class="job">Frontend Developer</p>
       <p class="name">Richard Streu</p>
       <div>
-        <app-slide-button [path]="" [text]="checkMyWorkText"></app-slide-button>
-        <app-slide-button [path]="" [text]="contactMeText"></app-slide-button>
+        <app-slide-button [path]="'#projectsComponent'" [text]="checkMyWorkText"></app-slide-button>
+        <app-slide-button [path]="'#contactComponent'" [text]="contactMeText"></app-slide-button>
       </div>
     </div>
     <app-arrow-right class="arrowRight"></app-arrow-right>

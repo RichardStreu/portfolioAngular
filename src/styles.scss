@@ -32,13 +32,22 @@ body {
 
 .contentWrapper {
   width: 100%;
-  max-width: 1248px;
+  max-width: calc(1248px + 4rem);
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media screen and (max-width: 650px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .d_none {
-  display: none;
+  display: none !important;
 }
 
 .d_block {
@@ -65,4 +74,37 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: rgba($color-highLight, 0.15);
   border-radius: 100vh;
+}
+
+.scrollbar-mobile {
+  overflow-y: auto; 
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: thin;
+  scrollbar-color: rgba($color-highLight, 0.5) transparent; 
+
+  &::-webkit-scrollbar {
+    display: none; 
+  }
+
+  &:hover::-webkit-scrollbar,
+  &:focus-within::-webkit-scrollbar {
+    display: block; 
+    width: 5px; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color-highLight, 0.5); 
+    border-radius: 10px; 
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+}
+
+.wordBreak {
+  hyphens: auto; /* Automatische Silbentrennung */
+  // overflow-wrap: break-word; /* Zusätzliche Unterstützung für Wortumbruch */
+  // word-wrap: break-word; /* Alte Syntax für Browser-Kompatibilität */
+  word-break: break-word; /* Für Sicherheit bei sehr langen Wörtern */
 }

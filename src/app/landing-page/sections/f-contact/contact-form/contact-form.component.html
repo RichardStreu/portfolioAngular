@@ -1,49 +1,85 @@
 <div class="formContainer">
-  <form action="">
+  <form (ngSubmit)="onSubmit()">
     <div class="inputBox">
       <label for="name">{{ labelNameText }}</label>
       <input
+        (focus)="focusNameInput()"
+        (blur)="validateAfterBlur('name')"
         type="text"
         id="nameInput"
-        class="nameInput"
+        [ngClass]="{ nameInput: true, validationWarning: isNameWarning }"
         name="name"
         [placeholder]="placeholderNameText"
-        [(ngModel)]="nameInputValue"
+        [(ngModel)]="nameInputNgModel"
+        required
       />
     </div>
     <div class="inputBox">
       <label for="email">{{ labelEmailText }}</label>
       <input
+        (focus)="focusEmailInput()"
+        (blur)="validateAfterBlur('email')"
         type="email"
         id="nameInput"
-        class="emailInput"
-        name="name"
+        [ngClass]="{ emailInput: true, validationWarning: isEmailWarning }"
+        name="email"
         [placeholder]="placeholderEmailText"
-        [(ngModel)]="emailInputValue"
+        [(ngModel)]="emailInputNgModel"
+        required
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
     </div>
     <div id="messageBox" class="inputBox">
       <label for="message">{{ labelMessageText }}</label>
       <textarea
+        (focus)="focusMessageInput()"
+        (blur)="validateAfterBlur('message')"
+        (input)="adjustTextareaHeight($event)"
+        rows="1"
         name="message"
         id="messageInput"
-        class="messageInput"
+        [ngClass]="{ messageInput: true, validationWarning: isMessageWarning }"
         [placeholder]="placeholderMessageText"
-        [(ngModel)]="messageInputValue"
+        [(ngModel)]="messageInputNgModel"
+        required
       ></textarea>
     </div>
     <div class="privacyPolicyBox">
-      <div (click)="checkCheckBox()" class="checkBox">
-        <svg [ngClass]="{'opacity_1': isCheckboxChecked}" width="10" height="8" viewBox="0 0 10 8" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M1 4L4 7L9 1" />
-        </svg>
+      <div>
+        <div (click)="checkCheckBox()" class="checkBox">
+          <svg
+            [ngClass]="{ opacity_1: isCheckboxChecked }"
+            width="10"
+            height="8"
+            viewBox="0 0 10 8"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M1 4L4 7L9 1" />
+          </svg>
+        </div>
+        <div class="privacyPolicyText">
+          <p>{{ privacyPolicyFirstText }}</p>
+          <a href="">{{ privacyPolicyLinkText }}</a>
+          <p>{{ privacyPolicySecondText }}</p>
+        </div>
       </div>
-      <p>{{ privacyPolicyFirstText }}</p>
-      <a href="">{{ privacyPolicyLinkText }}</a>
-      <p>{{ privacyPolicySecondText }}</p>
     </div>
+    <p class="checkboxValidationField">{{ checkboxValidationField }}&nbsp;</p>
     <div class="buttonBox">
-      <button class="submitButton" type="submit" value="submit">
+      <button
+        [ngClass]="{
+          submitButton: true,
+          hoverValid: areAllInputsValid,
+          hoverInvalid: !areAllInputsValid,
+          rotateIn: isRotateIn,
+          rotateOut: isRotateOut
+        }"
+        type="submit"
+        value="submit"
+      >
         <span>{{ submitButtonText }}</span>
       </button>
     </div>

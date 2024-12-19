@@ -30,7 +30,7 @@ export class ContactTextComponent {
           : 'Lass uns zusammenarbeiten';
       this.solveText =
         this.languageService.currentLanguage == 'en'
-          ? 'Got a preoblem to solve?'
+          ? 'Got a problem to solve?'
           : 'Ein Problem zu lösen?';
       this.myWorkText =
         this.languageService.currentLanguage == 'en'
