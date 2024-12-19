@@ -77,34 +77,34 @@ body {
 }
 
 .scrollbar-mobile {
-  overflow-y: auto; // Aktiviert vertikales Scrollen
-  -webkit-overflow-scrolling: touch; // Sanftes Scrollen wie auf iOS
-  scrollbar-width: thin; // Dünne Scrollbar für Firefox
-  scrollbar-color: rgba($color-highLight, 0.5) transparent; // Farbe für Firefox
+  overflow-y: auto; 
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: thin;
+  scrollbar-color: rgba($color-highLight, 0.5) transparent; 
 
   &::-webkit-scrollbar {
-    display: none; // Scrollbar standardmäßig ausblenden
+    display: none; 
   }
 
   &:hover::-webkit-scrollbar,
   &:focus-within::-webkit-scrollbar {
-    display: block; // Scrollbar beim Scrollen, Hover oder Fokus anzeigen
-    width: 5px; // Dünne Scrollbar
+    display: block; 
+    width: 5px; 
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba($color-highLight, 0.5); // Farbe der Scrollbar
-    border-radius: 10px; // Abgerundete Ecken
+    background: rgba($color-highLight, 0.5); 
+    border-radius: 10px; 
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent; // Unsichtbarer Hintergrund
+    background: transparent; 
   }
+}
 
-  // @media (hover: hover) {
-  //   &:hover::-webkit-scrollbar,
-  //   &:focus-within::-webkit-scrollbar {
-  //     display: block; // Scrollbar speziell auf mobilen Geräten
-  //   }
-  // }
+.wordBreak {
+  hyphens: auto; /* Automatische Silbentrennung */
+  overflow-wrap: break-word; /* Zusätzliche Unterstützung für Wortumbruch */
+  word-wrap: break-word; /* Alte Syntax für Browser-Kompatibilität */
+  word-break: break-word; /* Für Sicherheit bei sehr langen Wörtern */
 }
