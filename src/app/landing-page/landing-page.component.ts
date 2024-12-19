@@ -9,10 +9,16 @@ import { FContactComponent } from './sections/f-contact/f-contact.component';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [AHeroComponent, BAboutmeComponent, CSkillsetComponent, DProjectsComponent, EReferencesComponent, FContactComponent],
+  imports: [
+    AHeroComponent,
+    BAboutmeComponent,
+    CSkillsetComponent,
+    DProjectsComponent,
+    EReferencesComponent,
+    FContactComponent,
+  ],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent {
-  
 }

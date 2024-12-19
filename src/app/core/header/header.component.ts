@@ -38,7 +38,13 @@ export class HeaderComponent {
   // Toggle the visibility of the burger menu and adjust the page's overflow and padding.
   showHideBurgerMenu(event: any) {
     // Check if the event target is the same as the event current target.
-    if (event.target == event.currentTarget) {
+    if (
+      event.target == event.currentTarget ||
+      ((event.target.id == 'richardStreuLogoBox' ||
+        event.target.id == 'richardStreuLogo' ||
+        event.target.id == 'logoPath') &&
+        this.isBurgerMenuVisible)
+    ) {
       // Toggle the burger menu visibility state.
       this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
       // Emit the updated visibility state.
@@ -84,5 +90,9 @@ export class HeaderComponent {
   constructor() {
     this.chooseLanguage();
     this.lang = this.languageService.lang;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0 });
   }
 }

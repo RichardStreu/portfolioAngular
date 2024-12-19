@@ -45,7 +45,11 @@
         <a href="#contactComponent">{{ contactText }}</a>
       </div>
 
-      <a [routerLink]="['']">
+      <a
+        id="richardStreuLogoBox" 
+        [routerLink]="['']"
+        (click)="scrollToTop()"
+        (click)="showHideBurgerMenu($event)">
         <svg
           id="richardStreuLogo"
           xmlns="http://www.w3.org/2000/svg"
