@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, EventEmitter, Output } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -22,13 +22,23 @@ export class HeaderComponent {
   switchButton() {
     this.lang = !this.lang;
     this.languageService.switchLanguage();
+    console.log(window.scrollY);
+    
   }
 
   isBurgerMenuVisible: boolean = false;
 
+  @Output()updateBurgerVisibility = new EventEmitter();
+
+  submitBurgerVisibility() {
+    this.updateBurgerVisibility.emit(this.isBurgerMenuVisible);
+  }
+
   showHideBurgerMenu(event: any) {
+    console.log(window.scrollY);
     if (event.target == event.currentTarget) {
       this.isBurgerMenuVisible = !this.isBurgerMenuVisible;
+      this.submitBurgerVisibility();
     }
     const headerContentRef = document.getElementById('headerContent');
     if (this.isBurgerMenuVisible) {

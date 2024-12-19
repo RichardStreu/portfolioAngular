@@ -62,6 +62,12 @@ export class AHeroComponent {
     this.chooseLanguage();
   }
 
+  isBurgerMenuVisible: boolean = false;
+
+  setBurgerMenuVisibility(boolean: boolean) {
+    this.isBurgerMenuVisible = boolean;
+  }
+
   isHeaderHidden = false; // Zustand des Headers
   private lastScrollPosition = 0;
   window: any = window;
@@ -69,7 +75,7 @@ export class AHeroComponent {
 
   @HostListener('window:scroll', [])
   showHideHeader() {
-    if (this.window.scrollY > 100) {
+    if (this.window.scrollY > 100 && !this.isBurgerMenuVisible) {
       if (this.window.scrollY > this.lastScrollPosition) {
         this.isHeaderHidden = true;
       } else {
