@@ -32,7 +32,7 @@ export class ProjectDataService {
         },
         links: {
           github: 'https://github.com/RichardStreu/Developer-Akademie-Join',
-          live: 'https://join-richard-streu.netlify.app',
+          live: 'https://join.richardstreu.dev/',
         },
       },
       {
@@ -54,7 +54,7 @@ export class ProjectDataService {
         },
         links: {
           github: 'https://github.com/RichardStreu/LieferDEVo',
-          live: 'deverando-richard-streu.netlify.app',
+          live: 'https://deverando.richardstreu.dev/',
         },
       },
       {
@@ -77,7 +77,7 @@ export class ProjectDataService {
         },
         links: {
           github: 'https://github.com/RichardStreu/Developer_Akademie-Pokedex',
-          live: 'pokedex-richard-streu.netlify.app',
+          live: 'https://pokedex.richardstreu.dev/',
         },
       },
       {
@@ -99,7 +99,7 @@ export class ProjectDataService {
         },
         links: {
           github: 'https://github.com/RichardStreu/Developer_Akademie-Nordic_Impressions',
-          live: 'https://nordic-impressions-richard-streu.netlify.app/',
+          live: 'https://nordic-impressions.richardstreu.dev/',
         },
       },
     ];
