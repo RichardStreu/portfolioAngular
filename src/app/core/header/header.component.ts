@@ -1,4 +1,4 @@
-import { Component, inject, EventEmitter, Output } from '@angular/core';
+import { Component, inject, EventEmitter, Output, HostListener } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -109,4 +109,6 @@ export class HeaderComponent {
   scrollToTop() {
     window.scrollTo({ top: 0 });
   }
+
+  
 }
