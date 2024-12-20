@@ -11,4 +11,8 @@ import { LanguageService } from '../../services/language.service';
 })
 export class FooterComponent {
   languageService = inject(LanguageService);
+
+  scrollToTop() {
+    window.scrollTo({ top: 0 });
+  }
 }
