@@ -2,11 +2,14 @@
 
 .skillsetSection {
   padding-top: 144px;
+
   background: radial-gradient(
-    circle at -5% 50%,
-    rgba($color-highLight, 0.15),
-    rgb(41, 41, 41) 20%
+    circle at 0% 50%,
+    rgba($color-highLight, 0.15) 20px,
+    rgb(41, 41, 41) 360px
   );
+  background-repeat: no-repeat;
+  background-position: center;
 
   @media screen and (max-width: 1250px) {
     padding-top: 100px;
@@ -119,7 +122,6 @@
           justify-content: end;
         }
 
-
         .skillSetSkillsBox {
           width: 632px;
           display: flex;
@@ -134,7 +136,6 @@
             width: 100%;
             max-width: 568px;
             justify-content: space-evenly;
-          
           }
         }
 
@@ -191,8 +192,6 @@
               background-color: white;
               display: flex;
               flex-direction: column;
-
-              
 
               p {
                 font-family: "Karla", sans-serif;
