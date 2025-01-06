@@ -2,7 +2,8 @@
   <div class="contentWrapper">
     <div>
       <div class="footerLogoBox">
-        <a [routerLink]="['']">
+        <a [routerLink]="['']"
+        (click)="scrollToTop()">
           <svg
             id="richardStreuFooterLogo"
             xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +99,7 @@
         >
         <a href="mailto:contact@richardstreu.dev">Email</a>
         <a [routerLink]="['legalNotice']">
-          @if (languageService.currentLanguage == "en") {Legal Notice}
+          @if (languageService.currentLanguage == "en") {Privacy Policy}
           @else {Datenschutz}</a>
         <a [routerLink]="['imprint']">
           @if (languageService.currentLanguage == "en") {Imprint}

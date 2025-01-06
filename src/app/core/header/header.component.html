@@ -1,17 +1,38 @@
 <header>
   <div class="contentWrapper">
     <div id="headerContent" class="headerContent">
-      <div [ngClass]="{ burgerMenuBox: true, hiddenBurgerMenu: !isBurgerMenuVisible }"
-        (click)="showHideBurgerMenu($event)">
+      <div
+        [ngClass]="{
+          burgerMenuBox: true,
+          hiddenBurgerMenu: !isBurgerMenuVisible
+        }"
+        (click)="showHideBurgerMenu($event)"
+      >
         <div class="burgerMenu">
-          <a href="#aboutmeComponent"
-            (click)="showHideBurgerMenu($event)">{{ aboutMeText }}</a>
-          <a href="#skillsetComponent"
-            (click)="showHideBurgerMenu($event)">{{ skillsText }}</a>
-          <a href="#projectsComponent"
-            (click)="showHideBurgerMenu($event)">{{ projectsText }}</a>
-          <a href="#contactComponent"
-            (click)="showHideBurgerMenu($event)">{{ contactText }}</a>
+          <a
+            [routerLink]="['/']"
+            fragment="aboutmeComponent"
+            (click)="showHideBurgerMenu($event)"
+            >{{ aboutMeText }}</a
+          >
+          <a
+            [routerLink]="['/']"
+            fragment="skillsetComponent"
+            (click)="showHideBurgerMenu($event)"
+            >{{ skillsText }}</a
+          >
+          <a
+            [routerLink]="['/']"
+            fragment="projectsComponent"
+            (click)="showHideBurgerMenu($event)"
+            >{{ projectsText }}</a
+          >
+          <a
+            [routerLink]="['/']"
+            fragment="contactComponent"
+            (click)="showHideBurgerMenu($event)"
+            >{{ contactText }}</a
+          >
           <div
             class="languageButton"
             [class.active]="lang"
@@ -23,7 +44,7 @@
       </div>
       <div class="headerNavbar">
         <div
-        id="burgerIcon"
+          id="burgerIcon"
           class="burgerIcon"
           [ngClass]="{ burgerIcon: true, burgerVisible: isBurgerMenuVisible }"
           (click)="showHideBurgerMenu($event)"
@@ -39,17 +60,26 @@
         >
           <span>EN</span><span>DE</span>
         </div>
-        <a href="#aboutmeComponent">{{ aboutMeText }}</a>
-        <a href="#skillsetComponent">{{ skillsText }}</a>
-        <a href="#projectsComponent">{{ projectsText }}</a>
-        <a href="#contactComponent">{{ contactText }}</a>
+        <a [routerLink]="['/']" fragment="aboutmeComponent">{{
+          aboutMeText
+        }}</a>
+        <a [routerLink]="['/']" fragment="skillsetComponent">{{
+          skillsText
+        }}</a>
+        <a [routerLink]="['/']" fragment="projectsComponent">{{
+          projectsText
+        }}</a>
+        <a [routerLink]="['/']" fragment="contactComponent">{{
+          contactText
+        }}</a>
       </div>
 
       <a
-        id="richardStreuLogoBox" 
+        id="richardStreuLogoBox"
         [routerLink]="['']"
         (click)="scrollToTop()"
-        (click)="showHideBurgerMenu($event)">
+        (click)="showHideBurgerMenu($event)"
+      >
         <svg
           id="richardStreuLogo"
           xmlns="http://www.w3.org/2000/svg"

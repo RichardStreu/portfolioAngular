@@ -303,14 +303,14 @@
             top: -1px;
             left: -1px;
 
-            @media screen and (max-width: 650px) {
-              border-radius: 16px;
-            }
-
-            @media (hover: hover) {
+            @media screen and (hover: hover) and (min-width: 1350px) {
               &:hover {
                 transform: translate(24px, -24px);
               }
+            }
+
+            @media screen and (max-width: 650px) {
+              border-radius: 16px;
             }
           }
         }
