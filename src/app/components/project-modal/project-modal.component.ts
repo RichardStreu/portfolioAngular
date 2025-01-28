@@ -65,7 +65,6 @@ export class ProjectModalComponent {
   }
 
   constructor() {
-    this.chooseLanguage();
   }
 
   ngOnInit() {
@@ -73,6 +72,7 @@ export class ProjectModalComponent {
       if (index >= 0) this.index$ = index;
       this.currentProject = this.projectData.projects[this.index$];
     });
+    this.chooseLanguage();
   }
 
   closeProjectModal(event: any) {

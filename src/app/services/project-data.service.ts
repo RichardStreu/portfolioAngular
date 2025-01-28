@@ -41,8 +41,8 @@ export class ProjectDataService {
         projectImg: 'sharky.png',
         skillsList: [
           { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
-          { skillName: 'SCSS', skillImg: 'CSS.svg' },
-          { skillName: 'HTML', skillImg: 'HTML.svg' },
+          // { skillName: 'SCSS', skillImg: 'CSS.svg' },
+          // { skillName: 'HTML', skillImg: 'HTML.svg' },
         ],
         headline: {
           en: 'What is this project about?',
