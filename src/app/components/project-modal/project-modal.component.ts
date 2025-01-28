@@ -62,12 +62,15 @@ export class ProjectModalComponent {
           ? this.currentProject.description.en
           : this.currentProject.description.de;
     });
+    console.log(this.currentProject);
+    
   }
 
   constructor() {
   }
 
   ngOnInit() {
+    
     this.projectModalService.currentProjectIndex$.subscribe((index: number) => {
       if (index >= 0) this.index$ = index;
       this.currentProject = this.projectData.projects[this.index$];
@@ -85,9 +88,11 @@ export class ProjectModalComponent {
 
   nextProject() {
     this.projectModalService.showNextProject();
+    this.chooseLanguage();
   }
 
   previousProject() {
     this.projectModalService.showPreviousProject();
+    this.chooseLanguage();
   }
 }
