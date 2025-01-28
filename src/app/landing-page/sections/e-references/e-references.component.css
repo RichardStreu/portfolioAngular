@@ -1,0 +1,341 @@
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fira";
+  src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: calc(1248px + 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media screen and (max-width: 650px) {
+  .contentWrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.d_none {
+  display: none !important;
+}
+
+.d_block {
+  display: block;
+}
+
+.opacity_0 {
+  opacity: 0;
+}
+
+.opacity_1 {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(41, 41, 41);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 207, 182, 0.15);
+  border-radius: 100vh;
+}
+
+.scrollbar-mobile {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(61, 207, 182, 0.5) transparent;
+}
+.scrollbar-mobile::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-mobile:hover::-webkit-scrollbar, .scrollbar-mobile:focus-within::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.scrollbar-mobile::-webkit-scrollbar-thumb {
+  background: rgba(61, 207, 182, 0.5);
+  border-radius: 10px;
+}
+.scrollbar-mobile::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wordBreak {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
+}
+
+.referenceSection {
+  padding-top: 144px;
+}
+@media screen and (max-width: 1250px) {
+  .referenceSection {
+    padding-top: 100px;
+  }
+}
+.referenceSection .contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.referenceSection .contentWrapper p {
+  font-family: "Fira", monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  color: rgb(61, 207, 182);
+}
+@media screen and (max-width: 1250px) {
+  .referenceSection .contentWrapper p {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  mask: linear-gradient(90deg, transparent, white 6%, white 94%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, white 6%, white 94%, transparent);
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+  height: 300px;
+}
+@media screen and (max-width: 1250px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox {
+    height: 360px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox {
+    gap: 8px;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference {
+  height: 268px;
+  width: 632px;
+  background-color: rgba(61, 207, 182, 0.08);
+  border-radius: 30px;
+  border: 2px solid rgba(61, 207, 182, 0.7);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1250px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference {
+    padding: 40px 40px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference {
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference {
+    width: 68vw;
+    padding: 40px 32px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference {
+    width: 78vw;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference p {
+  overflow: auto;
+  font-family: "Karla", sans-serif;
+  line-height: 1.7rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: white;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0;
+  flex: 1;
+}
+@media screen and (max-width: 1250px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference p {
+    font-size: 1.13rem;
+    display: flex;
+    align-items: start;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+}
+@media screen and (max-width: 370px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox {
+    justify-content: center;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox .line {
+  height: 2px;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 370px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox .line {
+    display: none;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox div {
+  display: flex;
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox div p {
+  font-size: 1.13rem;
+  font-weight: 400;
+  font-family: "Karla", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0;
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+@media screen and (max-width: 1250px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox div p {
+    font-size: 1rem;
+    text-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 370px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox div p {
+    flex-direction: column;
+    align-items: center;
+  }
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .authorBox div p .lineSpan {
+    line-height: 0.5rem;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .singleReference .transition {
+  transition: all 0.4s ease-in-out;
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox ::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 207, 182, 0.15);
+  border-radius: 100vh;
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .referenceFocus {
+  height: 300px;
+  background-color: rgba(61, 207, 182, 0.15);
+  border: 2px solid rgb(61, 207, 182);
+}
+@media screen and (max-width: 1250px) {
+  .referenceSection .contentWrapper .carouselContainer .carouselBox .referenceFocus {
+    height: 360px;
+  }
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .referenceFocus p {
+  color: white !important;
+}
+.referenceSection .contentWrapper .carouselContainer .carouselBox .referenceFocus .line {
+  background-color: white !important;
+}
+.referenceSection .contentWrapper .navigationContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 2.5rem;
+}
+.referenceSection .contentWrapper .navigationButton {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.referenceSection .contentWrapper .navigationButton svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.referenceSection .contentWrapper .navigationButton svg:hover {
+  transform: scale(1.25);
+}
+.referenceSection .contentWrapper .navigationButton svg path {
+  transition: all 0.2s ease-in-out;
+}
+.referenceSection .contentWrapper .navigationButton svg:hover path {
+  fill: rgb(61, 207, 182);
+}
+.referenceSection .contentWrapper .dotBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.referenceSection .contentWrapper .dotBox .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100vh;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+.referenceSection .contentWrapper .dotBox .highLightBG {
+  background-color: rgb(61, 207, 182);
+}
+
+.transition {
+  transition: all 0.4s ease-in-out;
+}/*# sourceMappingURL=e-references.component.css.map */

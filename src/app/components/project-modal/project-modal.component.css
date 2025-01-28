@@ -1,0 +1,432 @@
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fira";
+  src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: calc(1248px + 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media screen and (max-width: 650px) {
+  .contentWrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.d_none {
+  display: none !important;
+}
+
+.d_block {
+  display: block;
+}
+
+.opacity_0 {
+  opacity: 0;
+}
+
+.opacity_1 {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(41, 41, 41);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 207, 182, 0.15);
+  border-radius: 100vh;
+}
+
+.scrollbar-mobile {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(61, 207, 182, 0.5) transparent;
+}
+.scrollbar-mobile::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-mobile:hover::-webkit-scrollbar, .scrollbar-mobile:focus-within::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.scrollbar-mobile::-webkit-scrollbar-thumb {
+  background: rgba(61, 207, 182, 0.5);
+  border-radius: 10px;
+}
+.scrollbar-mobile::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wordBreak {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
+}
+
+.projectModal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3000;
+  width: 100vw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+@media screen and (max-width: 1350px) {
+  .projectModal {
+    min-height: 100%;
+  }
+}
+.projectModal .projectModalLayer {
+  position: absolute;
+  z-index: 3100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1248px;
+  height: 656px;
+  border: 2px solid rgb(61, 207, 182);
+  border-radius: 30px;
+  background-color: rgb(41, 41, 41);
+  overflow: hidden;
+}
+@media screen and (max-width: 1350px) {
+  .projectModal .projectModalLayer {
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    max-width: 420px;
+    min-height: 100%;
+    overflow: auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer {
+    min-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+    border: none;
+    overflow-y: auto;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top right, rgba(61, 207, 182, 0) 40%, rgba(61, 207, 182, 0.1) 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media screen and (max-width: 1350px) {
+  .projectModal .projectModalLayer .projectModalBox {
+    flex-direction: column-reverse;
+    padding: 16px 16px;
+    justify-content: flex-end;
+    min-height: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox {
+    padding: 16px 8px;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart {
+  width: 480px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1350px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart {
+    width: 100%;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .indexField {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 6.25rem;
+  color: rgb(61, 207, 182);
+  padding-bottom: 0 0 1.25rem 0;
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .indexField {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .indexField {
+    font-size: 4rem;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .nameField {
+  font-family: "Fira", monospace;
+  font-weight: 700;
+  font-size: 3.25rem;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 360px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .nameField {
+    font-size: 2.75rem;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .textBox {
+  padding-bottom: 2rem;
+  height: 160px;
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .textBox {
+    padding-bottom: 1.25rem;
+    height: auto;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .textBox .headline {
+  font-family: "Fira", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(61, 207, 182);
+  padding-bottom: 1.25rem;
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .textBox .headline {
+    font-size: 1.25rem;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .textBox .description {
+  font-family: "Karla", sans-serif;
+  font-size: 1.13rem;
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .textBox .description {
+    font-size: 1rem;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .skillBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 2.5rem;
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .skillBox {
+    flex-wrap: wrap;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .skillBox .singleSkill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .skillBox .singleSkill img {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .skillBox .singleSkill p {
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  color: rgb(61, 207, 182);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .linkBox {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .linkBox {
+    justify-content: center;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 0.5rem;
+}
+@media (min-width: 1351px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox {
+    display: none;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox .previousArrow {
+  transform: rotate(180deg);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox button svg {
+  width: 24px;
+  height: 22px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox button svg:hover {
+  transform: scale(1.25);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox button svg:hover path {
+  fill: rgb(61, 207, 182);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalLeftPart .arrowBox button svg path {
+  transition: all 0.2s ease-in-out;
+  fill: white;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalRightPart {
+    width: 100%;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .closeButtonBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .closeButtonBox svg {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .closeButtonBox svg path {
+  transition: all 0.2s ease-in-out;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .closeButtonBox svg:hover {
+  transform: scale(1.25);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .closeButtonBox svg:hover path {
+  fill: rgb(61, 207, 182);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .projectImgBox {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+  border-radius: 30px;
+  background: repeating-linear-gradient(45deg, transparent, transparent 25px, rgb(61, 207, 182) 25px, rgb(61, 207, 182) 27px);
+}
+@media screen and (max-width: 1350px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalRightPart .projectImgBox {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalRightPart .projectImgBox {
+    height: 216px;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .projectImgBox img {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+  transition: all 0.4s ease-out;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+@media screen and (hover: hover) and (min-width: 1350px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalRightPart .projectImgBox img:hover {
+    transform: translate(24px, -24px);
+  }
+}
+@media screen and (max-width: 650px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalRightPart .projectImgBox img {
+    border-radius: 16px;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+@media (max-width: 1350px) {
+  .projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox {
+    display: none;
+  }
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox .previousArrow {
+  transform: rotate(180deg);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox button svg {
+  width: 24px;
+  height: 22px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox button svg:hover {
+  transform: scale(1.25);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox button svg:hover path {
+  fill: rgb(61, 207, 182);
+}
+.projectModal .projectModalLayer .projectModalBox .projectModalRightPart .arrowBox button svg path {
+  transition: all 0.2s ease-in-out;
+  fill: white;
+}/*# sourceMappingURL=project-modal.component.css.map */

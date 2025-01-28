@@ -1,0 +1,370 @@
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fira";
+  src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: calc(1248px + 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media screen and (max-width: 650px) {
+  .contentWrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.d_none {
+  display: none !important;
+}
+
+.d_block {
+  display: block;
+}
+
+.opacity_0 {
+  opacity: 0;
+}
+
+.opacity_1 {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(41, 41, 41);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 207, 182, 0.15);
+  border-radius: 100vh;
+}
+
+.scrollbar-mobile {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(61, 207, 182, 0.5) transparent;
+}
+.scrollbar-mobile::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-mobile:hover::-webkit-scrollbar, .scrollbar-mobile:focus-within::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.scrollbar-mobile::-webkit-scrollbar-thumb {
+  background: rgba(61, 207, 182, 0.5);
+  border-radius: 10px;
+}
+.scrollbar-mobile::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wordBreak {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
+}
+
+@keyframes buttonSlide {
+  0% {
+    transform: translateX(calc(100% + 3rem));
+  }
+  100% {
+    transform: translateX(calc(-100% - 3rem));
+  }
+}
+@keyframes rotateIn {
+  0% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOut {
+  0% {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+.formContainer:first-child {
+  border-top: 2px solid rgb(61, 207, 182);
+}
+.formContainer .inputBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid rgb(61, 207, 182);
+  padding-bottom: 2rem;
+  padding: 2rem 2rem calc(2rem - 2px) 2rem;
+}
+@media (max-width: 1250px) {
+  .formContainer .inputBox {
+    padding: 2rem 0.5rem calc(2rem - 2px) 0.5rem;
+  }
+}
+.formContainer .inputBox label {
+  font-family: "Fira", monospace;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgb(61, 207, 182);
+  padding-bottom: 1rem;
+}
+@media (max-width: 1250px) {
+  .formContainer .inputBox label {
+    font-size: 1.25rem;
+  }
+}
+.formContainer .inputBox input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 1250px) {
+  .formContainer .inputBox input {
+    font-size: 1rem;
+    text-wrap: wrap;
+  }
+}
+.formContainer .inputBox input:-webkit-autofill {
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px rgb(41, 41, 41) inset !important;
+  color: white;
+  -webkit-text-fill-color: white;
+  border: none !important;
+}
+.formContainer .inputBox input::-moz-placeholder {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: white;
+}
+.formContainer .inputBox input::placeholder {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: white;
+}
+@media (max-width: 1250px) {
+  .formContainer .inputBox input::-moz-placeholder {
+    font-size: 1rem;
+  }
+  .formContainer .inputBox input::placeholder {
+    font-size: 1rem;
+  }
+}
+.formContainer .inputBox textarea {
+  background-color: transparent;
+  border: none;
+  line-height: 1.35rem;
+  max-height: 128px;
+  resize: none;
+  outline: none;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 1250px) {
+  .formContainer .inputBox textarea {
+    font-size: 1rem;
+  }
+}
+.formContainer .inputBox textarea::-moz-placeholder {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: white;
+}
+.formContainer .inputBox textarea::placeholder {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: white;
+}
+@media (max-width: 1250px) {
+  .formContainer .inputBox textarea::-moz-placeholder {
+    font-size: 1rem;
+  }
+  .formContainer .inputBox textarea::placeholder {
+    font-size: 1rem;
+  }
+}
+.formContainer .inputBox .validationWarning {
+  color: rgb(197, 106, 106) !important;
+}
+.formContainer #messageBox {
+  padding: 2rem 2rem 2rem 2rem;
+}
+@media (max-width: 1250px) {
+  .formContainer #messageBox {
+    padding: 2rem 0.5rem 2rem 0.5rem;
+  }
+}
+.formContainer .privacyPolicyBox {
+  display: flex;
+  flex-direction: row;
+  padding-top: 2.5rem;
+  padding-bottom: calc(0.5rem - 0px);
+}
+.formContainer .privacyPolicyBox div {
+  display: flex;
+  align-items: center;
+}
+.formContainer .privacyPolicyBox div .checkBox {
+  cursor: pointer;
+  width: 18px !important;
+  height: 18px !important;
+  border: 2px solid rgb(61, 207, 182);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer .privacyPolicyBox div .checkBox svg {
+  transition: all 0.2s ease-in-out;
+  stroke: rgb(61, 207, 182);
+  opacity: 0;
+}
+.formContainer .privacyPolicyBox div .checkBox .opacity_1 {
+  opacity: 1;
+}
+.formContainer .privacyPolicyBox div .privacyPolicyText {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  line-height: 1.25rem;
+  padding-left: 0.75rem;
+}
+.formContainer .privacyPolicyBox div .privacyPolicyText p {
+  font-family: "Karla", sans-serif;
+  font-size: 0.93rem;
+  color: white;
+  text-wrap: wrap;
+}
+.formContainer .privacyPolicyBox div .privacyPolicyText a {
+  font-family: "Karla", sans-serif;
+  font-size: 0.93rem;
+  color: rgb(61, 207, 182);
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 0 0.25rem;
+  transition: all 0.2s ease-in-out;
+  text-wrap: nowrap;
+}
+.formContainer .privacyPolicyBox div .privacyPolicyText a:hover {
+  text-decoration: underline;
+}
+.formContainer .checkboxValidationField {
+  font-family: "Karla", sans-serif;
+  font-size: 0.93rem;
+  color: rgb(197, 106, 106) !important;
+  padding-top: 0.5rem;
+  padding-left: 30px;
+  line-height: 1rem;
+  padding-bottom: 2.5rem !important;
+}
+.formContainer .buttonBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.formContainer .buttonBox button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 100vh;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: white;
+  font-family: "Karla", sans-serif;
+  font-size: 1.13rem;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.formContainer .buttonBox button span {
+  position: relative;
+  transition: all 0.2s ease-in;
+}
+.formContainer .buttonBox .hoverValid:hover {
+  border: 2px solid rgb(61, 207, 182);
+}
+.formContainer .buttonBox .hoverValid:hover span {
+  transition: all 1s ease-in;
+  display: inline-block;
+  transform: translateX(calc(-100% - 3rem));
+  animation: buttonSlide 2s linear infinite;
+  animation-direction: normal;
+  animation-delay: 1s;
+  color: rgb(61, 207, 182);
+}
+.formContainer .buttonBox .hoverInvalid:hover {
+  border: 2px solid rgb(197, 106, 106);
+}
+.formContainer .buttonBox .hoverInvalid:hover span {
+  display: inline-block;
+  color: rgb(197, 106, 106);
+}
+.formContainer .buttonBox .rotateOut {
+  animation: rotateOut 0.4s ease-out forwards;
+  border: 2px solid rgb(61, 207, 182);
+  color: rgb(61, 207, 182);
+}
+.formContainer .buttonBox .rotateIn {
+  animation: rotateIn 0.4s ease-In forwards;
+  border: 2px solid rgb(61, 207, 182);
+  color: rgb(61, 207, 182);
+}/*# sourceMappingURL=contact-form.component.css.map */

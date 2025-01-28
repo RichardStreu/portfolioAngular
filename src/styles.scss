@@ -77,34 +77,34 @@ body {
 }
 
 .scrollbar-mobile {
-  overflow-y: auto; 
-  -webkit-overflow-scrolling: touch; 
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: rgba($color-highLight, 0.5) transparent; 
+  scrollbar-color: rgba($color-highLight, 0.5) transparent;
 
   &::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
 
   &:hover::-webkit-scrollbar,
   &:focus-within::-webkit-scrollbar {
-    display: block; 
-    width: 5px; 
+    display: block;
+    width: 5px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba($color-highLight, 0.5); 
-    border-radius: 10px; 
+    background: rgba($color-highLight, 0.5);
+    border-radius: 10px;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent; 
+    background: transparent;
   }
 }
 
 .wordBreak {
-  hyphens: auto; 
+  hyphens: auto;
   // overflow-wrap: break-word;
   // word-wrap: break-word;
-  word-break: break-word; 
+  word-break: break-word;
 }
