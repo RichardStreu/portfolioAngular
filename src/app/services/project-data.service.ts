@@ -36,6 +36,28 @@ export class ProjectDataService {
         },
       },
       {
+        name: 'Sharky',
+        isCurrentlyShown: false,
+        projectImg: 'sharky.png',
+        skillsList: [
+          { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
+          { skillName: 'SCSS', skillImg: 'CSS.svg' },
+          { skillName: 'HTML', skillImg: 'HTML.svg' },
+        ],
+        headline: {
+          en: 'What is this project about?',
+          de: 'Worum geht es in diesem Projekt?',
+        },
+        description: {
+          en: "Sharky is a 2D browser-based jump'n'run game. The focus and challenge lie in object-oriented programming as well as precise timing through the use of a variety of intervals and timeout functions.",
+          de: "Sharky ist ein 2D-Browser-Jump'n'Run-Spiel. Der Fokus und die Herausforderung liegen hier auf der objektorientierten Programmierung sowie auf dem präzisen Timing durch den Einsatz einer Vielzahl an Intervallen und Timeout-Funktionen.",
+        },
+        links: {
+          github: 'https://github.com/RichardStreu/Developer-Akademie_Sharkie',
+          live: 'https://sharky.richardstreu.dev/',
+        },
+      },
+      {
         name: 'DEVerando',
         isCurrentlyShown: false,
         projectImg: 'deverando.png',
@@ -98,7 +120,8 @@ export class ProjectDataService {
           de: 'Aufgabenmanager inspiriert vom Kanban System. Erstelle und organisiere Aufgaben mit Drag and Drop Funktionen, weise Benutzer und Kategorien zu.',
         },
         links: {
-          github: 'https://github.com/RichardStreu/Developer_Akademie-Nordic_Impressions',
+          github:
+            'https://github.com/RichardStreu/Developer_Akademie-Nordic_Impressions',
           live: 'https://nordic-impressions.richardstreu.dev/',
         },
       },
