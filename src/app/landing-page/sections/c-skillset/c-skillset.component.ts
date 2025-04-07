@@ -86,8 +86,8 @@ export class CSkillsetComponent {
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      },
-     {name: "Material Design",
-      imgPath: "Material-Design.svg",
+     {name: "Figma",
+      imgPath: "Figma.svg",
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      },
@@ -118,6 +118,11 @@ export class CSkillsetComponent {
      },
      {name: "Scrum",
       imgPath: "Scrum.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
+     },
+     {name: "TailwindCSS",
+      imgPath: "TailwindCSS.svg",
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      }
