@@ -49,8 +49,8 @@ export class ProjectDataService {
           de: 'Worum geht es in diesem Projekt?',
         },
         description: {
-          en: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
-          de: 'Aufgabenmanager inspiriert vom Kanban System. Erstelle und organisiere Aufgaben mit Drag and Drop Funktionen, weise Benutzer und Kategorien zu.',
+          en: 'Join is a web-based Kanban board built with HTML5, SCSS, and JavaScript. It enables efficient task organization and workflow management through an intuitive drag-and-drop interface.',
+          de: 'Join ist ein webbasiertes Kanban-Board mit HTML5, SCSS und JavaScript. Es ermöglicht effiziente Aufgabenorganisation und Workflow-Management per intuitiver Drag-and-drop-Oberfläche.',
         },
         links: {
           github: 'https://github.com/RichardStreu/Developer-Akademie-Join',
