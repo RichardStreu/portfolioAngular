@@ -6,7 +6,7 @@ import { LanguageService } from '../../../../services/language.service';
   standalone: true,
   imports: [],
   templateUrl: './contact-text.component.html',
-  styleUrl: './contact-text.component.scss'
+  styleUrl: './contact-text.component.scss',
 })
 export class ContactTextComponent {
   languageService = inject(LanguageService);
@@ -23,33 +23,36 @@ export class ContactTextComponent {
       this.contactMeText =
         this.languageService.currentLanguage == 'en'
           ? 'Contact me'
-          : 'Kontaktiere mich';
+          : 'Schreib mir';
+
       this.letsWorkText =
         this.languageService.currentLanguage == 'en'
           ? "Let's work together"
           : 'Lass uns zusammenarbeiten';
+
       this.solveText =
         this.languageService.currentLanguage == 'en'
           ? 'Got a problem to solve?'
-          : 'Ein Problem zu lösen?';
+          : 'Ein Problem, das gelöst werden soll?';
+
       this.myWorkText =
         this.languageService.currentLanguage == 'en'
-          ? 'Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.'
-          : 'Kontaktieren Sie mich über dieses Formular, ich freue mich darauf, von Ihnen zu hören, Ihre Ideen kennenzulernen und zu Ihren Projekten beizutragen.';
+          ? 'Use the form to get in touch. I’m curious to hear your ideas and happy to contribute to your project.'
+          : 'Nutzen Sie das Formular, um Kontakt aufzunehmen. Ich freue mich auf Ihre Ideen und darauf, Ihr Projekt zu unterstützen.';
+
       this.needDevText =
         this.languageService.currentLanguage == 'en'
-          ? 'Need a Frontend developer?'
-          : 'Brauchen Sie einen Entwickler?';
+          ? 'Looking for a frontend developer?'
+          : 'Sie suchen einen Frontend-Entwickler?';
+
       this.letsTalkText =
         this.languageService.currentLanguage == 'en'
           ? "Let's talk!"
-          : 'Lass uns reden!';
+          : 'Lass uns sprechen!';
     });
   }
 
   constructor() {
     this.chooseLanguage();
   }
-
-
 }
