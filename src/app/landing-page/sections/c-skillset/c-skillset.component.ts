@@ -37,7 +37,7 @@ export class CSkillsetComponent {
       this.skillSetDescriptionText =
         this.languageService.currentLanguage == 'en'
           ? 'Across my projects, I’ve worked with a wide range of modern frontend technologies. I like learning new tools and workflows that help me grow as a developer and build better products.'
-          : 'In meinen Projekten arbeite ich mit einer Vielzahl moderner Frontend-Technologien. Ich lerne gern neue Tools und Workflows kennen, um als Entwickler stetig zu wachsen und bessere Projekte zu entwickeln.';
+          : 'In meinen Projekten arbeite ich mit einer Vielzahl moderner Frontend-Technologien. Ich lerne gern neue Tools und Workflows kennen, um als Entwickler stetig zu wachsen.';
   
       this.youNeedText =
         this.languageService.currentLanguage == 'en'
