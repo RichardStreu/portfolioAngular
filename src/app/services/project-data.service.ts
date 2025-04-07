@@ -17,9 +17,10 @@ export class ProjectDataService {
         isCurrentlyShown: false,
         projectImg: 'finance.png',
         skillsList: [
-          { skillName: 'JavaScript', skillImg: 'JavaScript.svg' },
-          { skillName: 'SCSS', skillImg: 'CSS.svg' },
-          { skillName: 'HTML', skillImg: 'HTML.svg' },
+          { skillName: 'Angular', skillImg: 'Angular.svg' },
+          { skillName: 'TypeScript', skillImg: 'TypeScript.svg' },
+          { skillName: 'TailwindCSS', skillImg: 'TailwindCSS.svg' },
+          { skillName: 'Figma', skillImg: 'Figma.svg' },
         ],
         headline: {
           en: 'What is this project about?',
