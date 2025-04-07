@@ -35,15 +35,16 @@ export class ContactTextComponent {
           ? 'Got a problem to solve?'
           : 'Ein Problem, das gelöst werden soll?';
 
-      this.myWorkText =
-        this.languageService.currentLanguage == 'en'
-          ? 'Use the form to get in touch. I’m curious to hear your ideas and happy to contribute to your project.'
-          : 'Nutzen Sie das Formular, um Kontakt aufzunehmen. Ich freue mich auf Ihre Ideen und darauf, Ihr Projekt zu unterstützen.';
+          this.myWorkText =
+          this.languageService.currentLanguage == 'en'
+            ? 'Use the form to get in touch. I’m curious to hear your ideas and happy to contribute to your project.'
+            : 'Schreib mir gern über das Formular – ich bin gespannt auf deine Ideen und freue mich, dein Projekt zu unterstützen.';
+        
 
       this.needDevText =
         this.languageService.currentLanguage == 'en'
           ? 'Looking for a frontend developer?'
-          : 'Sie suchen einen Frontend-Entwickler?';
+          : 'Suchst du einen Frontend-Entwickler?';
 
       this.letsTalkText =
         this.languageService.currentLanguage == 'en'
