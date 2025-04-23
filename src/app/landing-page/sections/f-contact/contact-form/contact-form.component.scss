@@ -247,7 +247,7 @@
 
     .hoverValid {
       &:hover {
-        border: 2px solid $color-highLight;
+        border: 2px solid $color-singleHighlight;
 
         span {
           transition: all 1s ease-in;
@@ -256,7 +256,7 @@
           animation: buttonSlide 2s linear infinite;
           animation-direction: normal;
           animation-delay: 1s;
-          color: $color-highLight;
+          color: $color-singleHighlight;
         }
       }
     }

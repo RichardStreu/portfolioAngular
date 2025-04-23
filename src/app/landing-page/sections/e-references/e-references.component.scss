@@ -236,7 +236,7 @@
         }
 
         &:hover path {
-          fill: $color-highLight;
+          fill: $color-singleHighlight;
         }
       }
     }
@@ -258,7 +258,7 @@
       }
 
       .highLightBG {
-        background-color: $color-highLight;
+        background-color: $color-singleHighlight;
       }
     }
   }
