@@ -21,14 +21,19 @@ export class DProjectsComponent {
   projectData: any;
 
   featuredText: string = '';
+  projectsText: string = '';
   exploreText: string = '';
 
   chooseLanguage() {
     this.languageService.language.subscribe(() => {
       this.featuredText =
         this.languageService.currentLanguage == 'en'
-          ? 'Featured Projects'
-          : 'Ausgewählte Projekte';
+          ? 'Featured '
+          : 'Ausgewählte ';
+      this.projectsText =
+        this.languageService.currentLanguage == 'en'
+          ? 'Projects'
+          : 'Projekte';
       this.exploreText =
         this.languageService.currentLanguage == 'en'
           ? 'Explore a selection of my work here - Interact with projects to see my skills in action.'

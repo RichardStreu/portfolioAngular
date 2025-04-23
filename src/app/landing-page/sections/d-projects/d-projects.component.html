@@ -2,7 +2,10 @@
   <div class="contentWrapper">
     <div class="projectsTextPart">
       <p>Portfolio</p>
-      <p lang="de" class="featuredText wordBreak">{{ featuredText }}</p>
+      <p lang="de" class="featuredText wordBreak">
+        <span>{{ featuredText }}</span
+        ><span class="singleHighlight">{{ projectsText }}</span>
+      </p>
       <div>
         <p class="exploreText">{{ exploreText }}</p>
       </div>
