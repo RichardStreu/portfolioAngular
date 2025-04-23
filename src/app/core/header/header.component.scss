@@ -114,7 +114,7 @@ header {
           content: "";
           width: 44px;
           height: 28px;
-          background-color: $color-highLight;
+          background-color: $color-singleHighlight;
           border-radius: 100vh;
           position: absolute;
           z-index: 1;
@@ -189,16 +189,19 @@ header {
       div:nth-child(1) {
         transform-origin: bottom left;
         transform: rotate(45deg) translateY(-2px) scaleX(0.99);
+        background-color: $color-singleHighlight;
       }
 
       div:nth-child(2) {
         transform-origin: right;
         transform: scaleX(0);
+        background-color: $color-singleHighlight;
       }
 
       div:nth-child(3) {
         transform-origin: top left;
         transform: rotate(-45deg) translateY(2px) scaleX(0.98);
+        background-color: $color-singleHighlight;
       }
     }
 
