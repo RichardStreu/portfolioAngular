@@ -14,11 +14,11 @@
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
-  background-color: rgba($color: white, $alpha: 0.1);
+  background-color: rgba($color: $color-text, $alpha: 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
-    -webkit-mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
+  mask: linear-gradient(90deg, transparent, $color-text 3%, $color-text 97%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, $color-text 3%, $color-text 97%, transparent);
   padding: 12px 0;
   position: absolute;
   left: 0;
