@@ -12,8 +12,8 @@
 
 $color-bgDark: rgb(41, 41, 41);
 // $color-bgDark: red;
-// $color-text: rgb(25, 25, 25);
-$color-text: turquoise;
+$color-text: rgb(255, 255, 255);
+$color-text: red;
 // $color-highLight: magenta;
 $color-highLight: rgb(61, 207, 182);
 $color-red: rgb(197, 106, 106);
@@ -28,7 +28,7 @@ $color-red: rgb(197, 106, 106);
 body {
   font-family: "Karla", sans-serif;
   background-color: $color-bgDark;
-  color: white;
+  color: $color-text;
   font-size: 1rem;
   user-select: none;
 }
