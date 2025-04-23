@@ -71,7 +71,7 @@
           p {
             font-family: "Karla", sans-serif;
             font-size: 1.13rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba($color-text, 0.7);
             transition: all 0.2s ease-in-out;
             padding: 0;
 
@@ -80,7 +80,7 @@
             }
 
             &:hover {
-              color: white;
+              color: $color-text;
             }
           }
 
@@ -88,7 +88,7 @@
             font-family: "Fira", sans-serif;
             font-weight: bold;
             font-size: 1.5rem;
-            color: white;
+            color: $color-text;
             padding-top: 2rem;
             padding-bottom: 1rem;
 
@@ -153,7 +153,7 @@
             font-family: "Fira", sans-serif;
             font-size: 1.13rem;
             text-align: center;
-            color: white;
+            color: $color-text;
             font-weight: 400;
           }
 
@@ -177,7 +177,7 @@
               transform: rotate(45deg);
               width: 70px;
               height: 70px;
-              background: white;
+              background: $color-text;
               border-radius: 0.5rem;
             }
 
@@ -189,7 +189,7 @@
               left: 50%;
               top: 50%;
               transform: translate(-50%, -50%);
-              background-color: white;
+              background-color: $color-text;
               display: flex;
               flex-direction: column;
 
@@ -234,12 +234,11 @@
           }
 
           #extraSkillBox {
-            background-color: white;
+            background-color: $color-text;
             transition: all 0.4s ease-in-out;
             opacity: 0;
             transform: scaleY(0);
             transform-origin: bottom center;
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           }
 
           svg {
