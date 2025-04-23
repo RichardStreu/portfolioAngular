@@ -1,7 +1,12 @@
 @import "../../../styles.scss";
 
+footer {
+  background-color: $color-bgDarkTwo;
+}
+
 .contentWrapper {
   padding-top: 144px;
+  
 
   @media (max-width: 1250px) {
     padding-top: 100px;

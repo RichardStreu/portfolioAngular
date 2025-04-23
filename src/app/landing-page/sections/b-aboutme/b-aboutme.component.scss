@@ -1,5 +1,9 @@
 @import "../../../../styles.scss";
 
+.aboutMeSection {
+  background-color: $color-bgDarkTwo;
+}
+
 .aboutMeSection .contentWrapper {
   padding-top: 144px;
   display: flex;
