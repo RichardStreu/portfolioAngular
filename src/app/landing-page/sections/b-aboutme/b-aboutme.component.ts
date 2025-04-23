@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-b-aboutme',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './b-aboutme.component.html',
   styleUrl: './b-aboutme.component.scss',
 })
@@ -12,7 +13,8 @@ export class BAboutmeComponent {
   languageService = inject(LanguageService);
 
   whoIAmText: string = '';
-  aboutMeText: string = '';
+  aboutText: string = '';
+  meText: string = '';
   greetingText: string = '';
   locationText: string = '';
   mindsetText: string = '';
@@ -24,8 +26,10 @@ export class BAboutmeComponent {
         this.languageService.currentLanguage == 'en'
           ? 'Who I Am'
           : 'Über mich';
-      this.aboutMeText =
-        this.languageService.currentLanguage == 'en' ? 'About me' : 'Zu mir';
+      this.aboutText =
+        this.languageService.currentLanguage == 'en' ? 'About ': 'Zu ';
+        this.meText =
+        this.languageService.currentLanguage == 'en' ? 'me': 'mir';
       this.greetingText =
         this.languageService.currentLanguage == 'en'
           ? 'Hey, I’m a Frontend Developer based in Germany, with a background in operations and automation. I focus on building reliable and user-friendly interfaces using modern technologies – always with clean structure, consistent design, and attention to detail.'

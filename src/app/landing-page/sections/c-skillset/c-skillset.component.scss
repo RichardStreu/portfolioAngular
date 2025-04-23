@@ -88,7 +88,7 @@
             font-family: "Fira", sans-serif;
             font-weight: bold;
             font-size: 1.5rem;
-            color: $color-text;
+            color: $color-singleHighlight;
             padding-top: 2rem;
             padding-bottom: 1rem;
 
@@ -268,4 +268,8 @@
       }
     }
   }
+}
+
+.singleHighlight {
+  color: $color-singleHighlight;
 }
