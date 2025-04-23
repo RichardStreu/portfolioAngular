@@ -242,7 +242,7 @@ header {
         content: "";
         width: 44px;
         height: 28px;
-        background-color: $color-highLight;
+        background-color: $color-singleHighlight;
         border-radius: 100vh;
         position: absolute;
         z-index: 1;
@@ -286,7 +286,7 @@ header {
         width: 8px;
         height: 8px;
         border-radius: 100vh;
-        background-color: $color-highLight;
+        background-color: $color-singleHighlight;
         position: absolute;
         left: calc(50% - 4px);
         opacity: 0;
