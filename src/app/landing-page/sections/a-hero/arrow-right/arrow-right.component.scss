@@ -27,7 +27,7 @@
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: $color-highLight;
+      color: $color-singleHighlight;
     }
 
     @media screen and (max-width: 1100px) {
@@ -56,7 +56,7 @@
         width: 8px;
         height: 8px;
         border-radius: 100vh;
-        background-color: $color-highLight;
+        background-color: $color-singleHighlight;
         position: absolute;
         right: -12px;
         bottom: calc(50% - 2px);
