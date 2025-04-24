@@ -96,7 +96,7 @@ export class CSkillsetComponent {
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      },
-     {name: "Anuglar",
+     {name: "Angular",
       imgPath: "Angular.svg",
       effectClass: "bounce",
       colorClass: "fillColorWhite"
