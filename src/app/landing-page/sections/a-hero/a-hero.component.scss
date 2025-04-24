@@ -8,12 +8,11 @@
     rgba(61, 207, 182, 0) 40%,
     rgba($color-highLight, 0.3) 100%
   );
-  height: 100dvh;
   position: relative;
   overflow: hidden;
 
   @media screen and (max-width: 1100px) {
-    padding-top: 98px;
+    // padding-top: 98px;
   }
 
   .contentWrapper {
@@ -25,7 +24,7 @@
 
     @media screen and (max-width: 1100px) {
       align-items: flex-start;
-      height: calc(100dvh - 98px);
+      height: var(--hero-height);
     }
 
     .arrowLeft {

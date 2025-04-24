@@ -53,9 +53,17 @@ export class AHeroComponent {
     });
   }
 
-  // Initializes the component and sets the initial language for the button texts.
   constructor() {
     this.chooseLanguage();
+  }
+
+  ngOnInit() {
+    this.updateHeroHeight();
+  }
+
+  private updateHeroHeight() {
+    const vh = window.innerHeight;
+    document.documentElement.style.setProperty('--hero-height', `${vh}px`);
   }
 
   
