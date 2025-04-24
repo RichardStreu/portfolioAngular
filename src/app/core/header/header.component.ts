@@ -3,7 +3,6 @@ import {
   inject,
   EventEmitter,
   Output,
-  HostListener,
 } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { RouterModule } from '@angular/router';
