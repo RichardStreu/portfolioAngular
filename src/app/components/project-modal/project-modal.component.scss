@@ -6,7 +6,7 @@
   left: 0px;
   z-index: 3000;
   width: 100vw;
-  height: 100dvh;
+  height: 100dvh; // Verwende dynamische Viewport-Höhe
   background-color: rgba(black, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -46,6 +46,9 @@
       border-radius: 0;
       border: none;
       overflow-y: auto;
+      min-height: calc(
+        100dvh - env(safe-area-inset-bottom)
+      ); // Dynamische Höhe mit Safe-Area
     }
 
     .projectModalBox {
