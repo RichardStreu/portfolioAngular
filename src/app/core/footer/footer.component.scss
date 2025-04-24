@@ -1,7 +1,12 @@
 @import "../../../styles.scss";
 
+footer {
+  background-color: $color-bgDarkTwo;
+}
+
 .contentWrapper {
   padding-top: 144px;
+  
 
   @media (max-width: 1250px) {
     padding-top: 100px;
@@ -34,7 +39,7 @@
         width: auto;
 
         #logoFooterPath {
-          fill: $color-highLight;
+          fill: $color-singleHighlight;
         }
       }
     }
@@ -62,7 +67,7 @@
       padding-bottom: 0;
 
       a {
-        color: white;
+        color: $color-text;
         text-decoration: none;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
@@ -74,7 +79,7 @@
           width: 6px;
           height: 6px;
           border-radius: 100vh;
-          background-color: $color-highLight;
+          background-color: $color-singleHighlight;
           position: absolute;
           top: 50%;
           transform: translateY(-43%);
@@ -105,4 +110,8 @@
       display: block;
     }
   }
+}
+
+.singleHighlight {
+  color: $color-singleHighlight;
 }

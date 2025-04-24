@@ -35,13 +35,18 @@
   }
 
   .scrollDownBox {
-    height: 48px;
+    height: 60px;
     width: 30px;
     border: 2px solid $color-highLight;
     border-radius: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border: 2px solid $color-singleHighlight;
+    }
 
     svg {
       animation: upDown 1.4s infinite;

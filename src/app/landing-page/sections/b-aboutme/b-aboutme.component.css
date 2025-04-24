@@ -1,0 +1,252 @@
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fira";
+  src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: calc(1248px + 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media screen and (max-width: 650px) {
+  .contentWrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.d_none {
+  display: none !important;
+}
+
+.d_block {
+  display: block;
+}
+
+.opacity_0 {
+  opacity: 0;
+}
+
+.opacity_1 {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(41, 41, 41);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 207, 182, 0.15);
+  border-radius: 100vh;
+}
+
+.scrollbar-mobile {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(61, 207, 182, 0.5) transparent;
+}
+.scrollbar-mobile::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-mobile:hover::-webkit-scrollbar, .scrollbar-mobile:focus-within::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.scrollbar-mobile::-webkit-scrollbar-thumb {
+  background: rgba(61, 207, 182, 0.5);
+  border-radius: 10px;
+}
+.scrollbar-mobile::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wordBreak {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
+}
+
+.aboutMeSection .contentWrapper {
+  padding-top: 144px;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 640px) {
+  .aboutMeSection .contentWrapper {
+    padding-top: 100px;
+  }
+}
+
+.aboutMeContent {
+  width: 100%;
+  display: flex;
+}
+@media screen and (max-width: 1250px) {
+  .aboutMeContent {
+    flex-direction: column;
+  }
+}
+.aboutMeContent .aboutMeLeft {
+  flex: 1;
+}
+@media screen and (max-width: 1250px) {
+  .aboutMeContent .aboutMeLeft {
+    padding-bottom: 2.5rem;
+  }
+}
+.aboutMeContent .aboutMeLeft .imgSwipe {
+  width: 568px;
+  aspect-ratio: 1/1;
+  border-radius: 30px;
+  position: relative;
+  background: repeating-linear-gradient(45deg, transparent, transparent 25px, rgb(61, 207, 182) 25px, rgb(61, 207, 182) 27px);
+}
+@media screen and (max-width: 640px) {
+  .aboutMeContent .aboutMeLeft .imgSwipe {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+.aboutMeContent .aboutMeLeft .imgSwipe img {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+  filter: grayscale(100%);
+  transition: all 0.4s ease-out;
+}
+.aboutMeContent .aboutMeLeft .imgSwipe img:hover {
+  transform: translate(30px, -30px);
+}
+@media screen and (max-width: 640px) {
+  .aboutMeContent .aboutMeLeft .imgSwipe img:hover {
+    transform: translate(0px, 0px);
+  }
+}
+.aboutMeContent .aboutMeRight {
+  flex: 1;
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+}
+.aboutMeContent .aboutMeRight div {
+  width: 568px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+@media screen and (max-width: 640px) {
+  .aboutMeContent .aboutMeRight div {
+    gap: 1rem;
+  }
+}
+.aboutMeContent .aboutMeRight div > p {
+  font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  color: rgb(61, 207, 182);
+}
+@media screen and (max-width: 640px) {
+  .aboutMeContent .aboutMeRight div > p {
+    font-size: 1.13rem;
+  }
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox {
+  width: 100%;
+  min-height: 400px;
+  background-color: rgba(61, 207, 182, 0.15);
+  border: 2px solid rgb(61, 207, 182);
+  border-radius: 30px;
+  padding: 2rem;
+  gap: 1rem;
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox h2 {
+  font-family: "Fira", sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  color: rgb(61, 207, 182);
+  padding-bottom: 1rem;
+}
+@media screen and (max-width: 640px) {
+  .aboutMeContent .aboutMeRight div .aboutMeBox h2 {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .aboutMeContent .aboutMeRight div .aboutMeBox h2 {
+    font-size: 2.75rem;
+  }
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox p {
+  font-family: "Karla", sans-serif;
+  font-size: 1.13rem;
+  color: white;
+  padding-bottom: 1rem;
+}
+@media screen and (max-width: 640px) {
+  .aboutMeContent .aboutMeRight div .aboutMeBox p {
+    font-size: 1rem;
+  }
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox .aboutMeItems {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox .aboutMeItems svg {
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox .aboutMeItems svg path {
+  fill: rgb(61, 207, 182);
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox .aboutMeItems p {
+  font-family: "Karla", sans-serif;
+  font-size: 1.13rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 0;
+}
+@media screen and (max-width: 640px) {
+  .aboutMeContent .aboutMeRight div .aboutMeBox .aboutMeItems p {
+    font-size: 1rem;
+  }
+}
+.aboutMeContent .aboutMeRight div .aboutMeBox .aboutMeItems p:hover {
+  color: white;
+}/*# sourceMappingURL=b-aboutme.component.css.map */

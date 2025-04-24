@@ -28,28 +28,41 @@ export class CSkillsetComponent {
         this.languageService.currentLanguage == 'en'
           ? 'Technologies'
           : 'Technologien';
+  
       this.skillSetText =
         this.languageService.currentLanguage == 'en'
           ? 'Skill Set'
           : 'Fähigkeiten';
+  
       this.skillSetDescriptionText =
         this.languageService.currentLanguage == 'en'
-          ? 'My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.'
-          : 'Meine Reise umfasst die Arbeit an vielfältigen Projekten, bei denen eine Vielzahl von Frontend-Technologien und Konzepten zum Einsatz kamen. Ich bin offen für die Integration neuer Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und im ständig wandelnden Landschaft der Webentwicklung auf dem neuesten Stand zu bleiben.';
+          ? 'Across my projects, I’ve worked with a wide range of modern frontend technologies. I like learning new tools and workflows that help me grow as a developer and build better products.'
+          : 'In meinen Projekten arbeite ich mit einer Vielzahl moderner Frontend-Technologien. Ich lerne gern neue Tools und Workflows kennen, um als Entwickler stetig zu wachsen.';
+  
       this.youNeedText =
-        this.languageService.currentLanguage == 'en' ? 'You need' : 'Du benötigst';
+        this.languageService.currentLanguage == 'en'
+          ? 'You need'
+          : 'Du brauchst';
+  
       this.anotherSkillText =
-        this.languageService.currentLanguage == 'en' ? 'another skill?' : 'weitere Fähigkeiten?';
+        this.languageService.currentLanguage == 'en'
+          ? 'another skill?'
+          : 'eine andere Fähigkeit?';
+  
       this.feelFreeText =
-        this.languageService.currentLanguage == 'en' ? 'Feel free to contact me. I look forward to expanding on my previous knowledge.' : 'Zögern Sie nicht, mich zu kontaktieren. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.';
+        this.languageService.currentLanguage == 'en'
+          ? 'Feel free to reach out – I’m always open to learning something new and exploring new challenges.'
+          : 'Meld dich gern – ich freue mich über neue Herausforderungen und darauf, Neues zu lernen.';
+  
       this.buttonText =
         this.languageService.currentLanguage == 'en'
           ? "Let's Talk"
-          : 'Zum Kontakt';
+          : 'Jetzt kontaktieren';
+  
       this.specialInterestText =
         this.languageService.currentLanguage == 'en'
-          ? 'I have a special interest in learning'
-          : 'Ich interesseire mich ebenfalls für';
+          ? 'I’m also interested in'
+          : 'Ich interessiere mich außerdem für';
     });
   }
 
@@ -73,8 +86,8 @@ export class CSkillsetComponent {
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      },
-     {name: "Material Design",
-      imgPath: "Material-Design.svg",
+     {name: "Figma",
+      imgPath: "Figma.svg",
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      },
@@ -83,7 +96,7 @@ export class CSkillsetComponent {
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      },
-     {name: "Anuglar",
+     {name: "Angular",
       imgPath: "Angular.svg",
       effectClass: "bounce",
       colorClass: "fillColorWhite"
@@ -105,6 +118,11 @@ export class CSkillsetComponent {
      },
      {name: "Scrum",
       imgPath: "Scrum.svg",
+      effectClass: "bounce",
+      colorClass: "fillColorWhite"
+     },
+     {name: "TailwindCSS",
+      imgPath: "TailwindCSS.svg",
       effectClass: "bounce",
       colorClass: "fillColorWhite"
      }

@@ -72,7 +72,7 @@
       font-family: "Karla", sans-serif;
       font-weight: 400;
       font-size: 1.13rem;
-      color: white;
+      color: $color-text;
       transition: all 0.2s ease-in-out;
 
       @media (max-width: 1250px) {
@@ -83,8 +83,8 @@
       &:-webkit-autofill {
         background-color: transparent !important;
         box-shadow: 0 0 0px 1000px $color-bgDark inset !important;
-        color: white;
-        -webkit-text-fill-color: white;
+        color: $color-text;
+        -webkit-text-fill-color: $color-text;
         border: none !important;
       }
 
@@ -92,7 +92,7 @@
         font-family: "Karla", sans-serif;
         font-weight: 400;
         font-size: 1.13rem;
-        color: white;
+        color: $color-text;
 
         @media (max-width: 1250px) {
           font-size: 1rem;
@@ -111,7 +111,7 @@
       font-family: "Karla", sans-serif;
       font-weight: 400;
       font-size: 1.13rem;
-      color: white;
+      color: $color-text;
       transition: all 0.2s ease-in-out;
 
       @media (max-width: 1250px) {
@@ -122,7 +122,7 @@
         font-family: "Karla", sans-serif;
         font-weight: 400;
         font-size: 1.13rem;
-        color: white;
+        color: $color-text;
 
         @media (max-width: 1250px) {
           font-size: 1rem;
@@ -187,7 +187,7 @@
         p {
           font-family: "Karla", sans-serif;
           font-size: 0.93rem;
-          color: white;
+          color: $color-text;
           text-wrap: wrap;
         }
 
@@ -226,13 +226,13 @@
 
     button {
       background-color: transparent;
-      border: 2px solid white;
+      border: 2px solid $color-text;
       padding: 0.75rem 1.5rem;
       border-radius: 100vh;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
       text-decoration: none;
-      color: white;
+      color: $color-text;
       font-family: "Karla", sans-serif;
       font-size: 1.13rem;
       position: relative;
@@ -247,7 +247,7 @@
 
     .hoverValid {
       &:hover {
-        border: 2px solid $color-highLight;
+        border: 2px solid $color-singleHighlight;
 
         span {
           transition: all 1s ease-in;
@@ -256,7 +256,7 @@
           animation: buttonSlide 2s linear infinite;
           animation-direction: normal;
           animation-delay: 1s;
-          color: $color-highLight;
+          color: $color-singleHighlight;
         }
       }
     }

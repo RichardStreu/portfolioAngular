@@ -6,7 +6,7 @@
   left: 0px;
   z-index: 3000;
   width: 100vw;
-  height: 100dvh;
+  height: 100dvh; // Verwende dynamische Viewport-Höhe
   background-color: rgba(black, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -46,6 +46,9 @@
       border-radius: 0;
       border: none;
       overflow-y: auto;
+      min-height: calc(
+        100dvh - env(safe-area-inset-bottom)
+      ); // Dynamische Höhe mit Safe-Area
     }
 
     .projectModalBox {
@@ -223,7 +226,7 @@
 
               path {
                 transition: all 0.2s ease-in-out;
-                fill: white;
+                fill: $color-text;
               }
             }
           }
@@ -262,7 +265,7 @@
               transform: scale(1.25);
 
               path {
-                fill: $color-highLight;
+                fill: $color-singleHighlight;
               }
             }
           }
@@ -347,13 +350,13 @@
                 transform: scale(1.25);
 
                 path {
-                  fill: $color-highLight;
+                  fill: $color-singleHighlight;
                 }
               }
 
               path {
                 transition: all 0.2s ease-in-out;
-                fill: white;
+                fill: $color-text;
               }
             }
           }

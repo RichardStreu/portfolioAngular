@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { HeaderComponent } from '../../../core/header/header.component';
 import { ArrowLeftComponent } from './arrow-left/arrow-left.component';
 import { ArrowRightComponent } from './arrow-right/arrow-right.component';
 import { SlideButtonComponent } from '../../../components/slide-button/slide-button.component';
@@ -11,7 +10,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-a-hero',
   standalone: true,
   imports: [
-    HeaderComponent,
     ArrowLeftComponent,
     ArrowRightComponent,
     SlideButtonComponent,
@@ -55,9 +53,17 @@ export class AHeroComponent {
     });
   }
 
-  // Initializes the component and sets the initial language for the button texts.
   constructor() {
     this.chooseLanguage();
+  }
+
+  ngOnInit() {
+    this.updateHeroHeight();
+  }
+
+  private updateHeroHeight() {
+    const vh = window.innerHeight;
+    document.documentElement.style.setProperty('--hero-height', `${vh}px`);
   }
 
   

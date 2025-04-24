@@ -1,9 +1,8 @@
-import { Component, inject, Input, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { ProjectDataService } from '../../services/project-data.service';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../shared/interfaces';
-import { BehaviorSubject } from 'rxjs';
 import { ProjectModalService } from '../../services/project-modal.service';
 import { SlideButtonComponent } from '../slide-button/slide-button.component';
 
@@ -64,30 +63,32 @@ export class ProjectModalComponent {
     });
   }
 
-  constructor() {
-    this.chooseLanguage();
-  }
-
   ngOnInit() {
     this.projectModalService.currentProjectIndex$.subscribe((index: number) => {
       if (index >= 0) this.index$ = index;
       this.currentProject = this.projectData.projects[this.index$];
     });
+    this.chooseLanguage();
   }
 
-  closeProjectModal(event: any) {
-    if (event.target === event.currentTarget) {
+  public closeProjectModal(event: MouseEvent | TouchEvent): void {
+    if (
+      event.type === 'touchend' ||
+      (event instanceof MouseEvent && event.target === event.currentTarget)
+    ) {
       this.projectModalService.changeIsProjectModalOpen(this.index$);
     } else {
       return;
     }
   }
 
-  nextProject() {
+  public nextProject(): void {
     this.projectModalService.showNextProject();
+    this.chooseLanguage();
   }
 
-  previousProject() {
+  public previousProject(): void {
     this.projectModalService.showPreviousProject();
+    this.chooseLanguage();
   }
 }

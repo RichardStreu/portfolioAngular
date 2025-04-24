@@ -1,4 +1,10 @@
-import { Component, inject, EventEmitter, Output, HostListener } from '@angular/core';
+import {
+  Component,
+  inject,
+  EventEmitter,
+  Output,
+  HostListener,
+} from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -66,13 +72,17 @@ export class HeaderComponent {
   }
 
   hideScrollBar() {
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
+    // document.body.style.paddingRight = '8px';
+    document.body.style.position = 'fixed';
     document.body.style.paddingRight = '8px';
   }
 
   showScrollBar() {
-    document.body.style.overflow = 'auto';
-    document.body.style.paddingRight = '0px';
+    // document.body.style.overflow = 'auto';
+    // document.body.style.paddingRight = '0px';
+    document.body.style.position = '';
+    document.body.style.paddingRight = '';
   }
 
   // Text content for the links in the header.
@@ -109,6 +119,4 @@ export class HeaderComponent {
   scrollToTop() {
     window.scrollTo({ top: 0 });
   }
-
-  
 }

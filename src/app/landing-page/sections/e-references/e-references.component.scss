@@ -2,6 +2,7 @@
 
 .referenceSection {
   padding-top: 144px;
+  padding-bottom: 144px;
 
   @media screen and (max-width: 1250px) {
     padding-top: 100px;
@@ -33,15 +34,15 @@
       mask: linear-gradient(
         90deg,
         transparent,
-        white 6%,
-        white 94%,
+        $color-text 6%,
+        $color-text 94%,
         transparent
       );
       -webkit-mask: linear-gradient(
         90deg,
         transparent,
-        white 6%,
-        white 94%,
+        $color-text 6%,
+        $color-text 94%,
         transparent
       );
 
@@ -103,9 +104,9 @@
             line-height: 1.7rem;
             font-size: 1.25rem;
             font-weight: 400;
-            color: white;
+            color: $color-text;
             text-align: left;
-            color: rgba(white, 0.5);
+            color: rgba($color-text, 0.5);
             padding: 0;
             flex: 1;
 
@@ -130,7 +131,7 @@
             .line {
               height: 2px;
               flex: 1;
-              background-color: rgba(white, 0.5);
+              background-color: rgba($color-text, 0.5);
 
               @media screen and (max-width: 370px) {
                 display: none;
@@ -146,7 +147,7 @@
                 font-size: 1.13rem;
                 font-weight: 400;
                 font-family: "Karla", sans-serif;
-                color: rgba(white, 0.5);
+                color: rgba($color-text, 0.5);
                 padding: 0;
                 text-align: right;
                 display: flex;
@@ -194,11 +195,11 @@
           }
 
           p {
-            color: white !important;
+            color: $color-text !important;
           }
 
           .line {
-            background-color: white !important;
+            background-color: $color-text !important;
           }
         }
       }
@@ -235,7 +236,7 @@
         }
 
         &:hover path {
-          fill: $color-highLight;
+          fill: $color-singleHighlight;
         }
       }
     }
@@ -252,12 +253,12 @@
         width: 8px;
         height: 8px;
         border-radius: 100vh;
-        background-color: white;
+        background-color: $color-text;
         transition: all 0.2s ease-in-out;
       }
 
       .highLightBG {
-        background-color: $color-highLight;
+        background-color: $color-singleHighlight;
       }
     }
   }

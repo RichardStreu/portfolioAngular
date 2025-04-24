@@ -1,18 +1,41 @@
+// @font-face {
+//   font-family: "Karla";
+//   src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf")
+//     format("truetype");
+// }
+
+// @font-face {
+//   font-family: "Fira";
+//   src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf")
+//     format("truetype");
+// }
+
 @font-face {
   font-family: "Karla";
-  src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf")
+  src: url("./assets/fonts/inter/inter-variable-font.ttf")
     format("truetype");
 }
 
 @font-face {
   font-family: "Fira";
-  src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf")
+  src: url("./assets/fonts/inter/inter-variable-font.ttf")
     format("truetype");
 }
 
 $color-bgDark: rgb(41, 41, 41);
-// $color-highLight: magenta;
+$color-text: rgb(255, 255, 255);
 $color-highLight: rgb(61, 207, 182);
+
+$color-bgDark: rgb(43, 66, 88);
+$color-bgDarkTwo: rgb(26, 39, 51);
+$color-text: white;
+$color-highLight: rgb(230, 238, 255);
+$color-singleHighlight: rgb(4, 253, 232);
+
+// $color-bgDark: #B3E5FC;
+// $color-text: rgb(240, 236, 228);
+// $color-highLight: rgb(190, 212, 66);
+
 $color-red: rgb(197, 106, 106);
 
 * {
@@ -23,9 +46,9 @@ $color-red: rgb(197, 106, 106);
 }
 
 body {
-  font-family: "Karla", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: $color-bgDark;
-  color: white;
+  color: $color-text;
   font-size: 1rem;
   user-select: none;
 }
@@ -77,34 +100,38 @@ body {
 }
 
 .scrollbar-mobile {
-  overflow-y: auto; 
-  -webkit-overflow-scrolling: touch; 
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: rgba($color-highLight, 0.5) transparent; 
+  scrollbar-color: rgba($color-highLight, 0.5) transparent;
 
   &::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
 
   &:hover::-webkit-scrollbar,
   &:focus-within::-webkit-scrollbar {
-    display: block; 
-    width: 5px; 
+    display: block;
+    width: 5px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba($color-highLight, 0.5); 
-    border-radius: 10px; 
+    background: rgba($color-highLight, 0.5);
+    border-radius: 10px;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent; 
+    background: transparent;
   }
 }
 
 .wordBreak {
-  hyphens: auto; 
+  hyphens: auto;
   // overflow-wrap: break-word;
   // word-wrap: break-word;
-  word-break: break-word; 
+  word-break: break-word;
+}
+
+.singleHighlight {
+  color: $color-singleHighlight;
 }

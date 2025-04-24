@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fira";
+  src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: calc(1248px + 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media screen and (max-width: 650px) {
+  .contentWrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.d_none {
+  display: none !important;
+}
+
+.d_block {
+  display: block;
+}
+
+.opacity_0 {
+  opacity: 0;
+}
+
+.opacity_1 {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(41, 41, 41);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 207, 182, 0.15);
+  border-radius: 100vh;
+}
+
+.scrollbar-mobile {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(61, 207, 182, 0.5) transparent;
+}
+.scrollbar-mobile::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-mobile:hover::-webkit-scrollbar, .scrollbar-mobile:focus-within::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.scrollbar-mobile::-webkit-scrollbar-thumb {
+  background: rgba(61, 207, 182, 0.5);
+  border-radius: 10px;
+}
+.scrollbar-mobile::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wordBreak {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
+}
+
+.projectBar {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.projectBar:hover {
+  background-color: rgba(61, 207, 182, 0.15);
+}
+.projectBar div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 2rem;
+}
+@media screen and (max-width: 850px) {
+  .projectBar div {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.projectBar div p {
+  font-family: "Fira", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+.projectBar div .technologies {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 850px) {
+  .projectBar div .technologies {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+.projectBar div .technologies .singleSkill {
+  padding: 0px;
+}
+.projectBar div .technologies .singleSkill p {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1.13rem;
+  color: white;
+}
+.projectBar div .technologies .singleSkill hr {
+  height: 16px;
+  width: 2px;
+  border: none;
+  background-color: rgb(61, 207, 182);
+  margin-left: 6px;
+  margin-right: 6px;
+}
+@media screen and (max-width: 850px) {
+  .projectBar div .technologies .singleSkill {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+.projectBar hr {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(61, 207, 182);
+  border: none;
+}/*# sourceMappingURL=project-bar.component.css.map */

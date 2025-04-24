@@ -19,7 +19,7 @@
   > a {
     transform-origin: top left;
     transform: rotate(-90deg) translate(24px, -50%);
-    color: white;
+    color: $color-text;
     text-decoration: none;
     position: absolute;
     left: 50%;
@@ -27,7 +27,7 @@
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: $color-highLight;
+      color: $color-singleHighlight;
     }
 
     @media screen and (max-width: 1100px) {
@@ -56,7 +56,7 @@
         width: 8px;
         height: 8px;
         border-radius: 100vh;
-        background-color: $color-highLight;
+        background-color: $color-singleHighlight;
         position: absolute;
         right: -12px;
         bottom: calc(50% - 2px);
@@ -70,7 +70,7 @@
 
       &:hover {
         svg path {
-          fill: white;
+          fill: $color-text;
         }
       }
     }
@@ -88,6 +88,6 @@
     // flex: 1;
     height: 186px;
     width: 2px;
-    background-color: white;
+    background-color: $color-text;
   }
 }

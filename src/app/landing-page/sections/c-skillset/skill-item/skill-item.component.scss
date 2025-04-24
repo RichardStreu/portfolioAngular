@@ -13,7 +13,7 @@
 }
 
 .fillColorWhite {
-  color: white;
+  color: $color-text;
 }
 
 .fillColorHighLight {
@@ -52,6 +52,6 @@
     font-family: "Fira", sans-serif;
     font-size: 1.13rem;
     text-align: center;
-    color: white;
+    color: $color-text;
   }
 }
