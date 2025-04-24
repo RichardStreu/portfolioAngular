@@ -25,9 +25,9 @@ export class AppComponent {
 
   public isScrolling: boolean = false;
 
-  private lastToggleScrollY: number = 60;
+  private lastToggleScrollY: number = 70;
 
-  private toggleThreshold: number = 40;
+  private toggleThreshold: number = 30;
 
   // HostListener to handle window scroll events.
   @HostListener('window:scroll', [])
