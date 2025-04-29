@@ -47,7 +47,7 @@ export class CSkillsetComponent {
       this.anotherSkillText =
         this.languageService.currentLanguage == 'en'
           ? 'another skill?'
-          : 'eine andere Fähigkeit?';
+          : 'weitere Skills?';
   
       this.feelFreeText =
         this.languageService.currentLanguage == 'en'

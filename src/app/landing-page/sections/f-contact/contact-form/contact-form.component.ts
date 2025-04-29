@@ -52,7 +52,7 @@ export class ContactFormComponent {
     this.labelNameText =
       this.languageService.currentLanguage == 'en'
         ? "What's your name?"
-        : 'Wie ist dein Name?';
+        : 'Wie heißt du?';
   }
   choosePlaceholderNameText() {
     this.placeholderNameText =

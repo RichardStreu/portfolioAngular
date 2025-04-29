@@ -59,6 +59,29 @@ export class ProjectDataService {
         },
       },
       {
+        name: 'Code-Nex',
+        isCurrentlyShown: false,
+        projectImg: 'codeNex.png',
+        skillsList: [
+          { skillName: 'Jira', skillImg: 'jira.svg' },
+          { skillName: 'Scrum', skillImg: 'Scrum.svg' },
+          { skillName: 'GIT', skillImg: 'Git.svg' },
+          { skillName: 'Figma', skillImg: 'Figma.svg' }
+        ],
+        headline: {
+          en: 'Developer Community',
+          de: 'Entwickler-Community',
+        },
+        description: {
+          en: 'Self-organized developer community focused on continuous learning and expanding our tech stack. We apply new technologies in practice and deepen best practices to grow as developers.',
+          de: 'Selbstorganisierte Entwicklergemeinschaft mit Fokus auf Weiterbildung und Ausbau unseres Tech-Stacks. Wir wenden neue Technologien praktisch an und vertiefen Best Practices, um als Entwickler zu wachsen.',
+        },
+        links: {
+          github: 'https://github.com/CodeNex',
+          live: 'https://code-nex.de/',
+        },
+      },
+      {
         name: 'Sharky',
         isCurrentlyShown: false,
         projectImg: 'sharky.png',
