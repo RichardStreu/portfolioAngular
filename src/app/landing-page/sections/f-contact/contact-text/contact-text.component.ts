@@ -23,33 +23,33 @@ export class ContactTextComponent {
       this.contactMeText =
         this.languageService.currentLanguage == 'en'
           ? 'Contact me'
-          : 'Schreib mir';
+          : 'Lass uns starten.';
 
       this.letsWorkText =
         this.languageService.currentLanguage == 'en'
           ? "Let's work together"
-          : 'Lass uns zusammenarbeiten';
+          : 'Dein Projekt verdient den nächsten Schritt.';
 
       this.solveText =
         this.languageService.currentLanguage == 'en'
           ? 'Got a problem to solve?'
-          : 'Ein Problem, das gelöst werden soll?';
+          : 'Neue Herausforderungen? Ich liefere Lösungen.';
 
           this.myWorkText =
           this.languageService.currentLanguage == 'en'
             ? 'Use the form to get in touch. I’m curious to hear your ideas and happy to contribute to your project.'
-            : 'Schreib mir gern über das Formular – ich bin gespannt auf deine Ideen und freue mich, dein Projekt zu unterstützen.';
+            : 'Schick mir deine Idee – ich bin ready, dein Projekt nach vorn zu bringen.';
         
 
       this.needDevText =
         this.languageService.currentLanguage == 'en'
           ? 'Looking for a frontend developer?'
-          : 'Suchst du einen Frontend-Entwickler?';
+          : 'Frontend-Support für dein Projekt.';
 
       this.letsTalkText =
         this.languageService.currentLanguage == 'en'
           ? "Let's talk!"
-          : 'Lass uns sprechen!';
+          : 'Lass uns was aufbauen!';
     });
   }
 
